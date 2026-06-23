@@ -1,0 +1,970 @@
+{% extends 'mobiles/base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- HERO -->
+<section class="hero-section">
+    <img
+        src="{% static 'images/sastha-hero-banner.png' %}"
+        alt="Sastha Groups"
+        class="hero-banner">
+</section>
+
+<section class="business-section">
+
+    <div class="container">
+
+        <div class="section-header text-center">
+
+            <h2>Our Businesses</h2>
+
+            <p>
+                Explore our diverse range of services under Sastha Groups
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- MOBILE SHOP -->
+            <div class="col-lg-4">
+
+                <div class="business-card">
+
+                    <img src="{% static 'images/mobile-shop.png' %}"
+                         alt="Mobile Shop">
+
+                    <div class="business-content">
+
+                        <span class="business-icon">📱</span>
+
+                        <h3>Mobile Shop</h3>
+
+                        <p>
+                            Latest smartphones, accessories and trusted brands.
+                        </p>
+
+                        <a href="#" class="business-btn">
+                            Explore →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- BEAUTY PARLOR -->
+            <div class="col-lg-4">
+
+                <div class="business-card">
+
+                    <img src="{% static 'images/beauty-parlor.png' %}"
+                         alt="Beauty Parlor">
+
+                    <div class="business-content">
+
+                        <span class="business-icon">💄</span>
+
+                        <h3>Beauty Parlor</h3>
+
+                        <p>
+                            Professional beauty care, bridal makeup and styling.
+                        </p>
+
+                        <a href="#" class="business-btn">
+                            Explore →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- FLOWER SHOP -->
+            <div class="col-lg-4">
+
+                <div class="business-card">
+
+                    <img src="{% static 'images/flower-shop.png' %}"
+                         alt="Flower Shop">
+
+                    <div class="business-content">
+
+                        <span class="business-icon">🌸</span>
+
+                        <h3>Flower Shop</h3>
+
+                        <p>
+                            Fresh flowers, bouquets and floral arrangements.
+                        </p>
+
+                        <a href="#" class="business-btn">
+                            Explore →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- BRANDS -->
+<!-- <section class="brands-section">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label">Trusted Partners</span>
+            <h2 class="section-title">Top <span>Brands</span></h2>
+            <div class="section-divider mx-auto"></div>
+        </div>
+        <div class="row g-3">
+            <div class="col-6 col-md-2">
+                <div class="brand-card">
+                    <div class="brand-logo">🍎</div>
+                    <h6>Apple</h6>
+                    <span>48 Products</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-2">
+                <div class="brand-card">
+                    <div class="brand-logo">📟</div>
+                    <h6>Samsung</h6>
+                    <span>62 Products</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-2">
+                <div class="brand-card">
+                    <div class="brand-logo">1️⃣</div>
+                    <h6>OnePlus</h6>
+                    <span>35 Products</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-2">
+                <div class="brand-card">
+                    <div class="brand-logo">🌟</div>
+                    <h6>Xiaomi</h6>
+                    <span>55 Products</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-2">
+                <div class="brand-card">
+                    <div class="brand-logo">🎵</div>
+                    <h6>Vivo</h6>
+                    <span>29 Products</span>
+                </div>
+            </div>
+            <div class="col-6 col-md-2">
+                <div class="brand-card">
+                    <div class="brand-logo">💚</div>
+                    <h6>Oppo</h6>
+                    <span>31 Products</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+<!-- FEATURED PRODUCTS -->
+<section class="py-5" style="background: var(--white);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label">Hand Picked</span>
+            <h2 class="section-title">Featured <span>Mobiles</span></h2>
+            <div class="section-divider mx-auto"></div>
+        </div>
+        <div class="row g-4">
+
+            <!-- PRODUCT 1 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?q=80&w=800&auto=format&fit=crop" alt="iPhone 16 Pro">
+                        <span class="product-badge">NEW</span>
+                        <button class="product-wishlist">🤍</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <small>4.9 (328 reviews)</small>
+                        </div>
+                        <div class="brand-tag">Apple</div>
+                        <h5>iPhone 16 Pro</h5>
+                        <div class="product-price">
+                            <span class="current">₹1,19,999</span>
+                            <span class="original">₹1,39,999</span>
+                            <span class="discount">14% OFF</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-pink btn-sm">View Details</a>
+                            <a href="#" class="btn btn-outline-pink btn-sm">Add Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800&auto=format&fit=crop" alt="Samsung S25 Ultra">
+                        <span class="product-badge">HOT</span>
+                        <button class="product-wishlist">🤍</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <small>4.7 (214 reviews)</small>
+                        </div>
+                        <div class="brand-tag">Samsung</div>
+                        <h5>Samsung S25 Ultra</h5>
+                        <div class="product-price">
+                            <span class="current">₹99,999</span>
+                            <span class="original">₹1,09,999</span>
+                            <span class="discount">9% OFF</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-pink btn-sm">View Details</a>
+                            <a href="#" class="btn btn-outline-pink btn-sm">Add Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=800&auto=format&fit=crop" alt="OnePlus 13 Pro">
+                        <span class="product-badge">SALE</span>
+                        <button class="product-wishlist">🤍</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating">
+                            <span class="stars">★★★★★</span>
+                            <small>4.8 (186 reviews)</small>
+                        </div>
+                        <div class="brand-tag">OnePlus</div>
+                        <h5>OnePlus 13 Pro</h5>
+                        <div class="product-price">
+                            <span class="current">₹69,999</span>
+                            <span class="original">₹79,999</span>
+                            <span class="discount">12% OFF</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-pink btn-sm">View Details</a>
+                            <a href="#" class="btn btn-outline-pink btn-sm">Add Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PRODUCT 4 -->
+            <div class="col-lg-3 col-md-6">
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=800&auto=format&fit=crop" alt="Xiaomi 15 Ultra">
+                        <span class="product-badge">TOP</span>
+                        <button class="product-wishlist">🤍</button>
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating">
+                            <span class="stars">★★★★☆</span>
+                            <small>4.6 (152 reviews)</small>
+                        </div>
+                        <div class="brand-tag">Xiaomi</div>
+                        <h5>Xiaomi 15 Ultra</h5>
+                        <div class="product-price">
+                            <span class="current">₹54,999</span>
+                            <span class="original">₹64,999</span>
+                            <span class="discount">15% OFF</span>
+                        </div>
+                        <div class="card-actions">
+                            <a href="#" class="btn btn-pink btn-sm">View Details</a>
+                            <a href="#" class="btn btn-outline-pink btn-sm">Add Cart</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="text-center mt-5">
+            <a href="#" class="btn btn-outline-pink btn-lg px-5">View All Products</a>
+        </div>
+    </div>
+</section>
+
+<!-- BEAUTY SERVICES -->
+<!-- ============================================================
+  BEAUTY ALL IN ONE — Promo Banner Section
+  Drop this whole block wherever you want it centered in your page.
+  Needs: beauty-banner.css in the same folder (or inline it / link it in <head>).
+  Fonts used: Playfair Display (serif headings), Pinyon Script (the red script "Beauty"),
+              Poppins (body / labels) — loaded from Google Fonts in the CSS file via @import,
+              or link them in your <head> for better performance (snippet below the code).
+============================================================= -->
+
+<section class="bao-section">
+  <div class="bao-card">
+
+    <!-- Decorative corner flourishes -->
+    <svg class="bao-corner bao-corner--tl" viewBox="0 0 220 220" aria-hidden="true">
+      <use href="#bao-flower"></use>
+    </svg>
+    <svg class="bao-corner bao-corner--br" viewBox="0 0 220 220" aria-hidden="true">
+      <use href="#bao-flower"></use>
+    </svg>
+
+    <!-- Shared flower symbol definition (rendered invisibly once) -->
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <g id="bao-flower">
+          <g fill="#b91c2c">
+            <circle cx="60" cy="60" r="14" fill="#c98a1f"/>
+            <ellipse cx="60" cy="30" rx="16" ry="26" transform="rotate(0 60 60)"/>
+            <ellipse cx="60" cy="30" rx="16" ry="26" transform="rotate(45 60 60)"/>
+            <ellipse cx="60" cy="30" rx="16" ry="26" transform="rotate(90 60 60)"/>
+            <ellipse cx="60" cy="30" rx="16" ry="26" transform="rotate(135 60 60)"/>
+            <ellipse cx="60" cy="30" rx="16" ry="26" transform="rotate(180 60 60)"/>
+            <ellipse cx="60" cy="30" rx="16" ry="26" transform="rotate(225 60 60)"/>
+            <ellipse cx="60" cy="30" rx="16" ry="26" transform="rotate(270 60 60)"/>
+            <ellipse cx="60" cy="30" rx="16" ry="26" transform="rotate(315 60 60)"/>
+          </g>
+          <g fill="#7a1018" opacity="0.9">
+            <ellipse cx="125" cy="100" rx="11" ry="18" transform="rotate(20 125 100)"/>
+            <ellipse cx="140" cy="130" rx="9" ry="15" transform="rotate(40 140 130)"/>
+          </g>
+          <path d="M60 90 C 50 130, 30 150, 10 165" stroke="#c98a1f" stroke-width="2.5" fill="none"/>
+          <path d="M70 95 C 90 135, 110 150, 150 160" stroke="#c98a1f" stroke-width="2.5" fill="none"/>
+          <path d="M20 140 q 12 -14 26 -6" stroke="#c98a1f" stroke-width="2" fill="none"/>
+          <path d="M110 145 q 14 -10 28 0" stroke="#c98a1f" stroke-width="2" fill="none"/>
+        </g>
+      </defs>
+    </svg>
+
+    <!-- ===== Top: title + hero photo ===== -->
+    <div class="bao-hero">
+      <div class="bao-hero__text">
+        <p class="bao-eyebrow">Beauty That Makes You Shine</p>
+
+        <h1 class="bao-title">
+          <span class="bao-title__script">Beauty</span>
+          <span class="bao-title__serif">All in One</span>
+        </h1>
+
+        <p class="bao-services">
+          Pedicure <span class="bao-dot">❤</span> Manicure <span class="bao-dot">❤</span> Henna
+          <span class="bao-dot">❤</span> Facial <span class="bao-dot">❤</span> Haircut
+          <span class="bao-dot">❤</span> Wash <span class="bao-dot">❤</span> Waxing
+        </p>
+
+        <p class="bao-ribbon">
+          <span>Feel Beautiful. Look Confident. Be You.</span>
+        </p>
+      </div>
+
+      <div class="bao-hero__image">
+        <img
+          src="https://images.unsplash.com/photo-1616683693504-3ea7e9ad6fec?q=80&w=900&auto=format&fit=crop"
+          alt="Woman with eyes closed enjoying a relaxing facial treatment"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- ===== Service cards ===== -->
+    <div class="bao-services-grid">
+
+      <article class="bao-service">
+        <div class="bao-service__photo">
+          <img src="{% static 'images/Pedicure.jpg' %}"
+     alt="Marigold Garlands">
+          <span class="bao-service__icon" aria-hidden="true">🦶</span>
+        </div>
+        <h3 class="bao-service__title">Pedicure</h3>
+        <p class="bao-service__desc">Relax your feet with our soothing pedicure for soft, smooth and beautiful feet.</p>
+      </article>
+
+      <article class="bao-service">
+        <div class="bao-service__photo">
+          <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=600&auto=format&fit=crop" alt="Hands receiving a manicure with rose nearby" loading="lazy">
+          <span class="bao-service__icon" aria-hidden="true">💅</span>
+        </div>
+        <h3 class="bao-service__title">Manicure</h3>
+        <p class="bao-service__desc">Perfect nails, perfect you. We care for your hands with love and precision.</p>
+      </article>
+
+      <article class="bao-service">
+        <div class="bao-service__photo">
+          <img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=600&auto=format&fit=crop" alt="Hand decorated with intricate henna design" loading="lazy">
+          <span class="bao-service__icon" aria-hidden="true">🖌️</span>
+        </div>
+        <h3 class="bao-service__title">Henna</h3>
+        <p class="bao-service__desc">Beautiful henna designs for every occasion. Traditional, elegant &amp; long lasting.</p>
+      </article>
+
+      <article class="bao-service">
+        <div class="bao-service__photo">
+          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&auto=format&fit=crop" alt="Woman receiving a facial skincare treatment" loading="lazy">
+          <span class="bao-service__icon" aria-hidden="true">🧖‍♀️</span>
+        </div>
+        <h3 class="bao-service__title">Facial</h3>
+        <p class="bao-service__desc">Refresh your skin with our rejuvenating facials for a healthy, glowing look.</p>
+      </article>
+
+      <article class="bao-service">
+        <div class="bao-service__photo">
+          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=600&auto=format&fit=crop" alt="Hairstylist trimming a client's hair" loading="lazy">
+          <span class="bao-service__icon" aria-hidden="true">✂️</span>
+        </div>
+        <h3 class="bao-service__title">Haircut</h3>
+        <p class="bao-service__desc">Trendy cuts for every style and personality. Look fresh, look fabulous.</p>
+      </article>
+
+      <article class="bao-service">
+        <div class="bao-service__photo">
+          <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=600&auto=format&fit=crop" alt="Hair wash treatment at a salon" loading="lazy">
+          <span class="bao-service__icon" aria-hidden="true">🧴</span>
+        </div>
+        <h3 class="bao-service__title">Wash</h3>
+        <p class="bao-service__desc">Relax with our hair wash that cleanses, nourishes and refreshes your hair.</p>
+      </article>
+
+      <article class="bao-service">
+        <div class="bao-service__photo">
+          <img src="{% static 'images/Waxing.webp' %}"
+     alt="Marigold Garlands">
+          <span class="bao-service__icon" aria-hidden="true">🪒</span>
+        </div>
+        <h3 class="bao-service__title">Waxing</h3>
+        <p class="bao-service__desc">Smooth, soft and long-lasting results with our gentle waxing services.</p>
+      </article>
+
+    </div>
+
+    <!-- ===== Why you'll love us ===== -->
+    <div class="bao-why">
+      <div class="bao-why__heading">
+        <span class="bao-why__line"></span>
+        <span class="bao-why__heart">❤</span>
+        <h2>Why You'll Love Us</h2>
+        <span class="bao-why__heart">❤</span>
+        <span class="bao-why__line"></span>
+      </div>
+
+      <ul class="bao-why__grid">
+        <li><span class="bao-why__icon" aria-hidden="true">🌿</span><span>Hygienic &amp; Safe</span></li>
+        <li><span class="bao-why__icon" aria-hidden="true">💧</span><span>Premium Products</span></li>
+        <li><span class="bao-why__icon" aria-hidden="true">⭐</span><span>Expert Professionals</span></li>
+        <li><span class="bao-why__icon" aria-hidden="true">🛡️</span><span>Quality Service</span></li>
+        <li><span class="bao-why__icon" aria-hidden="true">❤️</span><span>Customer Satisfaction</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- CATEGORIES -->
+<!-- <section class="py-5 bg-grey-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label">Browse By</span>
+            <h2 class="section-title">Shop By <span>Category</span></h2>
+            <div class="section-divider mx-auto"></div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="category-card cat-pink">
+                    <span class="cat-icon">📱</span>
+                    <h5>Smartphones</h5>
+                    <p>200+ products</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="category-card cat-grey">
+                    <span class="cat-icon">⌚</span>
+                    <h5>Smart Watches</h5>
+                    <p>80+ products</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="category-card cat-pink">
+                    <span class="cat-icon">🎧</span>
+                    <h5>Earbuds</h5>
+                    <p>60+ products</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="category-card cat-grey">
+                    <span class="cat-icon">🔋</span>
+                    <h5>Accessories</h5>
+                    <p>120+ products</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- OFFER BANNER -->
+<!-- <section class="offer-section">
+    <div class="container" style="position:relative; z-index:1;">
+        <div class="row align-items-center">
+            <div class="col-lg-6 text-white">
+                <span class="offer-badge">⚡ LIMITED TIME OFFER</span>
+                <h2 class="fw-bold">
+                    Up To 40% OFF<br>
+                    On Premium Smartphones
+                </h2>
+                <p class="mt-3 fs-5" style="opacity:0.85;">
+                    Grab exclusive deals on iPhone, Samsung,
+                    OnePlus and more. Don't miss out!
+                </p>
+                <a href="#" class="btn mt-4 px-5 py-2 fw-bold"
+                   style="background:white; color:var(--primary-pink); border-radius:8px; font-size:1rem;">
+                    Shop Offers →
+                </a>
+            </div>
+            <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1200&auto=format&fit=crop"
+                     class="img-fluid" style="border-radius:20px; box-shadow:0 20px 50px rgba(0,0,0,0.2);" alt="offer mobile">
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- TRENDING PRODUCTS -->
+<!-- <section class="trending-section">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-5 flex-wrap gap-3">
+            <div>
+                <span class="section-label">Most Popular</span>
+                <h2 class="section-title mb-0">Trending <span>Products</span></h2>
+            </div>
+            <a href="#" class="btn btn-pink px-4">View All →</a>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="trending-card">
+                    <div style="overflow:hidden;">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop" alt="iPhone 16 Pro Max">
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating mb-2">
+                            <span class="stars">★★★★★</span>
+                            <small>4.9</small>
+                        </div>
+                        <h5>iPhone 16 Pro Max</h5>
+                        <p>Premium flagship smartphone with latest A19 chip and titanium design.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span style="font-size:1.1rem; font-weight:800; color:var(--primary-pink);">₹1,34,999</span>
+                            <a href="#" class="btn btn-pink btn-sm px-3">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="trending-card">
+                    <div style="overflow:hidden;">
+                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=800&auto=format&fit=crop" alt="OnePlus 13">
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating mb-2">
+                            <span class="stars">★★★★★</span>
+                            <small>4.8</small>
+                        </div>
+                        <h5>OnePlus 13</h5>
+                        <p>Blazing fast performance with Snapdragon 8 Elite and 100W charging.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span style="font-size:1.1rem; font-weight:800; color:var(--primary-pink);">₹69,999</span>
+                            <a href="#" class="btn btn-pink btn-sm px-3">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="trending-card">
+                    <div style="overflow:hidden;">
+                        <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800&auto=format&fit=crop" alt="Samsung S25 Ultra">
+                    </div>
+                    <div class="card-body">
+                        <div class="product-rating mb-2">
+                            <span class="stars">★★★★☆</span>
+                            <small>4.7</small>
+                        </div>
+                        <h5>Samsung S25 Ultra</h5>
+                        <p>Ultra premium AI-powered camera system with built-in S Pen.</p>
+                        <div class="d-flex align-items-center justify-content-between">
+                            <span style="font-size:1.1rem; font-weight:800; color:var(--primary-pink);">₹99,999</span>
+                            <a href="#" class="btn btn-pink btn-sm px-3">Explore</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+<!-- FLASH SALE -->
+<!-- <section class="flash-section">
+    <div class="container" style="position:relative; z-index:1;">
+        <span class="offer-badge mb-3">⚡ FLASH SALE</span>
+        <h2 class="fw-bold display-5 text-white">Mega Mobile Sale</h2>
+        <p class="fs-5 mt-3 text-white" style="opacity:0.85;">
+            Limited time offers — grab your dream phone today!
+        </p>
+        <div class="d-flex justify-content-center gap-3 mt-5 flex-wrap">
+            <div class="countdown-box">
+                <h2>02</h2>
+                <span>Days</span>
+            </div>
+            <div class="countdown-box">
+                <h2>14</h2>
+                <span>Hours</span>
+            </div>
+            <div class="countdown-box">
+                <h2>36</h2>
+                <span>Minutes</span>
+            </div>
+            <div class="countdown-box">
+                <h2>18</h2>
+                <span>Seconds</span>
+            </div>
+        </div>
+        <a href="#" class="btn mt-5 px-5 py-3 fw-bold"
+           style="background:white; color:var(--primary-pink); border-radius:10px; font-size:1rem;">
+            Shop Flash Sale →
+        </a>
+    </div>
+</section> -->
+
+<!-- ============================================================
+  FRESH BLOOMS — Indian Flower Shop Section
+  Place this directly below the .bao-section (Beauty All in One)
+  block — it shares the same red/gold/cream palette and fonts so
+  the two sections read as one matching set.
+  Needs: flower-shop.css in the same folder.
+============================================================= -->
+
+<section class="fls-section">
+  <div class="fls-card">
+
+    <!-- Decorative corner flourishes (reuses the same flower motif) -->
+    <svg class="fls-corner fls-corner--tl" viewBox="0 0 220 220" aria-hidden="true">
+      <use href="#fls-flower"></use>
+    </svg>
+    <svg class="fls-corner fls-corner--br" viewBox="0 0 220 220" aria-hidden="true">
+      <use href="#fls-flower"></use>
+    </svg>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <g id="fls-flower">
+          <g fill="#e07a1f">
+            <circle cx="60" cy="60" r="13" fill="#b91c2c"/>
+            <ellipse cx="60" cy="32" rx="15" ry="24" transform="rotate(0 60 60)"/>
+            <ellipse cx="60" cy="32" rx="15" ry="24" transform="rotate(40 60 60)"/>
+            <ellipse cx="60" cy="32" rx="15" ry="24" transform="rotate(80 60 60)"/>
+            <ellipse cx="60" cy="32" rx="15" ry="24" transform="rotate(120 60 60)"/>
+            <ellipse cx="60" cy="32" rx="15" ry="24" transform="rotate(160 60 60)"/>
+            <ellipse cx="60" cy="32" rx="15" ry="24" transform="rotate(200 60 60)"/>
+            <ellipse cx="60" cy="32" rx="15" ry="24" transform="rotate(240 60 60)"/>
+            <ellipse cx="60" cy="32" rx="15" ry="24" transform="rotate(280 60 60)"/>
+            <ellipse cx="60" cy="32" rx="15" ry="24" transform="rotate(320 60 60)"/>
+          </g>
+          <g fill="#7a1018" opacity="0.85">
+            <ellipse cx="128" cy="98" rx="10" ry="17" transform="rotate(25 128 98)"/>
+            <ellipse cx="142" cy="128" rx="8" ry="14" transform="rotate(45 142 128)"/>
+          </g>
+          <path d="M60 90 C 48 130, 28 150, 8 165" stroke="#3f7d3a" stroke-width="2.5" fill="none"/>
+          <path d="M70 95 C 92 135, 112 150, 152 160" stroke="#3f7d3a" stroke-width="2.5" fill="none"/>
+          <path d="M18 138 q 12 -14 26 -6" stroke="#3f7d3a" stroke-width="2" fill="none"/>
+          <path d="M112 144 q 14 -10 28 0" stroke="#3f7d3a" stroke-width="2" fill="none"/>
+        </g>
+      </defs>
+    </svg>
+
+    <!-- ===== Top: title + hero photo ===== -->
+    <div class="fls-hero">
+      <div class="fls-hero__text">
+        <p class="fls-eyebrow">Petals Picked Fresh, Every Morning</p>
+
+        <h1 class="fls-title">
+          <span class="fls-title__script">Fresh</span>
+          <span class="fls-title__serif">Blooms</span>
+        </h1>
+
+        <p class="fls-tagline">Your Neighbourhood Phool Wale</p>
+
+        <p class="fls-services">
+          Marigold <span class="fls-dot">❀</span> Mogra Gajra <span class="fls-dot">❀</span> Garlands
+          <span class="fls-dot">❀</span> Rose Bouquets <span class="fls-dot">❀</span> Pooja Thali
+          <span class="fls-dot">❀</span> Rangoli Flowers <span class="fls-dot">❀</span> Wedding Decor
+        </p>
+
+        <p class="fls-ribbon">
+          <span>Fresh Flowers. Festive Spirit. Pure Devotion.</span>
+        </p>
+      </div>
+
+      <div class="fls-hero__image">
+        <img
+          src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?q=80&w=900&auto=format&fit=crop"
+          alt="Vibrant marigold flower garlands at an Indian flower shop"
+          loading="lazy"
+        />
+      </div>
+    </div>
+
+    <!-- ===== Product cards ===== -->
+    <div class="fls-grid">
+
+      <article class="fls-item">
+        <div class="fls-item__photo">
+          <img src="{% static 'images/MarigoldGarlands.webp' %}"
+     alt="Marigold Garlands">
+          <span class="fls-item__icon" aria-hidden="true">🌼</span>
+        </div>
+        <h3 class="fls-item__title">Marigold Garlands</h3>
+        <p class="fls-item__desc">Bright genda phool malas for pooja, doorways and festive décor.</p>
+      </article>
+
+      <article class="fls-item">
+        <div class="fls-item__photo">
+          <img src="https://images.unsplash.com/photo-1599733594230-6b823276abcc?q=80&w=600&auto=format&fit=crop" alt="Fragrant mogra jasmine gajra flowers" loading="lazy">
+          <span class="fls-item__icon" aria-hidden="true">🤍</span>
+        </div>
+        <h3 class="fls-item__title">Mogra Gajra</h3>
+        <p class="fls-item__desc">Fragrant jasmine strings, hand-strung fresh for hair and offerings.</p>
+      </article>
+
+      <article class="fls-item">
+        <div class="fls-item__photo">
+          <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=600&auto=format&fit=crop" alt="Red rose bouquet wrapped for gifting" loading="lazy">
+          <span class="fls-item__icon" aria-hidden="true">🌹</span>
+        </div>
+        <h3 class="fls-item__title">Rose Bouquets</h3>
+        <p class="fls-item__desc">Hand-tied bouquets for birthdays, anniversaries and every occasion.</p>
+      </article>
+
+      <article class="fls-item">
+        <div class="fls-item__photo">
+<img src="{% static 'images/Pooja Flowers.webp' %}"
+     alt="Marigold Garlands">          <span class="fls-item__icon" aria-hidden="true">🪔</span>
+        </div>
+        <h3 class="fls-item__title">Pooja Flowers</h3>
+        <p class="fls-item__desc">Loose flowers and thali sets for daily puja and special rituals.</p>
+      </article>
+
+      <article class="fls-item">
+        <div class="fls-item__photo">
+<img src="{% static 'images/Rangoli Petals1.png' %}"
+     alt="Marigold Garlands">          <span class="fls-item__icon" aria-hidden="true">🎨</span>
+        </div>
+        <h3 class="fls-item__title">Rangoli Petals</h3>
+        <p class="fls-item__desc">Sorted petal sets in every colour to design rangoli at your doorstep.</p>
+      </article>
+
+      <article class="fls-item">
+        <div class="fls-item__photo">
+          <img src="https://images.unsplash.com/photo-1583160247711-2191776b4b91?q=80&w=600&auto=format&fit=crop" alt="Wedding mandap decorated with flowers" loading="lazy">
+          <span class="fls-item__icon" aria-hidden="true">💐</span>
+        </div>
+        <h3 class="fls-item__title">Wedding Decor</h3>
+        <p class="fls-item__desc">Mandap, car and venue floral decoration for your big day.</p>
+      </article>
+
+    </div>
+
+    <!-- ===== Why choose us ===== -->
+    <div class="fls-why">
+      <div class="fls-why__heading">
+        <span class="fls-why__line"></span>
+        <span class="fls-why__heart">❀</span>
+        <h2>Why Choose Us</h2>
+        <span class="fls-why__heart">❀</span>
+        <span class="fls-why__line"></span>
+      </div>
+
+      <ul class="fls-why__grid">
+        <li><span class="fls-why__icon" aria-hidden="true">🌸</span><span>Farm Fresh Daily</span></li>
+        <li><span class="fls-why__icon" aria-hidden="true">🚚</span><span>Same Day Delivery</span></li>
+        <li><span class="fls-why__icon" aria-hidden="true">✋</span><span>Hand Made With Care</span></li>
+        <li><span class="fls-why__icon" aria-hidden="true">💰</span><span>Honest Pricing</span></li>
+        <li><span class="fls-why__icon" aria-hidden="true">🙏</span><span>Trusted For Pooja</span></li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<!-- <section class="py-5" style="background: var(--white);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label">What They Say</span>
+            <h2 class="section-title">Customer <span>Reviews</span></h2>
+            <div class="section-divider mx-auto"></div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>Amazing mobile collections and super fast delivery. The quality is exactly as shown. Highly recommended!</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">AK</div>
+                        <div>
+                            <h6>Arjun Kumar</h6>
+                            <small>iPhone 16 Pro Buyer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>Best price compared to other stores. Customer support was excellent. Got my Samsung S25 Ultra in 2 days!</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">PS</div>
+                        <div>
+                            <h6>Priya Sharma</h6>
+                            <small>Samsung S25 Ultra Buyer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="testimonial-card">
+                    <div class="stars">★★★★☆</div>
+                    <p>Great experience purchasing my OnePlus 13. Website UI is very clean and professional. Will shop again!</p>
+                    <div class="reviewer">
+                        <div class="reviewer-avatar">RV</div>
+                        <div>
+                            <h6>Rahul Verma</h6>
+                            <small>OnePlus 13 Buyer</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+<section class="contact-section py-5">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <span class="section-label">Get In Touch</span>
+            <h2 class="section-title">Contact <span>Us</span></h2>
+            <div class="section-divider mx-auto"></div>
+        </div>
+
+        <div class="row g-4 align-items-stretch">
+
+            <div class="col-lg-5">
+
+                <div class="contact-card h-100">
+
+                    <h4>Sastha Groups</h4>
+
+                    <p>
+                        We are here to help you with mobiles,
+                        beauty services and fresh flowers.
+                    </p>
+
+                    <div class="mb-3">
+                        <strong>📞 Phone:</strong><br>
+                        +65 XXXXXXXX
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>📧 Email:</strong><br>
+                        info@sasthagroup.com
+                    </div>
+
+                    <div class="mb-3">
+                        <strong>📍 Address:</strong><br>
+                        Sastha Mobile Pte Ltd,
+                        Singapore
+                    </div>
+
+                    <a href="https://wa.me/65XXXXXXXX"
+                       class="btn btn-success">
+                       WhatsApp Us
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="col-lg-7">
+
+                <div class="map-wrapper">
+
+                    <!-- MAP HERE -->
+                     <iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.670332989841!2d103.88009467496579!3d1.3744850986125179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da178b04bc8d57%3A0xccb0922bd8a0cc8b!2sSastha%20Mobile%20Pte%20Ltd!5e0!3m2!1sen!2sin!4v1782234896444!5m2!1sen!2sin"
+width="100%"
+height="420"
+style="border:0;border-radius:20px;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<!-- WHY CHOOSE US -->
+<!-- <section class="features-section" style="background: var(--light-grey);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-label">Our Promise</span>
+            <h2 class="section-title">Why Choose <span>Sastha Mobiles</span></h2>
+            <div class="section-divider mx-auto"></div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">🚚</div>
+                    <h5>Fast Delivery</h5>
+                    <p>Quick and secure delivery across India within 2-3 business days.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h5>Secure Payment</h5>
+                    <p>100% safe and secure payment with UPI, cards and net banking.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">🎧</div>
+                    <h5>24/7 Support</h5>
+                    <p>Dedicated customer support team available around the clock.</p>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h5>Warranty Products</h5>
+                    <p>100% genuine products with official manufacturer warranty.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+
+
+{% endblock %}

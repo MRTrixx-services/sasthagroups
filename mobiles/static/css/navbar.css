@@ -1,0 +1,120 @@
+/* ===================================
+   SASTHA GROUPS NAVBAR
+=================================== */
+
+.sastha-navbar{
+    background: #ffffff;
+    padding: 12px 0;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+/* LOGO */
+
+.logo-img{
+    height: 60px;
+    width: auto;
+}
+
+.brand-text h5{
+    margin: 0;
+    color: #e31e24;
+    font-size: 1.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.brand-text span{
+    color: #777;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+/* NAV LINKS */
+
+.navbar-nav .nav-link{
+    color: #333;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 8px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active{
+    color: #e31e24;
+}
+
+/* UNDERLINE EFFECT */
+
+.navbar-nav .nav-link::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #e31e24;
+    transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after{
+    width: 100%;
+}
+
+/* CALL BUTTON */
+
+.call-btn{
+    background: #e31e24;
+    color: #fff;
+    border-radius: 30px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.call-btn:hover{
+    background: #c9171d;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* TOGGLER */
+
+.navbar-toggler{
+    border: none;
+    box-shadow: none !important;
+}
+
+/* MOBILE */
+
+@media (max-width: 991px){
+
+    .brand-text h5{
+        font-size: 1rem;
+    }
+
+    .brand-text span{
+        font-size: 0.7rem;
+    }
+
+    .navbar-nav{
+        padding-top: 15px;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link{
+        margin: 8px 0;
+    }
+
+    .call-btn{
+        margin-top: 15px;
+        width: 100%;
+    }
+}

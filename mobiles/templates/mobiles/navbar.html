@@ -1,0 +1,88 @@
+{% load static %}
+<nav class="sastha-navbar navbar navbar-expand-lg">
+    <div class="container">
+
+        <!-- LOGO -->
+        <a class="navbar-brand d-flex align-items-center gap-3" href="#">
+
+            <img src="{% static 'images/logo.jpeg' %}"
+                 alt="Sastha Groups"
+                 class="logo-img">
+
+            <div class="brand-text">
+                <h5 class="mb-0">SASTHA GROUPS</h5>
+                <span>Building Trust, Delivering Value</span>
+            </div>
+
+        </a>
+
+        <!-- MOBILE TOGGLE -->
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <!-- NAVIGATION -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+
+            <!-- CENTER MENU -->
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link active" href="#">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Mobile Shop
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Beauty Parlor
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Flower Shop
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        About
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">
+                        Contact
+                    </a>
+                </li>
+
+            </ul>
+
+            <!-- CALL BUTTON -->
+            <div class="d-flex align-items-center">
+
+                <a href="tel:+919999999999"
+                   class="btn call-btn">
+
+                    📞 Call Now
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>

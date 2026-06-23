@@ -1,0 +1,167 @@
+/* ===================================
+   SASTHA FOOTER
+=================================== */
+
+.sastha-footer{
+    background:#fff;
+    border-top:1px solid #ececec;
+    margin-top:0;
+    padding-top:70px;
+}
+
+/* LOGO */
+
+.footer-logo{
+    width:60px;
+    height:60px;
+    object-fit:cover;
+    border-radius:50%;
+}
+
+.footer-brand h4{
+    margin:0;
+    color:#e31e24;
+    font-size:1.2rem;
+    font-weight:800;
+    letter-spacing:1px;
+}
+
+.footer-brand span{
+    color:#777;
+    font-size:.75rem;
+}
+
+.footer-brand p{
+    color:#666;
+    line-height:1.8;
+    margin-top:15px;
+}
+
+/* HEADINGS */
+
+.sastha-footer h5{
+    color:#222;
+    font-size:1rem;
+    font-weight:700;
+    margin-bottom:20px;
+    position:relative;
+}
+
+.sastha-footer h5::after{
+    content:'';
+    width:40px;
+    height:3px;
+    background:#e31e24;
+    display:block;
+    margin-top:8px;
+    border-radius:10px;
+}
+
+/* LINKS */
+
+.footer-links{
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.footer-links li{
+    margin-bottom:12px;
+}
+
+.footer-links a{
+    color:#666;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-links a:hover{
+    color:#e31e24;
+    padding-left:5px;
+}
+
+/* CONTACT */
+
+.footer-contact p{
+    color:#666;
+    margin-bottom:12px;
+}
+
+/* SOCIAL */
+
+.footer-social{
+    display:flex;
+    gap:10px;
+    margin-top:20px;
+}
+
+.footer-social a{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:#f8f8f8;
+    color:#e31e24;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-social a:hover{
+    background:#e31e24;
+    color:#fff;
+    transform:translateY(-3px);
+}
+
+/* BOTTOM */
+
+.footer-bottom{
+    border-top:1px solid #ececec;
+    margin-top:50px;
+    padding:20px 0;
+}
+
+.footer-bottom p{
+    margin:0;
+    color:#777;
+}
+
+.footer-policy{
+    display:flex;
+    gap:20px;
+}
+
+.footer-policy a{
+    color:#777;
+    text-decoration:none;
+}
+
+.footer-policy a:hover{
+    color:#e31e24;
+}
+
+/* MOBILE */
+
+@media(max-width:991px){
+
+    .sastha-footer{
+        text-align:center;
+    }
+
+    .footer-social{
+        justify-content:center;
+    }
+
+    .footer-policy{
+        margin-top:10px;
+        justify-content:center;
+        flex-wrap:wrap;
+    }
+
+    .sastha-footer h5::after{
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+}
