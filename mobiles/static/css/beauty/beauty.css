@@ -1,0 +1,1493 @@
+/*=====================================
+        HERO SECTION
+======================================*/
+
+.beauty-hero{
+    position: relative;
+    overflow: hidden;
+    padding: 40px 0;
+    min-height: 720px;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg,#fff9fb 0%,#fffdfc 45%,#fff8f2 100%);
+}
+
+/* Background Glow */
+
+.beauty-hero::before{
+    content:"";
+    position:absolute;
+    width:520px;
+    height:520px;
+    left:-180px;
+    top:-150px;
+    border-radius:50%;
+    background:#ffd8e6;
+    filter:blur(90px);
+    opacity:.45;
+}
+
+.beauty-hero::after{
+    content:"";
+    position:absolute;
+    width:420px;
+    height:420px;
+    right:-120px;
+    bottom:-120px;
+    border-radius:50%;
+    background:#ffe8b5;
+    filter:blur(90px);
+    opacity:.40;
+}
+
+/*------------------------------------
+        LEFT CONTENT
+------------------------------------*/
+
+.beauty-tag{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:10px 22px;
+    border-radius:50px;
+    background:rgba(255,255,255,.75);
+    backdrop-filter:blur(10px);
+    color:#b91c2c;
+    font-weight:600;
+    font-size:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+    margin-bottom:28px;
+}
+
+.beauty-title{
+    font-size:68px;
+    line-height:1.1;
+    font-weight:800;
+    color:#222;
+    margin-bottom:25px;
+}
+
+.beauty-title span{
+    color:#b91c2c;
+}
+
+.beauty-desc{
+    font-size:18px;
+    color:#666;
+    line-height:1.9;
+    max-width:560px;
+    margin-bottom:35px;
+}
+
+/*------------------------------------
+        LIST
+------------------------------------*/
+
+.beauty-list{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+    margin-bottom:40px;
+}
+
+.beauty-list div{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:18px;
+    font-weight:600;
+    color:#222;
+}
+
+.beauty-list i{
+    color:#b91c2c;
+    font-size:18px;
+}
+
+/*------------------------------------
+        BUTTONS
+------------------------------------*/
+
+.hero-buttons{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.btn-book,
+.btn-whatsapp{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    padding:15px 34px;
+    border-radius:50px;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:700;
+    transition:.35s ease;
+}
+
+.btn-book{
+    background:linear-gradient(135deg,#b91c2c,#d8334a);
+    color:#fff;
+    box-shadow:0 15px 30px rgba(185,28,44,.28);
+}
+
+.btn-book:hover{
+    transform:translateY(-5px);
+    color:#fff;
+    box-shadow:0 20px 40px rgba(185,28,44,.35);
+}
+
+.btn-whatsapp{
+    background:#25D366;
+    color:#fff;
+    box-shadow:0 15px 30px rgba(37,211,102,.25);
+}
+
+.btn-whatsapp:hover{
+    transform:translateY(-5px);
+    color:#fff;
+    box-shadow:0 20px 40px rgba(37,211,102,.35);
+}
+
+/*------------------------------------
+        RATING
+------------------------------------*/
+
+.hero-rating{
+    margin-top:40px;
+}
+
+.hero-rating .stars{
+    font-size:22px;
+    letter-spacing:3px;
+    margin-bottom:8px;
+}
+
+.hero-rating p{
+    margin:0;
+    font-size:17px;
+    color:#666;
+}
+
+.hero-rating strong{
+    color:#222;
+}
+
+/*------------------------------------
+        IMAGE
+------------------------------------*/
+
+.hero-image-box{
+    position:relative;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:600px;
+}
+
+.hero-image-box::before{
+    content:"";
+    position:absolute;
+    width:480px;
+    height:480px;
+    border-radius:50%;
+    background:radial-gradient(circle,
+    rgba(255,220,230,.8),
+    rgba(255,240,245,.4),
+    transparent 70%);
+    filter:blur(15px);
+    z-index:0;
+}
+
+.hero-image-box img{
+    width:500px;
+    max-width:100%;
+    position:relative;
+    z-index:2;
+    background:none;
+    border:none;
+    box-shadow:none;
+    animation:floatGirl 5s ease-in-out infinite;
+    filter:drop-shadow(0 25px 40px rgba(185,28,44,.15));
+}
+
+/*------------------------------------
+        FLOAT ANIMATION
+------------------------------------*/
+
+@keyframes floatGirl{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/*=====================================
+        TABLET
+======================================*/
+
+@media(max-width:991px){
+
+.beauty-hero{
+    padding:80px 0;
+    text-align:center;
+}
+
+.beauty-title{
+    font-size:48px;
+}
+
+.beauty-desc{
+    margin:auto auto 35px;
+}
+
+.beauty-list{
+    grid-template-columns:1fr;
+    max-width:320px;
+    margin:0 auto 35px;
+    text-align:left;
+}
+
+.hero-buttons{
+    justify-content:center;
+}
+
+.hero-rating{
+    text-align:center;
+}
+
+.hero-image-box{
+    min-height:auto;
+    margin-top:60px;
+}
+
+.hero-image-box img{
+    width:360px;
+}
+
+}
+
+/*=====================================
+        MOBILE
+======================================*/
+
+@media(max-width:576px){
+
+.beauty-hero{
+    padding:70px 0;
+}
+
+.beauty-title{
+    font-size:36px;
+}
+
+.beauty-desc{
+    font-size:16px;
+    line-height:1.8;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.btn-book,
+.btn-whatsapp{
+    width:100%;
+    justify-content:center;
+}
+
+.hero-image-box img{
+    width:290px;
+}
+
+.beauty-tag{
+    font-size:14px;
+}
+
+.beauty-list div{
+    font-size:16px;
+}
+
+.hero-rating .stars{
+    font-size:18px;
+}
+
+.hero-rating p{
+    font-size:15px;
+}
+
+}
+
+/*==============================
+    FLOATING DECORATIONS
+===============================*/
+
+.flower{
+    position:absolute;
+    z-index:5;
+    pointer-events:none;
+    user-select:none;
+}
+
+/* Top Left */
+
+.flower1{
+    top:40px;
+    left:30px;
+    font-size:38px;
+    animation:float1 5s ease-in-out infinite;
+}
+
+/* Top Right */
+
+.flower2{
+    top:70px;
+    right:20px;
+    font-size:34px;
+    animation:float2 6s ease-in-out infinite;
+}
+
+/* Left Sparkle */
+
+.flower3{
+    left:40px;
+    bottom:120px;
+    font-size:26px;
+    animation:twinkle 2s infinite;
+}
+
+/* Bottom Right Flower */
+
+.flower4{
+    right:60px;
+    bottom:50px;
+    font-size:36px;
+    animation:float3 7s ease-in-out infinite;
+}
+
+/* Top Sparkle */
+
+.flower5{
+    top:10px;
+    left:55%;
+    font-size:22px;
+    animation:twinkle 2.5s infinite;
+}
+
+
+/*=====================================
+        ABOUT SECTION
+======================================*/
+
+.beauty-about{
+
+    padding:110px 0;
+
+    background:#fffdfb;
+
+    position:relative;
+
+}
+
+.about-image{
+
+    position:relative;
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+.about-image img{
+
+    width:100%;
+
+    max-width:430px;
+
+    border-radius:25px;
+
+    box-shadow:0 25px 60px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+}
+
+.about-image img:hover{
+
+    transform:scale(1.03);
+
+}
+
+.experience-card{
+
+    position:absolute;
+
+    bottom:25px;
+
+    right:-15px;
+
+    background:#b91c2c;
+
+    color:#fff;
+
+    padding:22px;
+
+    width:140px;
+
+    border-radius:18px;
+
+    text-align:center;
+
+    box-shadow:0 18px 35px rgba(185,28,44,.35);
+
+}
+
+.experience-card h2{
+
+    font-size:40px;
+
+    margin:0;
+
+    font-weight:800;
+
+}
+
+.experience-card span{
+
+    font-size:14px;
+
+}
+
+.about-tag{
+
+    display:inline-block;
+
+    background:#ffeef2;
+
+    color:#b91c2c;
+
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.about-title{
+
+    font-size:46px;
+
+    font-weight:800;
+
+    line-height:1.2;
+
+    margin-bottom:25px;
+
+    color:#222;
+
+}
+
+.about-title span{
+
+    color:#b91c2c;
+
+}
+
+.about-desc{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:#666;
+
+    margin-bottom:35px;
+
+}
+
+.about-features{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-bottom:40px;
+
+}
+
+.about-features div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-weight:600;
+
+    font-size:17px;
+
+}
+
+.about-features i{
+
+    color:#b91c2c;
+
+    font-size:20px;
+
+}
+
+.about-btn{
+
+    display:inline-block;
+
+    padding:15px 35px;
+
+    background:#b91c2c;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    border-radius:50px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.about-btn:hover{
+
+    background:#93131f;
+
+    color:#fff;
+
+    transform:translateY(-4px);
+
+}
+
+/*==========================
+Responsive
+===========================*/
+
+@media(max-width:991px){
+
+.about-image{
+
+margin-bottom:60px;
+
+}
+
+.about-title{
+
+font-size:36px;
+
+}
+
+.about-features{
+
+grid-template-columns:1fr;
+
+}
+
+.experience-card{
+
+right:20px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.beauty-about{
+
+padding:80px 0;
+
+}
+
+.about-title{
+
+font-size:30px;
+
+}
+
+.about-desc{
+
+font-size:16px;
+
+}
+
+.experience-card{
+
+width:120px;
+
+padding:16px;
+
+}
+
+.experience-card h2{
+
+font-size:30px;
+
+}
+
+}
+
+/*=====================================
+        SERVICES
+======================================*/
+
+.beauty-services{
+
+    padding:110px 0;
+
+    background:#fff7f9;
+
+}
+
+.section-heading{
+
+    text-align:center;
+
+    margin-bottom:70px;
+
+}
+
+.section-tag{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    background:#ffeef2;
+
+    color:#b91c2c;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    margin-bottom:18px;
+
+}
+
+.section-heading h2{
+
+    font-size:48px;
+
+    font-weight:800;
+
+    color:#222;
+
+    margin-bottom:20px;
+
+}
+
+.section-heading p{
+
+    max-width:650px;
+
+    margin:auto;
+
+    color:#666;
+
+    line-height:1.9;
+
+}
+
+.service-card{
+
+    background:#fff;
+
+    padding:40px 30px;
+
+    border-radius:24px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    height:100%;
+
+    box-shadow:0 12px 35px rgba(0,0,0,.06);
+
+    border:1px solid rgba(185,28,44,.08);
+
+}
+
+.service-card:hover{
+
+    transform:translateY(-12px);
+
+    box-shadow:0 30px 60px rgba(185,28,44,.15);
+
+}
+
+.service-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto auto 25px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#b91c2c,#d94c65);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:38px;
+
+    color:#fff;
+
+    transition:.4s;
+
+}
+
+.service-card:hover .service-icon{
+
+    transform:rotate(10deg) scale(1.08);
+
+}
+
+.service-card h4{
+
+    font-size:24px;
+
+    font-weight:700;
+
+    margin-bottom:15px;
+
+}
+
+.service-card p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin:0;
+
+}
+
+/* Responsive */
+
+@media(max-width:768px){
+
+.section-heading h2{
+
+font-size:34px;
+
+}
+
+.service-card{
+
+padding:30px 22px;
+
+}
+
+}
+
+/*=====================================
+        PRICE LIST
+======================================*/
+/*=====================================
+        PRICE LIST
+======================================*/
+
+.beauty-pricing{
+    padding:110px 0;
+    background:#fffdfb;
+}
+
+.pricing-card{
+    max-width:900px;
+    margin:auto;
+    background:#fff;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 20px 60px rgba(0,0,0,.08);
+    border:1px solid rgba(185,28,44,.08);
+}
+
+.price-row{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:22px 35px;
+    border-bottom:1px dashed #ecdcdc;
+    transition:.35s;
+}
+
+.price-row:last-child{
+    border-bottom:none;
+}
+
+.price-row:hover{
+    background:#fff5f7;
+    transform:translateX(8px);
+}
+
+.price-service{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.price-icon{
+    width:52px;
+    height:52px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#b91c2c,#d94c65);
+    color:#fff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:20px;
+    flex-shrink:0;
+    box-shadow:0 10px 20px rgba(185,28,44,.18);
+}
+
+.price-service span{
+    font-size:20px;
+    font-weight:600;
+    color:#222;
+}
+
+.price-amount{
+    color:#b91c2c;
+    font-size:22px;
+    font-weight:700;
+}
+
+.bridal-price{
+    background:linear-gradient(135deg,#b91c2c,#d94c65);
+}
+
+.bridal-price:hover{
+    transform:none;
+}
+
+.bridal-price .price-service span{
+    color:#fff;
+}
+
+.bridal-icon{
+    background:#fff;
+    color:#b91c2c;
+}
+
+.bridal-price a{
+    background:#fff;
+    color:#b91c2c;
+    padding:10px 22px;
+    border-radius:40px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.3s;
+}
+
+.bridal-price a:hover{
+    background:#ffe8ee;
+}
+
+@media(max-width:768px){
+
+.price-row{
+    padding:18px 20px;
+}
+
+.price-service{
+    gap:12px;
+}
+
+.price-icon{
+    width:42px;
+    height:42px;
+    font-size:16px;
+}
+
+.price-service span{
+    font-size:16px;
+}
+
+.price-amount{
+    font-size:18px;
+}
+
+.bridal-price{
+    flex-direction:column;
+    gap:15px;
+    text-align:center;
+}
+
+}
+
+/*=====================================
+        BRIDAL BANNER
+======================================*/
+
+.bridal-banner{
+
+    padding:40px 0;
+
+    background:#fff7fa;
+
+}
+
+.bridal-banner-box{
+
+    position:relative;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+    box-shadow:0 20px 50px rgba(0,0,0,.12);
+
+    transition:.4s;
+
+}
+
+.bridal-banner-box:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 35px 90px rgba(185,28,44,.18);
+
+}
+
+.bridal-banner-box img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+.bridal-overlay{
+
+    position:absolute;
+
+    left:50%;
+
+    bottom:35px;
+
+    transform:translateX(-50%);
+
+}
+
+.bridal-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    background:#25D366;
+
+    color:#fff;
+
+    padding:16px 34px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    box-shadow:0 18px 40px rgba(37,211,102,.35);
+
+    transition:.35s;
+
+}
+
+.bridal-btn:hover{
+
+    background:#1db954;
+
+    color:#fff;
+
+    transform:scale(1.05);
+
+}
+
+@media(max-width:768px){
+
+.bridal-banner{
+
+padding:80px 0;
+
+}
+
+.bridal-overlay{
+
+bottom:18px;
+
+}
+
+.bridal-btn{
+
+font-size:15px;
+
+padding:13px 24px;
+
+}
+
+}
+
+
+/*=====================================
+        BOOK APPOINTMENT CTA
+======================================*/
+
+.beauty-cta{
+
+    padding:110px 0;
+
+    background:#fff8fb;
+
+}
+
+.beauty-cta-box{
+
+    background:linear-gradient(135deg,#b91c2c,#d9405d);
+
+    color:#fff;
+
+    border-radius:30px;
+
+    padding:70px 60px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 30px 70px rgba(185,28,44,.28);
+
+}
+
+/* Decorative Glow */
+
+.beauty-cta-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+
+    height:320px;
+
+    background:rgba(255,255,255,.08);
+
+    border-radius:50%;
+
+    top:-100px;
+
+    right:-80px;
+
+}
+
+.beauty-cta-box::after{
+
+    content:"✨";
+
+    position:absolute;
+
+    bottom:25px;
+
+    left:40px;
+
+    font-size:45px;
+
+    opacity:.25;
+
+}
+
+.cta-tag{
+
+    display:inline-block;
+
+    padding:10px 22px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.15);
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+.beauty-cta h2{
+
+    font-size:52px;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+
+    line-height:1.2;
+
+}
+
+.beauty-cta h2 span{
+
+    color:#ffe8a6;
+
+}
+
+.beauty-cta p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    opacity:.95;
+
+    margin-bottom:35px;
+
+}
+
+.cta-features{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.cta-features div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-size:17px;
+
+    font-weight:600;
+
+}
+
+.cta-features i{
+
+    color:#ffe8a6;
+
+}
+
+.cta-buttons{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+.cta-call,
+
+.cta-whatsapp{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    text-decoration:none;
+
+    padding:18px;
+
+    border-radius:60px;
+
+    font-size:18px;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.cta-call{
+
+    background:#fff;
+
+    color:#b91c2c;
+
+}
+
+.cta-call:hover{
+
+    background:#ffe8ee;
+
+    color:#b91c2c;
+
+    transform:translateY(-5px);
+
+}
+
+.cta-whatsapp{
+
+    background:#25D366;
+
+    color:#fff;
+
+}
+
+.cta-whatsapp:hover{
+
+    background:#1fbf59;
+
+    color:#fff;
+
+    transform:translateY(-5px);
+
+}
+
+/*=========================
+Responsive
+==========================*/
+
+@media(max-width:991px){
+
+.beauty-cta-box{
+
+padding:50px 30px;
+
+text-align:center;
+
+}
+
+.beauty-cta h2{
+
+font-size:40px;
+
+}
+
+.cta-features{
+
+grid-template-columns:1fr;
+
+margin-bottom:40px;
+
+}
+
+.cta-buttons{
+
+margin-top:20px;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.beauty-cta{
+
+padding:80px 0;
+
+}
+
+.beauty-cta h2{
+
+font-size:32px;
+
+}
+
+.beauty-cta p{
+
+font-size:16px;
+
+}
+
+}
+
+/*=====================================
+        CONTACT & MAP
+======================================*/
+
+.beauty-contact{
+    padding:110px 0;
+    background:#fffdfb;
+}
+
+.contact-card{
+    background:#fff;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+    height:100%;
+}
+
+.contact-item{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    margin-bottom:30px;
+}
+
+.contact-item:last-child{
+    margin-bottom:35px;
+}
+
+.contact-icon{
+    width:60px;
+    height:60px;
+    min-width:60px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#b91c2c,#d94c65);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:#fff;
+    font-size:22px;
+    box-shadow:0 10px 20px rgba(185,28,44,.18);
+}
+
+.contact-item h5{
+    margin-bottom:8px;
+    font-weight:700;
+    color:#222;
+}
+
+.contact-item p{
+    margin:0;
+    color:#666;
+    line-height:1.8;
+}
+
+.contact-item a{
+    color:#25D366;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.contact-item a:hover{
+    color:#1ea952;
+}
+
+.direction-btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:#b91c2c;
+    color:#fff;
+    padding:15px 28px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:700;
+    transition:.35s;
+}
+
+.direction-btn:hover{
+    background:#93131f;
+    color:#fff;
+    transform:translateY(-4px);
+}
+
+.map-card{
+    height:100%;
+    min-height:560px;
+    border-radius:25px;
+    overflow:hidden;
+    box-shadow:0 20px 50px rgba(0,0,0,.08);
+    border:6px solid #fff;
+}
+
+.map-card iframe{
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+/*=========================
+Responsive
+==========================*/
+
+@media(max-width:991px){
+
+.contact-card{
+    margin-bottom:40px;
+}
+
+.map-card{
+    min-height:420px;
+}
+
+}
+
+@media(max-width:576px){
+
+.beauty-contact{
+    padding:80px 0;
+}
+
+.contact-card{
+    padding:25px;
+}
+
+.contact-item{
+    gap:14px;
+}
+
+.contact-icon{
+    width:50px;
+    height:50px;
+    min-width:50px;
+    font-size:18px;
+}
+
+.contact-item h5{
+    font-size:18px;
+}
+
+.contact-item p{
+    font-size:15px;
+}
+
+.direction-btn{
+    width:100%;
+    justify-content:center;
+}
+
+.map-card{
+    min-height:320px;
+}
+
+}

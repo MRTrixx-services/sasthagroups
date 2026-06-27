@@ -1,0 +1,901 @@
+{% extends 'mobiles/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/beauty/beauty.css' %}">
+
+<!-- =========================
+        HERO SECTION
+========================== -->
+
+<section class="beauty-hero">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- LEFT CONTENT -->
+            <div class="col-lg-6">
+
+                <span class="beauty-tag">
+                    ✨ Welcome to Sastha Beauty Parlour
+                </span>
+
+                <h1 class="beauty-title">
+                    Reveal Your <span>Timeless Beauty</span>
+                </h1>
+
+                <p class="beauty-desc">
+                    Indulge in premium beauty treatments designed to enhance your natural
+                    elegance. From flawless bridal makeup to rejuvenating facials and
+                    expert hair styling, we create a luxurious experience that leaves you
+                    feeling confident, refreshed and beautiful.
+                </p>
+
+                <div class="beauty-list">
+
+                    <div><i class="fas fa-check-circle"></i> Bridal Makeup</div>
+
+                    <div><i class="fas fa-check-circle"></i> Hair Styling</div>
+
+                    <div><i class="fas fa-check-circle"></i> Luxury Facials</div>
+
+                    <div><i class="fas fa-check-circle"></i> Skin & Hair Care</div>
+
+                </div>
+
+                <div class="hero-buttons">
+
+                    <a href="#appointment" class="btn-book">
+                        <i class="fas fa-calendar-check"></i>
+                        Book Appointment
+                    </a>
+
+                    <a href="https://wa.me/6585353536?text=Hi%20Sastha%20Group,%20I%20would%20like%20to%20book%20a%20beauty%20appointment."
+                       class="btn-whatsapp"
+                       target="_blank">
+
+                        <i class="fab fa-whatsapp"></i>
+
+                        WhatsApp Us
+
+                    </a>
+
+                </div>
+
+                <div class="hero-rating">
+
+                    <div class="stars">
+                        ⭐⭐⭐⭐⭐
+                    </div>
+
+                    <p>
+                        <strong>4.9 / 5</strong> • Trusted by <strong>5000+</strong> Happy Customers
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="col-lg-6">
+
+                <div class="hero-image-box">
+                    <span class="flower flower1">🌸</span>
+                    <span class="flower flower2">🌺</span>
+                    <span class="flower flower3">✨</span>
+                    <span class="flower flower4">🌼</span>
+                    <span class="flower flower5">✨</span>
+
+                    <img src="{% static 'images/beauty/hero-girl.png' %}"
+                         alt="Sastha Beauty Parlour">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+        WELCOME SECTION
+========================================= -->
+
+<section class="beauty-about">
+
+    <div class="container">
+
+        <div class="row align-items-center">
+
+            <!-- Left Image -->
+
+            <div class="col-lg-5">
+
+                <div class="about-image">
+
+                    <img src="{% static 'images/beauty-parlor.png' %}"
+                         alt="Beauty Parlour">
+
+                    <div class="experience-card">
+
+                        <h2>10+</h2>
+
+                        <span>Years of Excellence</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Right Content -->
+
+            <div class="col-lg-7">
+
+                <span class="about-tag">
+
+                    About Sastha Beauty Parlour
+
+                </span>
+
+                <h2 class="about-title">
+
+                    Beauty Begins With
+                    <span>Self Care & Confidence</span>
+
+                </h2>
+
+                <p class="about-desc">
+
+                    At Sastha Beauty Parlour, we believe every woman deserves to
+                    feel confident and beautiful. Our experienced beauticians,
+                    premium products and personalized care ensure every visit is
+                    relaxing, refreshing and memorable.
+
+                </p>
+
+                <div class="about-features">
+
+                    <div>
+
+                        <i class="fas fa-spa"></i>
+
+                        Certified Beauticians
+
+                    </div>
+
+                    <div>
+
+                        <i class="fas fa-leaf"></i>
+
+                        Premium Products
+
+                    </div>
+
+                    <div>
+
+                        <i class="fas fa-heart"></i>
+
+                        Personalized Care
+
+                    </div>
+
+                    <div>
+
+                        <i class="fas fa-award"></i>
+
+                        Quality Service
+
+                    </div>
+
+                </div>
+
+                <a href="#services" class="about-btn">
+
+                    Book Now
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+        OUR SERVICES
+========================================= -->
+
+<section class="beauty-services" id="services">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                Our Services
+            </span>
+
+            <h2>
+                Luxury Beauty Services
+            </h2>
+
+            <p>
+                Experience premium beauty treatments tailored to enhance your confidence,
+                elegance and natural beauty.
+            </p>
+
+        </div>
+
+        <div class="row g-4">
+
+            <!-- Service 1 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        💇‍♀️
+                    </div>
+
+                    <h4>Hair Styling</h4>
+
+                    <p>
+                        Professional haircuts, styling, colouring and hair spa treatments.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Service 2 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        💄
+                    </div>
+
+                    <h4>Bridal Makeup</h4>
+
+                    <p>
+                        Elegant bridal makeup packages designed for your special day.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Service 3 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ✨
+                    </div>
+
+                    <h4>Luxury Facial</h4>
+
+                    <p>
+                        Refresh and rejuvenate your skin with premium facial treatments.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Service 4 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🌸
+                    </div>
+
+                    <h4>Skin Care</h4>
+
+                    <p>
+                        Personalized skincare solutions for glowing and healthy skin.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Service 5 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        💅
+                    </div>
+
+                    <h4>Manicure</h4>
+
+                    <p>
+                        Beautiful nail shaping, polishing and luxury hand care.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Service 6 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🦶
+                    </div>
+
+                    <h4>Pedicure</h4>
+
+                    <p>
+                        Relaxing foot care treatments for healthy and beautiful feet.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Service 7 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        🌿
+                    </div>
+
+                    <h4>Hair Spa</h4>
+
+                    <p>
+                        Nourish your hair with deep conditioning and spa therapies.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Service 8 -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <div class="service-card">
+
+                    <div class="service-icon">
+                        ❤️
+                    </div>
+
+                    <h4>Waxing</h4>
+
+                    <p>
+                        Gentle waxing services for smooth and flawless skin.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+        PRICE LIST
+========================================= -->
+
+<!-- =========================================
+        PRICE LIST
+========================================= -->
+
+<section class="beauty-pricing">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+                Price List
+            </span>
+
+            <h2>Affordable Luxury Pricing</h2>
+
+            <p>
+                Premium beauty services at affordable prices.
+                Experience elegance, quality and personalized care every visit.
+            </p>
+
+        </div>
+
+        <div class="pricing-card">
+
+            <div class="price-row">
+
+                <div class="price-service">
+
+                    <div class="price-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+
+                    <span>Hair Cut</span>
+
+                </div>
+
+                <span class="price-amount">$20</span>
+
+            </div>
+
+            <div class="price-row">
+
+                <div class="price-service">
+
+                    <div class="price-icon">
+                        <i class="fas fa-shower"></i>
+                    </div>
+
+                    <span>Hair Wash</span>
+
+                </div>
+
+                <span class="price-amount">$15</span>
+
+            </div>
+
+            <div class="price-row">
+
+                <div class="price-service">
+
+                    <div class="price-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+
+                    <span>Luxury Facial</span>
+
+                </div>
+
+                <span class="price-amount">$45</span>
+
+            </div>
+
+            <div class="price-row">
+
+                <div class="price-service">
+
+                    <div class="price-icon">
+                        <i class="fas fa-hand-sparkles"></i>
+                    </div>
+
+                    <span>Manicure</span>
+
+                </div>
+
+                <span class="price-amount">$25</span>
+
+            </div>
+
+            <div class="price-row">
+
+                <div class="price-service">
+
+                    <div class="price-icon">
+                        <i class="fas fa-shoe-prints"></i>
+                    </div>
+
+                    <span>Pedicure</span>
+
+                </div>
+
+                <span class="price-amount">$30</span>
+
+            </div>
+
+            <div class="price-row">
+
+                <div class="price-service">
+
+                    <div class="price-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+
+                    <span>Hair Spa</span>
+
+                </div>
+
+                <span class="price-amount">$50</span>
+
+            </div>
+
+            <div class="price-row">
+
+                <div class="price-service">
+
+                    <div class="price-icon">
+                        <i class="fas fa-droplet"></i>
+                    </div>
+
+                    <span>Waxing</span>
+
+                </div>
+
+                <span class="price-amount">$30</span>
+
+            </div>
+
+            <div class="price-row">
+
+                <div class="price-service">
+
+                    <div class="price-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+
+                    <span>Henna</span>
+
+                </div>
+
+                <span class="price-amount">$20</span>
+
+            </div>
+
+            <div class="price-row bridal-price">
+
+                <div class="price-service">
+
+                    <div class="price-icon bridal-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+
+                    <span>Bridal Makeup Package</span>
+
+                </div>
+
+                <a href="https://wa.me/6585353536?text=Hi%20Sastha%20Beauty,%20I%20would%20like%20to%20know%20about%20your%20Bridal%20Makeup%20Package."
+                   target="_blank">
+
+                    Contact Us
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+        BRIDAL BANNER
+========================================= -->
+
+<section class="bridal-banner">
+
+    <div class="container">
+
+        <div class="bridal-banner-box">
+
+            <img src="{% static 'images/beauty/bridal-banner.png' %}"
+                 alt="Bridal Makeup Banner">
+
+            <div class="bridal-overlay">
+
+                <a href="https://wa.me/6585353536?text=Hi%20Sastha%20Beauty,%20I%20would%20like%20to%20book%20a%20Bridal%20Makeup%20Consultation."
+                   target="_blank"
+                   class="bridal-btn">
+
+                    <i class="fab fa-whatsapp"></i>
+
+                    Book Bridal Consultation
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+        BOOK APPOINTMENT CTA
+========================================= -->
+
+<section class="beauty-cta" id="appointment">
+
+    <div class="container">
+
+        <div class="beauty-cta-box">
+
+            <div class="row align-items-center">
+
+                <div class="col-lg-8">
+
+                    <span class="cta-tag">
+                        Book Your Appointment Today
+                    </span>
+
+                    <h2>
+                        Ready To Transform
+                        <span>Your Beauty?</span>
+                    </h2>
+
+                    <p>
+                        Whether you're preparing for a special occasion or simply
+                        treating yourself, our experienced beauty professionals are
+                        here to make you look and feel your absolute best.
+                    </p>
+
+                    <div class="cta-features">
+
+                        <div>
+                            <i class="fas fa-check-circle"></i>
+                            Premium Beauty Care
+                        </div>
+
+                        <div>
+                            <i class="fas fa-check-circle"></i>
+                            Bridal Specialists
+                        </div>
+
+                        <div>
+                            <i class="fas fa-check-circle"></i>
+                            Hygienic Environment
+                        </div>
+
+                        <div>
+                            <i class="fas fa-check-circle"></i>
+                            Affordable Packages
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-4">
+
+                    <div class="cta-buttons">
+
+                        <a href="tel:+656585353536"
+                           class="cta-call">
+
+                            <i class="fas fa-phone-alt"></i>
+
+                            Call Now
+
+                        </a>
+
+                        <a href="https://wa.me/6585353536?text=Hi%20Sastha%20Beauty,%20I%20would%20like%20to%20book%20an%20appointment."
+                           target="_blank"
+                           class="cta-whatsapp">
+
+                            <i class="fab fa-whatsapp"></i>
+
+                            WhatsApp
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+        CONTACT & MAP
+========================================= -->
+
+<section class="beauty-contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-tag">
+
+                Contact Us
+
+            </span>
+
+            <h2>
+
+                Visit Our Beauty Parlour
+
+            </h2>
+
+            <p>
+
+                We'd love to welcome you to our beauty studio.
+                Contact us today or visit our salon for a luxurious beauty experience.
+
+            </p>
+
+        </div>
+
+        <div class="row g-5">
+
+            <!-- Contact Details -->
+
+            <div class="col-lg-5">
+
+                <div class="contact-card">
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            <i class="fas fa-map-marker-alt"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h5>Address</h5>
+
+                            <p>
+                                Sastha Mobile Pte Ltd <br>
+                                Singapore
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            <i class="fas fa-phone-alt"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h5>Phone</h5>
+
+                            <p>+65 8535 3536</p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            <i class="fab fa-whatsapp"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h5>WhatsApp</h5>
+
+                            <a href="https://wa.me/6585353536?text=Hi%20Sastha%20Beauty,%20I%20would%20like%20to%20book%20an%20appointment."
+                                target="_blank">
+                                    Chat With Us
+                                </a>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            <i class="fas fa-envelope"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h5>Email</h5>
+
+                            <p>
+
+                                info@sasthagroup.com
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="contact-item">
+
+                        <div class="contact-icon">
+
+                            <i class="far fa-clock"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h5>Working Hours</h5>
+
+                            <p>
+
+                                Mon - Sat : 9:00 AM - 8:00 PM
+
+                                <br>
+
+                                Sunday : 10:00 AM - 6:00 PM
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <a href="https://maps.google.com"
+                       target="_blank"
+                       class="direction-btn">
+
+                        <i class="fas fa-location-arrow"></i>
+
+                        Get Directions
+
+                    </a>
+
+                </div>
+
+            </div>
+
+            <!-- Google Map -->
+
+            <div class="col-lg-7">
+
+                <div class="map-card">
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6703329875236!2d103.88266960000001!3d1.3744851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da178b04bc8d57%3A0xccb0922bd8a0cc8b!2sSastha%20Mobile%20Pte%20Ltd!5e0!3m2!1sen!2sin!4v1782544591922!5m2!1sen!2sin"
+                        width="100%"
+                        height="100%"
+                        style="border:0;"
+                        allowfullscreen=""
+                        loading="lazy"
+                        referrerpolicy="strict-origin-when-cross-origin">
+                    </iframe>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+{% endblock %}
