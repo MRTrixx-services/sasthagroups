@@ -3,11 +3,346 @@
 {% block content %}
 
 <!-- HERO -->
-<section class="hero-section">
-    <img
-        src="{% static 'images/sastha-hero-banners.jpeg' %}"
-        alt="Sastha Groups"
-        class="hero-banner">
+<!-- =========================================
+        HERO SECTION - PART 1
+        LEFT PANEL
+========================================= -->
+
+<section class="hero">
+
+    <!-- LEFT SIDE -->
+    <div class="hero__left">
+
+        <!-- =====================
+                LOGO
+        ====================== -->
+
+        <div class="hero__logo">
+
+            <div class="logo-icon">
+
+                <img src="{% static 'images/logo.jpeg' %}"
+                     alt="Sastha Group Logo">
+
+            </div>
+
+            <div class="logo-text">
+
+                <h2>SASTHA</h2>
+
+                <div class="logo-divider">
+
+                    <span></span>
+
+                    <h6>GROUP</h6>
+
+                    <span></span>
+
+                </div>
+
+                <p>
+                    BUILDING TRUST, DELIVERING VALUE
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- =====================
+              HERO CONTENT
+        ====================== -->
+
+        <div class="hero-content">
+
+            <span class="hero-tag">
+
+                Welcome to Sastha Group
+
+            </span>
+
+            <h1>
+
+                One Group,
+
+                <span>
+
+                    Three Essentials
+
+                </span>
+
+            </h1>
+
+            <h3>
+
+                Endless Possibilities
+
+            </h3>
+
+            <p>
+
+                Sastha Group proudly brings together a trusted Mobile Shop,
+                a premium Beauty Parlour and a fresh Flower Shop under one
+                brand. We are committed to quality, customer satisfaction
+                and delivering the best experience every single day.
+
+            </p>
+
+            <!-- Small Highlights -->
+
+            <div class="hero-features">
+
+                <div>
+
+                    <i class="fas fa-check-circle"></i>
+
+                    Trusted Quality
+
+                </div>
+
+                <div>
+
+                    <i class="fas fa-check-circle"></i>
+
+                    Professional Service
+
+                </div>
+
+                <div>
+
+                    <i class="fas fa-check-circle"></i>
+
+                    Affordable Pricing
+
+                </div>
+
+                <div>
+
+                    <i class="fas fa-check-circle"></i>
+
+                    Customer Satisfaction
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- =====================
+            CITY BACKGROUND
+        ====================== -->
+
+        <div class="hero-city">
+
+            <img src="{% static 'images/city-shadow.png' %}"
+                 alt="City Background">
+
+        </div>
+
+    </div>
+
+    <!-- RIGHT SIDE STARTS HERE -->
+    <div class="hero__right">
+
+            <!-- ==========================
+            MOBILE SHOP CARD
+    =========================== -->
+
+    <div class="hero-card">
+
+        <div class="hero-card-image">
+
+            <img src="{% static 'images/mobile-shop.png' %}"
+                 alt="Mobile Shop">
+
+            <div class="hero-card-overlay"></div>
+
+            <div class="hero-card-label">
+
+                <span>MOBILE</span>
+
+                <small>Accessories & Repairs</small>
+
+            </div>
+
+        </div>
+
+        <div class="hero-card-footer">
+
+            <div class="hero-card-icon">
+
+                <i class="fas fa-mobile-alt"></i>
+
+            </div>
+
+            <h4>
+
+                Mobile Shop
+
+            </h4>
+
+            <a href="{% url 'mobiles' %}">
+    Explore
+    <i class="fas fa-arrow-right"></i>
+</a>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================
+            BEAUTY CARD
+    =========================== -->
+
+    <div class="hero-card">
+
+        <div class="hero-card-image">
+
+            <img src="{% static 'images/beauty-parlor.png' %}"
+                 alt="Beauty Parlour">
+
+            <div class="hero-card-overlay"></div>
+
+            <div class="hero-card-label">
+
+                <span>BEAUTY</span>
+
+                <small>Luxury Beauty Care</small>
+
+            </div>
+
+        </div>
+
+        <div class="hero-card-footer">
+
+            <div class="hero-card-icon">
+
+                <i class="fas fa-spa"></i>
+
+            </div>
+
+            <h4>
+
+                Beauty Parlour
+
+            </h4>
+
+            <a href="{% url 'beauty:home' %}">
+    Explore
+    <i class="fas fa-arrow-right"></i>
+</a>
+
+        </div>
+
+    </div>
+
+    <!-- ==========================
+            FLOWER SHOP CARD
+    =========================== -->
+
+    <div class="hero-card">
+
+        <div class="hero-card-image">
+
+            <img src="{% static 'images/flower-shop.png' %}"
+                 alt="Flower Shop">
+
+            <div class="hero-card-overlay"></div>
+
+            <div class="hero-card-label">
+
+                <span>FLOWERS</span>
+
+                <small>Fresh Daily Collection</small>
+
+            </div>
+
+        </div>
+
+        <div class="hero-card-footer">
+
+            <div class="hero-card-icon">
+
+                <i class="fas fa-seedling"></i>
+
+            </div>
+
+            <h4>
+
+                Flower Shop
+
+            </h4>
+
+            <a href="{% url 'flowers:home' %}">
+    Explore
+    <i class="fas fa-arrow-right"></i>
+</a>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+<!-- =====================================
+        TRUST BAR
+====================================== -->
+
+<section class="trust-bar">
+
+    <div class="container">
+
+        <div class="trust-wrapper">
+
+            <div class="trust-item">
+
+                <i class="fas fa-shield-alt"></i>
+
+                <span>
+
+                    Trusted Quality
+
+                </span>
+
+            </div>
+
+            <div class="trust-item">
+
+                <i class="fas fa-users"></i>
+
+                <span>
+
+                    Customer Focused
+
+                </span>
+
+            </div>
+
+            <div class="trust-item">
+
+                <i class="fas fa-chart-line"></i>
+
+                <span>
+
+                    Growing Together
+
+                </span>
+
+            </div>
+
+            <div class="trust-website">
+
+                <i class="fas fa-globe"></i>
+
+                www.sasthagroup.com
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
 
 <section class="business-section">
@@ -44,10 +379,9 @@
                             Latest smartphones, accessories and trusted brands.
                         </p>
 
-                        <a href="#" class="business-btn">
-                            Explore →
-                        </a>
-
+                       <a href="{% url 'mobiles' %}" class="business-btn">
+    Explore →
+</a>
                     </div>
 
                 </div>
@@ -72,9 +406,9 @@
                             Professional beauty care, bridal makeup and styling.
                         </p>
 
-                        <a href="#" class="business-btn">
-                            Explore →
-                        </a>
+                        <a href="{% url 'beauty:home' %}" class="business-btn">
+    Explore →
+</a>
 
                     </div>
 
@@ -100,9 +434,9 @@
                             Fresh flowers, bouquets and floral arrangements.
                         </p>
 
-                        <a href="#" class="business-btn">
-                            Explore →
-                        </a>
+                       <a href="{% url 'flowers:home' %}" class="business-btn">
+    Explore →
+</a>
 
                     </div>
 
@@ -203,8 +537,12 @@
                             <span class="discount">14% OFF</span>
                         </div>
                         <div class="card-actions">
-                            <a href="#" class="btn btn-pink btn-sm">View Details</a>
-                            <a href="#" class="btn btn-outline-pink btn-sm">Add Cart</a>
+                            <a href="{% url 'mobiles' %}" class="btn btn-pink btn-sm">
+    View Details
+</a>
+                           <a href="{% url 'mobiles' %}" class="btn btn-outline-pink btn-sm">
+    Add Cart
+</a>
                         </div>
                     </div>
                 </div>
@@ -296,7 +634,9 @@
 
         </div>
         <div class="text-center mt-5">
-            <a href="#" class="btn btn-outline-pink btn-lg px-5">View All Products</a>
+            <a href="{% url 'mobiles' %}" class="btn btn-outline-pink btn-lg px-5">
+    View All Products
+</a>
         </div>
     </div>
 </section>
@@ -881,7 +1221,7 @@
 
                     <div class="mb-3">
                         <strong>📞 Phone:</strong><br>
-                        +65 XXXXXXXX
+                        +65 913 44 333
                     </div>
 
                     <div class="mb-3">
@@ -891,8 +1231,10 @@
 
                     <div class="mb-3">
                         <strong>📍 Address:</strong><br>
-                        Sastha Mobile Pte Ltd,
-                        Singapore
+                        Blk 662, Shop No. 01-23
+Buffalo Road,
+Singapore 210662
+Little India MRT Exit C
                     </div>
 
                     <a href="https://wa.me/6585353536?text=Hi%20Sastha%20Group,%20I%20would%20like%20to%20know%20more%20about%20your%20services."

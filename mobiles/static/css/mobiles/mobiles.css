@@ -1,0 +1,31 @@
+/*=========================
+        HERO
+=========================*/
+
+.mobile-hero{
+
+    padding:0;
+
+    margin:0;
+
+    background:#fff;
+
+}
+
+.hero-banner{
+
+    width:100%;
+
+    overflow:hidden;
+
+}
+
+.hero-banner img{
+
+    width:100%;
+
+    height:auto;
+
+    display:block;
+
+}

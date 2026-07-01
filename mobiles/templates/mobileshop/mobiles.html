@@ -1,0 +1,26 @@
+{% extends "mobiles/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/mobiles/mobiles.css' %}">
+{% endblock %}
+
+{% block content %}
+
+
+<section class="mobile-hero">
+
+    <div class="container-fluid p-0">
+
+        <div class="hero-banner">
+
+            <img src="{% static 'images/mobile-hero-banner.png' %}"
+                 class="img-fluid w-100"
+                 alt="Sastha Mobile">
+
+        </div>
+
+    </div>
+
+</section>
+{% endblock %}

@@ -1,0 +1,510 @@
+{% extends "mobiles/base.html" %}
+{% load static %}
+
+{% block title %}Fresh Blooms – Indian Flower Shop{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/flowers/flowers.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- =====================================================
+     FLOWER SHOP — Full Page
+     File: templates/flowers/home.html
+     CSS:  static/css/flowers/flowers.css
+===================================================== -->
+
+<!-- ╔══════════════════════════════════════════════╗ -->
+<!-- ║              HERO SECTION                   ║ -->
+<!-- ╚══════════════════════════════════════════════╝ -->
+<section class="fl-hero">
+  <!-- Animated petal drops (pure CSS) -->
+  <div class="fl-petals" aria-hidden="true">
+    <span class="fl-petal fl-petal--1">🌸</span>
+    <span class="fl-petal fl-petal--2">🌼</span>
+    <span class="fl-petal fl-petal--3">🌺</span>
+    <span class="fl-petal fl-petal--4">🌸</span>
+    <span class="fl-petal fl-petal--5">🌼</span>
+    <span class="fl-petal fl-petal--6">🌺</span>
+  </div>
+
+  <div class="fl-hero__inner">
+    <div class="fl-hero__text">
+      <span class="fl-hero__badge">🌿 Farm Fresh · Delivered Daily</span>
+
+      <h1 class="fl-hero__title">
+        <span class="fl-hero__title-script">Fresh</span>
+        <span class="fl-hero__title-serif">Blooms</span>
+      </h1>
+
+      <p class="fl-hero__subtitle">
+        Your Neighbourhood <strong>Phool Wale</strong> — Marigold Garlands, Mogra Gajra,
+        Pooja Flowers, Bouquets &amp; Wedding Decor, all picked fresh every morning.
+      </p>
+
+      <div class="fl-hero__cta-row">
+        <a href="https://wa.me/919999999999?text=Hi%2C%20I%20want%20to%20order%20flowers%20🌸"
+           target="_blank" rel="noopener" class="fl-btn fl-btn--whatsapp">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15
+              -.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075
+              -.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059
+              -.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52
+              .149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52
+              -.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51
+              -.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372
+              -.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074
+              .149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625
+              .712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413
+              .248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.528 5.845L.057 23.5
+              l5.797-1.452A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22
+              c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.44.862.878-3.348-.24-.386
+              C2.558 15.894 2 14.01 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+          </svg>
+          Order on WhatsApp
+        </a>
+
+        <a href="#fl-pricing" class="fl-btn fl-btn--pricing">
+          💰 View Pricing
+        </a>
+
+        <a href="#fl-enquiry" class="fl-btn fl-btn--enquiry">
+          📋 Quick Enquiry
+        </a>
+      </div>
+
+      <div class="fl-hero__trust">
+        <span>⭐ 4.9 Rating</span>
+        <span class="fl-trust-sep">|</span>
+        <span>🚚 Same Day Delivery</span>
+        <span class="fl-trust-sep">|</span>
+        <span>🙏 Trusted for Pooja</span>
+      </div>
+    </div>
+
+    <div class="fl-hero__visual">
+      <div class="fl-hero__img-wrap">
+        <img
+          src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?q=80&w=900&auto=format&fit=crop"
+          alt="Vibrant marigold and rose flowers at our Indian flower shop"
+          loading="eager"
+        />
+        <div class="fl-hero__img-badge">
+          <span class="fl-hero__img-badge-number">500+</span>
+          <span>Happy Customers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════╗ -->
+<!-- ║           QUICK STATS STRIP                 ║ -->
+<!-- ╚══════════════════════════════════════════════╝ -->
+<div class="fl-stats">
+  <div class="fl-stats__inner">
+    <div class="fl-stat">
+      <span class="fl-stat__num">500+</span>
+      <span class="fl-stat__label">Customers</span>
+    </div>
+    <div class="fl-stat__sep"></div>
+    <div class="fl-stat">
+      <span class="fl-stat__num">12+</span>
+      <span class="fl-stat__label">Flower Types</span>
+    </div>
+    <div class="fl-stat__sep"></div>
+    <div class="fl-stat">
+      <span class="fl-stat__num">Daily</span>
+      <span class="fl-stat__label">Fresh Stock</span>
+    </div>
+    <div class="fl-stat__sep"></div>
+    <div class="fl-stat">
+      <span class="fl-stat__num">5 yrs</span>
+      <span class="fl-stat__label">In Business</span>
+    </div>
+  </div>
+</div>
+
+<!-- ╔══════════════════════════════════════════════╗ -->
+<!-- ║              OUR FLOWERS                    ║ -->
+<!-- ╚══════════════════════════════════════════════╝ -->
+<section class="fl-section" id="fl-flowers">
+  <div class="fl-section__inner">
+
+    <div class="fl-section__head">
+      <p class="fl-section__eyebrow">What We Offer</p>
+      <h2 class="fl-section__title">
+        <span class="fl-section__title-script">Our</span>
+        <span class="fl-section__title-serif">Flowers</span>
+      </h2>
+      <p class="fl-section__subtitle">Every petal picked fresh from the farm — delivered to your door.</p>
+    </div>
+
+    <div class="fl-flowers-grid">
+
+      <article class="fl-flower-card">
+        <div class="fl-flower-card__img">
+          <img src="{% static 'images/MarigoldGarlands.webp' %}"
+     alt="Marigold Garlands">
+          <span class="fl-flower-card__tag">Best Seller</span>
+        </div>
+        <div class="fl-flower-card__body">
+          <h3>Marigold Garlands</h3>
+          <p>Bright genda phool malas for doorways, pooja and festive occasions.</p>
+          <a href="https://wa.me/919999999999?text=I+want+Marigold+Garlands" target="_blank" rel="noopener" class="fl-flower-card__btn">
+            Enquire Now →
+          </a>
+        </div>
+      </article>
+
+      <article class="fl-flower-card">
+        <div class="fl-flower-card__img">
+          <img src="https://images.unsplash.com/photo-1599733594230-6b823276abcc?q=80&w=600&auto=format&fit=crop"
+               alt="Fragrant mogra jasmine gajra" loading="lazy">
+          <span class="fl-flower-card__tag fl-flower-card__tag--green">Daily Fresh</span>
+        </div>
+        <div class="fl-flower-card__body">
+          <h3>Mogra Gajra</h3>
+          <p>Hand-strung jasmine strings, fragrant and fresh — perfect for hair and offerings.</p>
+          <a href="https://wa.me/919999999999?text=I+want+Mogra+Gajra" target="_blank" rel="noopener" class="fl-flower-card__btn">
+            Enquire Now →
+          </a>
+        </div>
+      </article>
+
+      <article class="fl-flower-card">
+        <div class="fl-flower-card__img">
+          <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=600&auto=format&fit=crop"
+               alt="Red rose bouquets" loading="lazy">
+          <span class="fl-flower-card__tag">Popular</span>
+        </div>
+        <div class="fl-flower-card__body">
+          <h3>Rose Bouquets</h3>
+          <p>Hand-tied red, pink and white rose bouquets — perfect gifts for every occasion.</p>
+          <a href="https://wa.me/919999999999?text=I+want+Rose+Bouquets" target="_blank" rel="noopener" class="fl-flower-card__btn">
+            Enquire Now →
+          </a>
+        </div>
+      </article>
+
+      <article class="fl-flower-card">
+        <div class="fl-flower-card__img">
+          <img src="{% static 'images/Pooja Flowers.webp' %}"
+     alt="Marigold Garlands">   
+          <span class="fl-flower-card__tag fl-flower-card__tag--saffron">Sacred</span>
+        </div>
+        <div class="fl-flower-card__body">
+          <h3>Pooja Flowers</h3>
+          <p>Loose flowers, lotus, tulsi and decorated thali sets for daily puja &amp; rituals.</p>
+          <a href="https://wa.me/919999999999?text=I+want+Pooja+Flowers" target="_blank" rel="noopener" class="fl-flower-card__btn">
+            Enquire Now →
+          </a>
+        </div>
+      </article>
+
+      <article class="fl-flower-card">
+        <div class="fl-flower-card__img">
+          <img src="{% static 'images/Rangoli Petals1.png' %}"
+     alt="Marigold Garlands">
+          <span class="fl-flower-card__tag fl-flower-card__tag--green">Festive</span>
+        </div>
+        <div class="fl-flower-card__body">
+          <h3>Rangoli Petals</h3>
+          <p>Multi-colour petal sets sorted and ready to create beautiful rangoli patterns.</p>
+          <a href="https://wa.me/919999999999?text=I+want+Rangoli+Petals" target="_blank" rel="noopener" class="fl-flower-card__btn">
+            Enquire Now →
+          </a>
+        </div>
+      </article>
+
+      <article class="fl-flower-card">
+        <div class="fl-flower-card__img">
+          <img src="{% static 'images/wedding_deccor.png' %}"
+     alt="Marigold Garlands">
+          <span class="fl-flower-card__tag">Premium</span>
+        </div>
+        <div class="fl-flower-card__body">
+          <h3>Wedding &amp; Event Decor</h3>
+          <p>Mandap, car decoration, venue arches and bridal entry floral arrangements.</p>
+          <a href="https://wa.me/919999999999?text=I+need+Wedding+Decor" target="_blank" rel="noopener" class="fl-flower-card__btn">
+            Enquire Now →
+          </a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════╗ -->
+<!-- ║              PRICING SECTION                ║ -->
+<!-- ╚══════════════════════════════════════════════╝ -->
+<section class="fl-section fl-section--dark" id="fl-pricing">
+  <div class="fl-section__inner">
+
+    <div class="fl-section__head fl-section__head--light">
+      <p class="fl-section__eyebrow fl-section__eyebrow--light">Honest &amp; Transparent</p>
+      <h2 class="fl-section__title fl-section__title--light">
+        <span class="fl-section__title-script">Our</span>
+        <span class="fl-section__title-serif">Pricing</span>
+      </h2>
+      <p class="fl-section__subtitle fl-section__subtitle--light">No hidden charges. What you see is what you pay.</p>
+    </div>
+
+    <div class="fl-pricing-grid">
+
+      <div class="fl-price-card">
+        <div class="fl-price-card__icon">🌼</div>
+        <h3 class="fl-price-card__name">Marigold Garland</h3>
+        <p class="fl-price-card__sub">Per metre, fresh daily</p>
+        <div class="fl-price-card__price">₹30 <span>/ metre</span></div>
+        <ul class="fl-price-card__list">
+          <li>✓ Minimum 2 metres</li>
+          <li>✓ Yellow &amp; orange available</li>
+          <li>✓ Bulk discounts on 10+ metres</li>
+        </ul>
+        <a href="https://wa.me/919999999999?text=Marigold+Garland+Order" target="_blank" rel="noopener" class="fl-price-card__btn">
+          Order Now
+        </a>
+      </div>
+
+      <div class="fl-price-card fl-price-card--highlight">
+        <span class="fl-price-card__badge">Most Popular</span>
+        <div class="fl-price-card__icon">💐</div>
+        <h3 class="fl-price-card__name">Wedding Decor Package</h3>
+        <p class="fl-price-card__sub">Full venue &amp; mandap setup</p>
+        <div class="fl-price-card__price">₹5,000 <span>onwards</span></div>
+        <ul class="fl-price-card__list">
+          <li>✓ Mandap decoration</li>
+          <li>✓ Car flower decoration</li>
+          <li>✓ Stage &amp; entry arch</li>
+          <li>✓ Bridal bouquet included</li>
+        </ul>
+        <a href="https://wa.me/919999999999?text=Wedding+Decor+Enquiry" target="_blank" rel="noopener" class="fl-price-card__btn fl-price-card__btn--white">
+          Get Quote
+        </a>
+      </div>
+
+      <div class="fl-price-card">
+        <div class="fl-price-card__icon">🌹</div>
+        <h3 class="fl-price-card__name">Rose Bouquet</h3>
+        <p class="fl-price-card__sub">Hand-tied, gift ready</p>
+        <div class="fl-price-card__price">₹150 <span>/ dozen</span></div>
+        <ul class="fl-price-card__list">
+          <li>✓ Red, pink &amp; white roses</li>
+          <li>✓ Gift wrapping available</li>
+          <li>✓ Same-day delivery</li>
+        </ul>
+        <a href="https://wa.me/919999999999?text=Rose+Bouquet+Order" target="_blank" rel="noopener" class="fl-price-card__btn">
+          Order Now
+        </a>
+      </div>
+
+      <div class="fl-price-card">
+        <div class="fl-price-card__icon">🤍</div>
+        <h3 class="fl-price-card__name">Mogra Gajra</h3>
+        <p class="fl-price-card__sub">Fresh jasmine strings</p>
+        <div class="fl-price-card__price">₹20 <span>/ string</span></div>
+        <ul class="fl-price-card__list">
+          <li>✓ Strung fresh each morning</li>
+          <li>✓ Perfect for hair &amp; puja</li>
+          <li>✓ Wholesale available</li>
+        </ul>
+        <a href="https://wa.me/919999999999?text=Mogra+Gajra+Order" target="_blank" rel="noopener" class="fl-price-card__btn">
+          Order Now
+        </a>
+      </div>
+
+      <div class="fl-price-card">
+        <div class="fl-price-card__icon">🪔</div>
+        <h3 class="fl-price-card__name">Daily Pooja Flowers</h3>
+        <p class="fl-price-card__sub">Subscription &amp; single order</p>
+        <div class="fl-price-card__price">₹50 <span>/ day</span></div>
+        <ul class="fl-price-card__list">
+          <li>✓ Daily morning delivery</li>
+          <li>✓ Mixed seasonal flowers</li>
+          <li>✓ Monthly subscription discount</li>
+        </ul>
+        <a href="https://wa.me/919999999999?text=Pooja+Flowers+Subscription" target="_blank" rel="noopener" class="fl-price-card__btn">
+          Subscribe
+        </a>
+      </div>
+
+      <div class="fl-price-card">
+        <div class="fl-price-card__icon">🎨</div>
+        <h3 class="fl-price-card__name">Rangoli Petal Set</h3>
+        <p class="fl-price-card__sub">Multi-colour sorted petals</p>
+        <div class="fl-price-card__price">₹80 <span>/ set</span></div>
+        <ul class="fl-price-card__list">
+          <li>✓ 5 colours per set</li>
+          <li>✓ Diwali &amp; festival specials</li>
+          <li>✓ Bulk packs available</li>
+        </ul>
+        <a href="https://wa.me/919999999999?text=Rangoli+Petal+Set+Order" target="_blank" rel="noopener" class="fl-price-card__btn">
+          Order Now
+        </a>
+      </div>
+
+    </div>
+
+    <p class="fl-pricing-note">
+      💬 Prices may vary by season &amp; availability. <a href="https://wa.me/919999999999" target="_blank" rel="noopener">WhatsApp us</a> for today's rates.
+    </p>
+
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════╗ -->
+<!-- ║           WHY CHOOSE US                     ║ -->
+<!-- ╚══════════════════════════════════════════════╝ -->
+<section class="fl-section fl-section--cream" id="fl-why">
+  <div class="fl-section__inner">
+
+    <div class="fl-section__head">
+      <p class="fl-section__eyebrow">Our Promise</p>
+      <h2 class="fl-section__title">
+        <span class="fl-section__title-script">Why</span>
+        <span class="fl-section__title-serif">Choose Us</span>
+      </h2>
+    </div>
+
+    <div class="fl-why-grid">
+      <div class="fl-why-card">
+        <span class="fl-why-card__icon">🌱</span>
+        <h3>Farm Fresh Daily</h3>
+        <p>Every flower sourced directly from local farms and arrives at your door the same morning it's cut.</p>
+      </div>
+      <div class="fl-why-card">
+        <span class="fl-why-card__icon">🚚</span>
+        <h3>Same Day Delivery</h3>
+        <p>Order before 10 AM and get your flowers delivered the same day anywhere in the city.</p>
+      </div>
+      <div class="fl-why-card">
+        <span class="fl-why-card__icon">✋</span>
+        <h3>Handmade With Love</h3>
+        <p>Each garland and gajra is hand-strung by our skilled artisans — not machine made.</p>
+      </div>
+      <div class="fl-why-card">
+        <span class="fl-why-card__icon">💰</span>
+        <h3>Honest Pricing</h3>
+        <p>No hidden charges, no festival markups. We believe quality flowers should be affordable.</p>
+      </div>
+      <div class="fl-why-card">
+        <span class="fl-why-card__icon">🙏</span>
+        <h3>Trusted for Pooja</h3>
+        <p>Hundreds of families rely on us for their daily puja flowers — pure, fresh and sacred.</p>
+      </div>
+      <div class="fl-why-card">
+        <span class="fl-why-card__icon">💍</span>
+        <h3>Wedding Specialists</h3>
+        <p>From small functions to big fat Indian weddings — we handle all flower decoration with care.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════════════════════╗ -->
+<!-- ║           ENQUIRY FORM SECTION              ║ -->
+<!-- ╚══════════════════════════════════════════════╝ -->
+<section class="fl-section" id="fl-enquiry">
+  <div class="fl-section__inner">
+
+    <div class="fl-enquiry-wrap">
+
+      <!-- Left: info -->
+      <div class="fl-enquiry-info">
+        <p class="fl-section__eyebrow">Get In Touch</p>
+        <h2 class="fl-enquiry-info__title">
+          <span class="fl-section__title-script" style="font-size:3rem;line-height:1">Send</span><br>
+          <span style="font-family:'Playfair Display',serif;font-weight:700;font-size:2.2rem;color:#7a1018">an Enquiry</span>
+        </h2>
+        <p class="fl-enquiry-info__text">
+          Tell us what you need — daily pooja flowers, a wedding package, a bouquet for gifting, or anything else.
+          We'll get back to you on WhatsApp within minutes.
+        </p>
+
+        <div class="fl-enquiry-contact">
+          <a href="https://wa.me/919999999999" target="_blank" rel="noopener" class="fl-btn fl-btn--whatsapp">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+              <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.528 5.845L.057 23.5l5.797-1.452A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.44.862.878-3.348-.24-.386C2.558 15.894 2 14.01 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+            </svg>
+            Chat on WhatsApp
+          </a>
+
+          <div class="fl-enquiry-contact__details">
+            <p>📍 Blk 662, Shop No. 01-23 
+Buffalo Road,
+Singapore 210662   <br>
+Little India MRT Exit C</p>
+            <p>🕗 Open: 6 AM – 9 PM, All Days</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: form -->
+      <div class="fl-enquiry-form-wrap">
+        <form class="fl-form" method="post" action="">
+          {% csrf_token %}
+
+          <div class="fl-form__row">
+            <div class="fl-form__group">
+              <label for="fl-name">Your Name</label>
+              <input type="text" id="fl-name" name="name" placeholder="e.g. Priya Sharma" required>
+            </div>
+            <div class="fl-form__group">
+              <label for="fl-phone">WhatsApp Number</label>
+              <input type="tel" id="fl-phone" name="phone" placeholder="+91 99999 99999" required>
+            </div>
+          </div>
+
+          <div class="fl-form__group">
+            <label for="fl-service">What do you need?</label>
+            <select id="fl-service" name="service" required>
+              <option value="" disabled selected>Select a service…</option>
+              <option value="marigold">Marigold Garlands</option>
+              <option value="mogra">Mogra Gajra</option>
+              <option value="rose">Rose Bouquet</option>
+              <option value="pooja">Pooja Flowers (Daily)</option>
+              <option value="rangoli">Rangoli Petal Set</option>
+              <option value="wedding">Wedding / Event Decor</option>
+              <option value="other">Something Else</option>
+            </select>
+          </div>
+
+          <div class="fl-form__group">
+            <label for="fl-date">When do you need it?</label>
+            <input type="date" id="fl-date" name="date">
+          </div>
+
+          <div class="fl-form__group">
+            <label for="fl-message">Any special requests?</label>
+            <textarea id="fl-message" name="message" rows="4"
+              placeholder="e.g. I need 20 metres of marigold for a wedding on Sunday morning…"></textarea>
+          </div>
+
+          <button type="submit" class="fl-form__submit">
+            🌸 Send Enquiry
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Floating WhatsApp button -->
+<!-- <a href="https://wa.me/919999999999?text=Hi%2C+I+want+to+order+flowers+🌸"
+   target="_blank" rel="noopener"
+   class="fl-whatsapp-float"
+   aria-label="Chat with us on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+    <path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.528 5.845L.057 23.5l5.797-1.452A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.44.862.878-3.348-.24-.386C2.558 15.894 2 14.01 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+  </svg>
+</a> -->
+
+{% endblock %}

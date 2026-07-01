@@ -48,18 +48,1041 @@ a {
    HERO SECTION
    ========================================= */
 /* HERO BANNER */
+/*====================================================
+        HERO SECTION - PART 3
+=====================================================*/
 
-.hero-section{
-    width:100%;
-    margin:0;
-    padding:0;
+.hero{
+
+    position:relative;
+
+    display:flex;
+
+    min-height:720px;
+
+    background:#f5f5f5;
+
     overflow:hidden;
+
 }
 
-.hero-banner{
+/*=========================
+        LEFT PANEL
+==========================*/
+
+.hero__left{
+
+    width:38%;
+
+    background:#f5f5f5;
+
+    padding:50px 45px;
+
+    position:relative;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+}
+
+/*=========================
+        LOGO
+==========================*/
+
+.hero__logo{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    margin-bottom:60px;
+
+}
+
+.logo-icon{
+
+    width:85px;
+
+    height:85px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    background:#fff;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+}
+
+.logo-icon img{
+
     width:100%;
-    height:auto;
+
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.logo-text h2{
+
+    margin:0;
+
+    font-size:42px;
+
+    font-weight:900;
+
+    color:#c40000;
+
+    letter-spacing:3px;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.logo-divider{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin:8px 0;
+
+}
+
+.logo-divider span{
+
+    flex:1;
+
+    height:2px;
+
+    background:#888;
+
+}
+
+.logo-divider h6{
+
+    margin:0;
+
+    font-size:14px;
+
+    letter-spacing:4px;
+
+    color:#555;
+
+    font-weight:700;
+
+}
+
+.logo-text p{
+
+    margin:0;
+
+    font-size:11px;
+
+    color:#777;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+/*=========================
+        CONTENT
+==========================*/
+
+.hero-content{
+
+    position:relative;
+
+    z-index:2;
+
+}
+
+.hero-tag{
+
+    display:inline-block;
+
+    background:#fff;
+
+    color:#c40000;
+
+    padding:10px 22px;
+
+    border-radius:40px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+
+}
+
+.hero-content h1{
+
+    font-size:54px;
+
+    line-height:1.15;
+
+    font-weight:900;
+
+    color:#333;
+
+    margin-bottom:8px;
+
+}
+
+.hero-content h1 span{
+
     display:block;
+
+    color:#c40000;
+
+}
+
+.hero-content h3{
+
+    color:#444;
+
+    font-size:32px;
+
+    font-weight:700;
+
+    margin-bottom:25px;
+
+}
+
+.hero-content p{
+
+    font-size:17px;
+
+    line-height:1.9;
+
+    color:#666;
+
+    max-width:500px;
+
+    margin-bottom:35px;
+
+}
+
+/*=========================
+        FEATURES
+==========================*/
+
+.hero-features{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+}
+
+.hero-features div{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-weight:600;
+
+    color:#333;
+
+}
+
+.hero-features i{
+
+    color:#c40000;
+
+    font-size:18px;
+
+}
+
+/*=========================
+        CITY IMAGE
+==========================*/
+
+.hero-city{
+
+    position:absolute;
+
+    left:0;
+
+    right:0;
+
+    bottom:0;
+
+    opacity:.18;
+
+    pointer-events:none;
+
+}
+
+.hero-city img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+/*=========================
+        RIGHT PANEL
+==========================*/
+
+.hero__right{
+
+    flex:1;
+
+    display:flex;
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:#ececec;
+
+}
+
+/*====================================================
+        HERO SECTION - PART 4
+        RIGHT CARDS
+=====================================================*/
+
+.hero__right{
+
+    flex:1;
+
+    display:flex;
+
+    align-items:stretch;
+
+    overflow:hidden;
+
+    position:relative;
+
+}
+
+/* Red Diagonal Accent */
+
+.hero__right::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    top:0;
+
+    bottom:0;
+
+    width:120px;
+
+    background:linear-gradient(110deg,#f5f5f5 20%,transparent 20%);
+
+    z-index:5;
+
+    pointer-events:none;
+
+}
+
+/*=========================
+        CARD
+==========================*/
+
+.hero-card{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    position:relative;
+
+    overflow:visible;
+
+    clip-path:polygon(6% 0%,100% 0%,94% 100%,0% 100%);
+
+    margin-left:-3%;
+
+    transition:.45s;
+
+    background:#fff;
+    z-index:1;
+
+}
+
+.hero-card:first-child{
+
+    clip-path:polygon(0% 0%,100% 0%,94% 100%,0% 100%);
+
+    margin-left:0;
+
+}
+
+.hero-card:last-child{
+
+    clip-path:polygon(6% 0%,100% 0%,100% 100%,0% 100%);
+
+}
+
+/*=========================
+        IMAGE
+==========================*/
+
+.hero-card-image{
+
+    position:relative;
+
+    flex:1;
+
+    overflow:hidden;
+
+    min-height:420px;
+
+}
+
+.hero-card-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    transition:.6s;
+
+}
+
+.hero-card:hover img{
+
+    transform:scale(1.08);
+
+}
+
+/* Overlay */
+
+.hero-card-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+
+        to top,
+
+        rgba(0,0,0,.45),
+
+        rgba(0,0,0,.05),
+
+        transparent
+
+    );
+
+}
+
+/*=========================
+        TOP LABEL
+==========================*/
+
+.hero-card-label{
+
+    position:absolute;
+
+    top:18px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    background:#c40000;
+
+    color:#fff;
+
+    padding:8px 18px;
+
+    text-align:center;
+
+    border-radius:4px;
+
+    box-shadow:0 10px 25px rgba(196,0,0,.25);
+
+}
+
+.hero-card-label span{
+
+    display:block;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    letter-spacing:2px;
+
+}
+
+.hero-card-label small{
+
+    display:block;
+
+    font-size:11px;
+
+    opacity:.9;
+
+}
+
+/*=========================
+        FOOTER
+==========================*/
+
+.hero-card-footer{
+
+    background:#1b1b1b;
+
+    padding:18px 18px 22px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+    position:relative;
+
+    overflow:visible;
+
+}
+
+/* Circle Icon */
+
+.hero-card-icon{
+
+    width:60px;
+
+    height:60px;
+
+    margin-top:-48px;
+
+    border-radius:50%;
+
+    background:#1b1b1b;
+
+    border:3px solid #fff;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:#fff;
+
+    font-size:24px;
+    position:relative;
+
+    z-index:50;
+
+}
+
+.hero-card-footer h4{
+
+    margin:14px 0 18px;
+
+    color:#fff;
+
+    font-size:15px;
+
+    letter-spacing:2px;
+
+    font-weight:800;
+
+    text-transform:uppercase;
+
+}
+
+/*=========================
+        BUTTON
+==========================*/
+
+.hero-card-footer a{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 18px;
+
+    border:2px solid rgba(255,255,255,.45);
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:12px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    transition:.35s;
+
+}
+
+.hero-card-footer a:hover{
+
+    background:#c40000;
+
+    border-color:#c40000;
+
+}
+
+/* Hover */
+
+.hero-card:hover{
+
+    z-index:20;
+
+}
+
+.hero-card:hover .hero-card-icon{
+
+    background:#c40000;
+
+}
+
+/*====================================================
+        TRUST BAR
+=====================================================*/
+
+.trust-bar{
+
+    background:#fff;
+
+    border-top:4px solid #c40000;
+
+    padding:20px 0;
+
+}
+
+.trust-wrapper{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:25px;
+
+}
+
+.trust-item{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    font-weight:700;
+
+    color:#333;
+
+    letter-spacing:1px;
+
+}
+
+.trust-item i{
+
+    color:#c40000;
+
+    font-size:22px;
+
+}
+
+.trust-website{
+
+    background:#c40000;
+
+    color:#fff;
+
+    padding:12px 24px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    font-weight:700;
+
+    border-radius:5px;
+
+}
+
+/*====================================================
+        HERO SECTION - PART 5
+        RESPONSIVE & FINAL POLISH
+=====================================================*/
+
+/* Smooth Animation */
+
+.hero-card,
+.hero-card img,
+.hero-card-footer a,
+.hero-card-icon,
+.hero-tag{
+    transition:all .35s ease;
+}
+
+/* Hero Hover Effect */
+
+.hero:hover .hero-card:not(:hover){
+    filter:brightness(.92);
+}
+
+/*=========================
+        LARGE SCREEN
+==========================*/
+
+@media(min-width:1600px){
+
+.hero{
+
+    max-width:1600px;
+
+    margin:auto;
+
+}
+
+.hero-content h1{
+
+    font-size:68px;
+
+}
+
+.hero-content h3{
+
+    font-size:38px;
+
+}
+
+.hero-card-image{
+
+    min-height:520px;
+
+}
+
+}
+
+/*=========================
+        TABLET
+==========================*/
+
+@media(max-width:1200px){
+
+.hero{
+
+    flex-direction:column;
+
+}
+
+.hero__left{
+
+    width:100%;
+
+    padding:60px 40px;
+
+}
+
+.hero__right{
+
+    width:100%;
+
+}
+
+.hero-card{
+
+    clip-path:none !important;
+
+    margin-left:0 !important;
+
+}
+
+.hero__right::before{
+
+    display:none;
+
+}
+
+.hero-card-image{
+
+    min-height:300px;
+
+}
+
+}
+
+/*=========================
+        MOBILE
+==========================*/
+
+@media(max-width:768px){
+
+.hero{
+
+    min-height:auto;
+
+}
+
+.hero__left{
+
+    padding:40px 20px;
+
+}
+
+.hero__logo{
+
+    flex-direction:column;
+
+    text-align:center;
+
+}
+
+.logo-text{
+
+    text-align:center;
+
+}
+
+.logo-divider{
+
+    justify-content:center;
+
+}
+
+.logo-divider span{
+
+    max-width:60px;
+
+}
+
+.hero-content{
+
+    text-align:center;
+
+}
+
+.hero-tag{
+
+    font-size:13px;
+
+}
+
+.hero-content h1{
+
+    font-size:38px;
+
+}
+
+.hero-content h3{
+
+    font-size:24px;
+
+}
+
+.hero-content p{
+
+    font-size:15px;
+
+    max-width:100%;
+
+}
+
+.hero-features{
+
+    grid-template-columns:1fr;
+
+    text-align:left;
+
+}
+
+.hero__right{
+
+    flex-direction:column;
+
+}
+
+.hero-card{
+
+    width:100%;
+
+}
+
+.hero-card-image{
+
+    min-height:260px;
+
+}
+
+.hero-card-footer{
+
+    padding:30px 20px;
+
+}
+
+.trust-wrapper{
+
+    flex-direction:column;
+
+    gap:20px;
+
+    text-align:center;
+
+}
+
+.trust-website{
+
+    width:100%;
+
+    justify-content:center;
+
+}
+
+}
+
+/*=========================
+        SMALL MOBILE
+==========================*/
+
+@media(max-width:480px){
+
+.hero-content h1{
+
+    font-size:30px;
+
+}
+
+.hero-content h3{
+
+    font-size:20px;
+
+}
+
+.logo-icon{
+
+    width:70px;
+
+    height:70px;
+
+}
+
+.logo-text h2{
+
+    font-size:32px;
+
+}
+
+.hero-card-label{
+
+    padding:6px 14px;
+
+}
+
+.hero-card-label span{
+
+    font-size:11px;
+
+}
+
+.hero-card-footer h4{
+
+    font-size:13px;
+
+}
+
+.hero-card-footer a{
+
+    font-size:11px;
+
+    padding:8px 14px;
+
+}
+
+}
+
+/*=========================
+        FINAL POLISH
+==========================*/
+
+.hero-card{
+
+    cursor:pointer;
+
+}
+
+.hero-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 50px rgba(0,0,0,.18);
+
+}
+
+.hero-card:hover .hero-card-footer{
+
+    background:#222;
+
+}
+
+.hero-card:hover .hero-card-label{
+
+    background:#a50000;
+
+}
+
+.hero-card:hover .hero-card-icon{
+
+    transform:rotate(8deg) scale(1.08);
+
+}
+
+.hero-card:hover .hero-card-footer a{
+
+    transform:translateY(-2px);
+
+}
+
+.hero-tag:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.12);
+
+}
+
+.hero-card-image img{
+
+    will-change:transform;
+
 }
 
 /* OUR BUSINESSES */

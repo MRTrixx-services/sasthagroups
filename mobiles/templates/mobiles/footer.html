@@ -53,9 +53,11 @@
 
                 <ul class="footer-links">
 
-                    <li><a href="/">Home</a></li>
+                   <li>
+        <a href="{% url 'home' %}">Home</a>
+    </li>
 
-                    <li><a href="/about/">About Us</a></li>
+                    
 
                     <li><a href="/contact/">Contact</a></li>
 
@@ -70,13 +72,25 @@
 
                 <ul class="footer-links">
 
-                    <li><a href="#">📱 Mobile Shop</a></li>
+    <li>
+        <a href="{% url 'mobiles' %}">
+            📱 Mobile Shop
+        </a>
+    </li>
 
-                    <li><a href="#">💄 Beauty Parlour</a></li>
+    <li>
+        <a href="{% url 'beauty:home' %}">
+            💄 Beauty Parlour
+        </a>
+    </li>
 
-                    <li><a href="#">🌸 Flower Shop</a></li>
+    <li>
+        <a href="{% url 'flowers:home' %}">
+            🌸 Flower Shop
+        </a>
+    </li>
 
-                </ul>
+</ul>
 
             </div>
 
@@ -92,7 +106,7 @@
                     </p>
 
                     <p>
-                        📞 +65 XXXXXXXX
+                        📞 +65 913 44 333
                     </p>
 
                     <p>

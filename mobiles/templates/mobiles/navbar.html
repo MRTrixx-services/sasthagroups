@@ -1,9 +1,13 @@
 {% load static %}
+
 <nav class="sastha-navbar navbar navbar-expand-lg">
+
     <div class="container">
 
         <!-- LOGO -->
-        <a class="navbar-brand d-flex align-items-center gap-3" href="#">
+
+        <a class="navbar-brand d-flex align-items-center gap-3"
+           href="{% url 'home' %}">
 
             <img src="{% static 'images/logo.jpeg' %}"
                  alt="Sastha Group"
@@ -17,6 +21,7 @@
         </a>
 
         <!-- MOBILE TOGGLE -->
+
         <button class="navbar-toggler"
                 type="button"
                 data-bs-toggle="collapse"
@@ -26,54 +31,84 @@
 
         </button>
 
-        <!-- NAVIGATION -->
-        <div class="collapse navbar-collapse" id="navbarNav">
+        <!-- MENU -->
 
-            <!-- CENTER MENU -->
+        <div class="collapse navbar-collapse"
+             id="navbarNav">
+
             <ul class="navbar-nav mx-auto">
 
+                <!-- HOME -->
+
                 <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'home' %}">
+
+                    <a class="nav-link {% if request.resolver_match.url_name == 'home' and not request.resolver_match.app_name %}active{% endif %}"
+                       href="{% url 'home' %}">
+
                         Home
+
                     </a>
+
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        Mobile Shop
-                    </a>
-                </li>
+                <!-- MOBILE SHOP -->
+
+                <!-- MOBILE SHOP -->
+
+<li class="nav-item">
+    <a class="nav-link {% if request.resolver_match.url_name == 'mobiles' %}active{% endif %}"
+       href="{% url 'mobiles' %}">
+        Mobile Shop
+    </a>
+</li>
+
+                <!-- BEAUTY -->
 
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'beauty:home' %}">
+
+                    <a class="nav-link {% if request.resolver_match.app_name == 'beauty' %}active{% endif %}"
+                       href="{% url 'beauty:home' %}">
+
                         Beauty Parlor
+
                     </a>
+
                 </li>
 
+                <!-- FLOWERS -->
+
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+
+                    <a class="nav-link {% if request.resolver_match.app_name == 'flowers' %}active{% endif %}"
+                       href="{% url 'flowers:home' %}">
+
                         Flower Shop
+
                     </a>
+
                 </li>
 
-                <li class="nav-item">
-                    <a class="nav-link" href="#">
-                        About
-                    </a>
-                </li>
+
+                <!-- CONTACT -->
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">
+
+                    <a class="nav-link"
+                       href="#">
+
                         Contact
+
                     </a>
+
                 </li>
 
             </ul>
 
             <!-- CALL BUTTON -->
+
             <div class="d-flex align-items-center">
 
-                <a href="tel:+919999999999"
+                <a href="tel:+6585353536"
                    class="btn call-btn">
 
                     📞 Call Now
@@ -85,4 +120,5 @@
         </div>
 
     </div>
+
 </nav>
