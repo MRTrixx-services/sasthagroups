@@ -1,0 +1,350 @@
+{% extends "mobiles/base.html" %}
+{% load static %}
+
+{% block title %}Contact Us – Sastha Shop{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/mobiles/contact.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- =====================================================
+     CONTACT PAGE
+     File : templates/mobiles/contact.html
+     CSS  : static/css/contact.css
+     View : mobiles/views.py  →  contact_view
+     URL  : config/urls.py    →  path('contact/', ...)
+===================================================== -->
+
+<!-- ── HERO BANNER ── -->
+<section class="ct-hero">
+  <div class="ct-hero__inner">
+    <span class="ct-hero__badge">📍 We're Here For You</span>
+    <h1 class="ct-hero__title">
+      <span class="ct-hero__script">Get in</span>
+      <span class="ct-hero__serif">Touch</span>
+    </h1>
+    <p class="ct-hero__sub">
+      One message reaches all three of our shops —
+      <strong>Mobile Shop</strong>, <strong>Beauty Parlour</strong> &amp; <strong>Flower Shop</strong>.
+      We'll reply on WhatsApp within minutes.
+    </p>
+
+    <!-- Three shop quick-links -->
+    <div class="ct-hero__shops">
+      <a href="#ct-form" class="ct-shop-pill ct-shop-pill--mobile">
+        📱 Mobile Shop
+      </a>
+      <a href="#ct-form" class="ct-shop-pill ct-shop-pill--parlour">
+        💄 Beauty Parlour
+      </a>
+      <a href="#ct-form" class="ct-shop-pill ct-shop-pill--flower">
+        🌸 Flower Shop
+      </a>
+    </div>
+  </div>
+
+  <!-- Decorative circles -->
+  <span class="ct-hero__blob ct-hero__blob--1" aria-hidden="true"></span>
+  <span class="ct-hero__blob ct-hero__blob--2" aria-hidden="true"></span>
+  <span class="ct-hero__blob ct-hero__blob--3" aria-hidden="true"></span>
+</section>
+
+
+<!-- ── INFO CARDS ROW ── -->
+<section class="ct-info-strip">
+  <div class="ct-info-strip__inner">
+
+    <div class="ct-info-card ct-info-card--red">
+      <span class="ct-info-card__icon">📍</span>
+      <div>
+        <h3>Visit Us</h3>
+        <!-- <p>123, Main Bazaar Road<br>Your City – 600001<br>Tamil Nadu, India</p> -->
+        <p>
+            Blk 662, Shop No. 01-23<br>
+            Buffalo Road,<br>
+            Singapore 210662<br>
+            Little India MRT Exit C
+        </p>
+      </div>
+    </div>
+
+    <div class="ct-info-card ct-info-card--green">
+      <span class="ct-info-card__icon">📞</span>
+      <div>
+        <h3>Call / WhatsApp</h3>
+        <p>
+          <a href="tel:+6591344333">
+                +65 91344333
+            </a><br>
+          <a href="https://wa.me/+65 913 44 333" target="_blank" rel="noopener">Chat on WhatsApp →</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="ct-info-card ct-info-card--orange">
+      <span class="ct-info-card__icon">🕗</span>
+      <div>
+        <h3>Working Hours</h3>
+        <p>Monday – Saturday : 9:00 AM – 8:00 PM<br>Sunday : 10:00 AM – 6:00 PM<br>All festivals open 🎉</p>
+      </div>
+    </div>
+
+    <div class="ct-info-card ct-info-card--blue">
+      <span class="ct-info-card__icon">✉️</span>
+      <div>
+        <h3>Email Us</h3>
+        <p>
+          <a href="mailto:info@sasthagroup.com">info@sasthagroup.com</a><br>
+          We reply within 24 hrs
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── MAIN CONTENT: FORM + MAP ── -->
+<section class="ct-main">
+  <div class="ct-main__inner">
+
+    <!-- LEFT: Contact form -->
+    <div class="ct-form-wrap" id="ct-form">
+      <div class="ct-form-head">
+        <h2>
+          <span class="ct-form-head__script">Send a</span>
+          <span class="ct-form-head__serif">Message</span>
+        </h2>
+        <p>Fill the form and we'll WhatsApp you right back.</p>
+      </div>
+
+      <!-- Success / Error messages -->
+      {% if messages %}
+        {% for message in messages %}
+          <div class="ct-alert ct-alert--{{ message.tags }}">
+            {% if message.tags == 'success' %}✅{% else %}⚠️{% endif %}
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      <form class="ct-form" method="POST" action="{% url 'contact' %}">
+        {% csrf_token %}
+
+        <div class="ct-form__row">
+          <div class="ct-form__group">
+            <label for="ct-name">Full Name <span>*</span></label>
+            <input
+              type="text"
+              id="ct-name"
+              name="name"
+              placeholder="e.g. Priya Sharma"
+              value="{{ form_data.name|default:'' }}"
+              required
+            >
+          </div>
+          <div class="ct-form__group">
+            <label for="ct-phone">WhatsApp Number <span>*</span></label>
+            <input
+              type="tel"
+              id="ct-phone"
+              name="phone"
+              placeholder="+91 99999 99999"
+              value="{{ form_data.phone|default:'' }}"
+              required
+            >
+          </div>
+        </div>
+
+        <div class="ct-form__group">
+          <label for="ct-email">Email Address</label>
+          <input
+            type="email"
+            id="ct-email"
+            name="email"
+            placeholder="priya@example.com"
+            value="{{ form_data.email|default:'' }}"
+          >
+        </div>
+
+        <!-- Which shop? -->
+        <div class="ct-form__group">
+          <label>Which Shop? <span>*</span></label>
+          <div class="ct-shop-select">
+            <label class="ct-shop-opt ct-shop-opt--mobile">
+              <input type="radio" name="shop" value="mobile"
+                {% if form_data.shop == 'mobile' %}checked{% endif %} required>
+              <span class="ct-shop-opt__box">
+                <span class="ct-shop-opt__icon">📱</span>
+                <span class="ct-shop-opt__label">Mobile Shop</span>
+              </span>
+            </label>
+            <label class="ct-shop-opt ct-shop-opt--parlour">
+              <input type="radio" name="shop" value="parlour"
+                {% if form_data.shop == 'parlour' %}checked{% endif %}>
+              <span class="ct-shop-opt__box">
+                <span class="ct-shop-opt__icon">💄</span>
+                <span class="ct-shop-opt__label">Beauty Parlour</span>
+              </span>
+            </label>
+            <label class="ct-shop-opt ct-shop-opt--flower">
+              <input type="radio" name="shop" value="flower"
+                {% if form_data.shop == 'flower' %}checked{% endif %}>
+              <span class="ct-shop-opt__box">
+                <span class="ct-shop-opt__icon">🌸</span>
+                <span class="ct-shop-opt__label">Flower Shop</span>
+              </span>
+            </label>
+            <label class="ct-shop-opt ct-shop-opt--all">
+              <input type="radio" name="shop" value="general"
+                {% if form_data.shop == 'general' or not form_data.shop %}checked{% endif %}>
+              <span class="ct-shop-opt__box">
+                <span class="ct-shop-opt__icon">🏪</span>
+                <span class="ct-shop-opt__label">All / General</span>
+              </span>
+            </label>
+          </div>
+        </div>
+
+        <div class="ct-form__group">
+          <label for="ct-subject">Subject <span>*</span></label>
+          <select id="ct-subject" name="subject" required>
+            <option value="" disabled {% if not form_data.subject %}selected{% endif %}>Select a topic…</option>
+            <option value="price_inquiry"   {% if form_data.subject == 'price_inquiry'   %}selected{% endif %}>Price Inquiry</option>
+            <option value="appointment"     {% if form_data.subject == 'appointment'     %}selected{% endif %}>Book Appointment</option>
+            <option value="order"           {% if form_data.subject == 'order'           %}selected{% endif %}>Place an Order</option>
+            <option value="complaint"       {% if form_data.subject == 'complaint'       %}selected{% endif %}>Complaint / Feedback</option>
+            <option value="wholesale"       {% if form_data.subject == 'wholesale'       %}selected{% endif %}>Wholesale / Bulk</option>
+            <option value="other"           {% if form_data.subject == 'other'           %}selected{% endif %}>Other</option>
+          </select>
+        </div>
+
+        <div class="ct-form__group">
+          <label for="ct-message">Your Message <span>*</span></label>
+          <textarea
+            id="ct-message"
+            name="message"
+            rows="5"
+            placeholder="Tell us what you need and we'll get back to you quickly…"
+            required
+          >{{ form_data.message|default:'' }}</textarea>
+        </div>
+
+        <button type="submit" class="ct-submit">
+          🚀 Send Message
+        </button>
+
+        <p class="ct-form__note">
+          Or reach us directly:
+          <a href="https://wa.me/919999999999?text=Hi+Sastha+Shop!" target="_blank" rel="noopener">
+            WhatsApp us →
+          </a>
+        </p>
+      </form>
+    </div>
+
+    <!-- RIGHT: Map + shop cards -->
+    <div class="ct-side">
+
+      <!-- Google Maps embed -->
+      <div class="ct-map">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.6703329875236!2d103.88266960000001!3d1.3744851!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da178b04bc8d57%3A0xccb0922bd8a0cc8b!2sSastha%20Mobile%20Pte%20Ltd!5e0!3m2!1sen!2sin!4v1782544591922!5m2!1sen!2sin"
+            width="100%"
+            height="260"
+            style="border:0;border-radius:12px;display:block;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+      </div>
+
+      <!-- Three shop mini-cards -->
+      <div class="ct-shop-cards">
+
+        <div class="ct-shop-card ct-shop-card--mobile">
+          <div class="ct-shop-card__icon">📱</div>
+          <div class="ct-shop-card__body">
+            <h3>Mobile Shop</h3>
+            <p>Phones, accessories, repairs &amp; recharge — all brands, best prices.</p>
+            <div class="ct-shop-card__links">
+              <a href="tel:+6591344333">
+                📞 Call
+            </a>
+
+            <a href="https://wa.me/6591344333?text=Hi%20Sastha%20Beauty,%20I%20would%20like%20to%20book%20an%20appointment."
+            target="_blank">
+                💬 WhatsApp
+            </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-shop-card ct-shop-card--parlour">
+          <div class="ct-shop-card__icon">💄</div>
+          <div class="ct-shop-card__body">
+            <h3>Beauty Parlour</h3>
+            <p>Pedicure, Manicure, Henna, Facial, Haircut, Wash &amp; Waxing.</p>
+            <div class="ct-shop-card__links">
+              <a href="tel:+6591344333">
+                📞 Call
+              </a>
+              <a href="https://wa.me/6591344333?text=Hi%20Sastha%20Beauty,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">
+                💬 WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="ct-shop-card ct-shop-card--flower">
+          <div class="ct-shop-card__icon">🌸</div>
+          <div class="ct-shop-card__body">
+            <h3>Flower Shop</h3>
+            <p>Marigold garlands, mogra gajra, pooja flowers, bouquets &amp; wedding decor.</p>
+            <div class="ct-shop-card__links">
+              <a href="tel:+919999999999">📞 Call</a>
+              <a href="https://wa.me/919999999999?text=Flower+Shop+Order" target="_blank" rel="noopener">💬 WhatsApp</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── SOCIAL / QUICK ACTION STRIP ── -->
+<section class="ct-social">
+  <div class="ct-social__inner">
+    <p class="ct-social__label">Find us on</p>
+    <div class="ct-social__links">
+      <a href="#" class="ct-social__btn ct-social__btn--wa" aria-label="WhatsApp">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.528 5.845L.057 23.5l5.797-1.452A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.44.862.878-3.348-.24-.386C2.558 15.894 2 14.01 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        WhatsApp
+      </a>
+      <a href="#" class="ct-social__btn ct-social__btn--ig" aria-label="Instagram">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        Instagram
+      </a>
+      <a href="#" class="ct-social__btn ct-social__btn--fb" aria-label="Facebook">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="tel:+919999999999" class="ct-social__btn ct-social__btn--call" aria-label="Call us">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        Call Now
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/6591344333?text=Hi%20Sastha%20Beauty,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener"
+   class="ct-float-wa" aria-label="Chat on WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.528 5.845L.057 23.5l5.797-1.452A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.44.862.878-3.348-.24-.386C2.558 15.894 2 14.01 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+</a>
+
+{% endblock %}
