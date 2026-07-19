@@ -1,6 +1,9 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.contrib import messages
+from django.core.mail import EmailMultiAlternatives
+from django.template.loader import render_to_string
+from django.conf import settings
+from django.utils import timezone
 
 def home(request):
     return render(request, 'mobiles/home.html')
@@ -58,20 +61,71 @@ def contact_view(request):
 
         # ── Save to database (uncomment after adding the model) ──
         # ContactEnquiry.objects.create(
-        #     name    = name,
-        #     phone   = phone,
-        #     email   = email,
-        #     shop    = shop,
-        #     subject = subject,
-        #     message = message,
+        #     name=name, phone=phone, email=email,
+        #     shop=shop, subject=subject, message=message,
         # )
+
+        # ── Send email notification ──
+        subject_labels = {
+            'price_inquiry': 'Price Inquiry',
+            'appointment':   'Book Appointment',
+            'order':         'Place an Order',
+            'complaint':     'Complaint / Feedback',
+            'wholesale':     'Wholesale / Bulk',
+            'other':         'Other',
+        }
+        shop_labels = {
+            'mobile':  'Mobile Shop',
+            'parlour': 'Beauty Parlour',
+            'flower':  'Flower Shop',
+            'general': 'General',
+        }
+        ctx = {
+            'name':            name,
+            'phone':           phone,
+            'email':           email,
+            'shop':            shop,
+            'shop_display':    shop_labels.get(shop, 'General'),
+            'subject_display': subject_labels.get(subject, subject),
+            'message':         message,
+            'submitted_at':    timezone.now().strftime('%d %b %Y, %I:%M %p'),
+        }
+        # ── Admin notification email ──
+        admin_html = render_to_string('mobiles/email/contact_email.html', ctx)
+        admin_subject = f"[Sastha Group] New {ctx['shop_display']} Enquiry from {name}"
+        admin_msg = EmailMultiAlternatives(
+            subject=admin_subject,
+            body=f"New enquiry from {name} ({phone}) — {ctx['subject_display']}\n\n{message}",
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            to=['info@sasthagroup.com'],
+            reply_to=[email] if email else [],
+        )
+        admin_msg.attach_alternative(admin_html, 'text/html')
+
+        # ── User confirmation email (only if they gave an email) ──
+        if email:
+            user_html = render_to_string('mobiles/email/contact_email_user.html', ctx)
+            user_msg = EmailMultiAlternatives(
+                subject="We received your message – Sastha Group 🌸",
+                body=f"Hi {name}, thank you for contacting Sastha Group! We've received your enquiry and will WhatsApp you at {phone} shortly.",
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                to=[email],
+            )
+            user_msg.attach_alternative(user_html, 'text/html')
+
+        try:
+            admin_msg.send()
+            if email:
+                user_msg.send()
+        except Exception:
+            pass  # don't block the user if email fails
 
         # ── Success: show message and redirect to the same page ──
         messages.success(
             request,
             f"Thank you {name}! We've received your message and will WhatsApp you shortly. 🌸"
         )
-        return redirect('contact')   # PRG pattern: prevents duplicate submissions on refresh
+        return redirect('contact')
 
     # ── GET: show the empty form ──
     return render(request, 'mobiles/contact.html', {

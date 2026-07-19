@@ -1,7 +1,50 @@
 {% extends "mobiles/base.html" %}
 {% load static %}
 
-{% block title %}Fresh Blooms – Indian Flower Shop{% endblock %}
+{% block title %}Fresh Blooms – Indian Flower Shop<!-- Toast data -->
+{% if messages %}
+  {% for message in messages %}
+    <div class="fl-toast-data" data-type="{{ message.tags }}" data-msg="{{ message }}" hidden></div>
+  {% endfor %}
+{% endif %}
+
+<div id="fl-toast-container" aria-live="polite"></div>
+
+<style>
+#fl-toast-container{position:fixed;top:24px;right:24px;z-index:99999;display:flex;flex-direction:column;gap:12px;pointer-events:none;}
+.fl-toast{display:flex;align-items:center;gap:12px;min-width:300px;max-width:420px;padding:16px 18px;border-radius:12px;background:#fff;box-shadow:0 8px 32px rgba(0,0,0,.15);font-size:.9rem;font-weight:500;pointer-events:all;opacity:0;transform:translateX(60px);transition:opacity .35s ease,transform .35s ease;}
+.fl-toast--show{opacity:1;transform:translateX(0);}
+.fl-toast--success{border-left:5px solid #d97706;color:#78350f;}
+.fl-toast--error{border-left:5px solid #dc2626;color:#7f1d1d;}
+.fl-toast__icon{font-size:1.3rem;flex-shrink:0;}
+.fl-toast__msg{flex:1;line-height:1.45;}
+.fl-toast__close{background:none;border:none;font-size:1.2rem;opacity:.5;cursor:pointer;padding:0 2px;flex-shrink:0;}
+.fl-toast__close:hover{opacity:1;}
+@media(max-width:500px){#fl-toast-container{top:12px;right:12px;left:12px;}.fl-toast{min-width:unset;max-width:100%;}}
+</style>
+
+<script>
+function flPreselect(val){
+  var sel=document.getElementById("fl-service");
+  if(sel){sel.value=val;}
+}
+(function(){
+  function showToast(msg,type){
+    var wrap=document.getElementById("fl-toast-container");
+    var t=document.createElement("div");
+    t.className="fl-toast fl-toast--"+type;
+    t.innerHTML='<span class="fl-toast__icon">'+(type==="success"?"🌸":"⚠️")+'</span>'+'<span class="fl-toast__msg">'+msg+'</span>'+'<button class="fl-toast__close" aria-label="Close">&times;</button>';
+    t.querySelector(".fl-toast__close").onclick=function(){dismiss(t);};
+    wrap.appendChild(t);
+    requestAnimationFrame(function(){t.classList.add("fl-toast--show");});
+    setTimeout(function(){dismiss(t);},6000);
+  }
+  function dismiss(t){t.classList.remove("fl-toast--show");t.addEventListener("transitionend",function(){t.remove();},{once:true});}
+  document.querySelectorAll(".fl-toast-data").forEach(function(el){showToast(el.dataset.msg,el.dataset.type);});
+})();
+</script>
+
+{% endblock %}
 
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/flowers/flowers.css' %}">
@@ -153,7 +196,7 @@
         <div class="fl-flower-card__body">
           <h3>Marigold Garlands</h3>
           <p>Bright genda phool malas for doorways, pooja and festive occasions.</p>
-          <a href="https://wa.me/919999999999?text=I+want+Marigold+Garlands" target="_blank" rel="noopener" class="fl-flower-card__btn">
+          <a href="#fl-enquiry" onclick="flPreselect('marigold')" class="fl-flower-card__btn">
             Enquire Now →
           </a>
         </div>
@@ -168,7 +211,7 @@
         <div class="fl-flower-card__body">
           <h3>Mogra Gajra</h3>
           <p>Hand-strung jasmine strings, fragrant and fresh — perfect for hair and offerings.</p>
-          <a href="https://wa.me/919999999999?text=I+want+Mogra+Gajra" target="_blank" rel="noopener" class="fl-flower-card__btn">
+          <a href="#fl-enquiry" onclick="flPreselect('mogra')" class="fl-flower-card__btn">
             Enquire Now →
           </a>
         </div>
@@ -183,7 +226,7 @@
         <div class="fl-flower-card__body">
           <h3>Rose Bouquets</h3>
           <p>Hand-tied red, pink and white rose bouquets — perfect gifts for every occasion.</p>
-          <a href="https://wa.me/919999999999?text=I+want+Rose+Bouquets" target="_blank" rel="noopener" class="fl-flower-card__btn">
+          <a href="#fl-enquiry" onclick="flPreselect('rose')" class="fl-flower-card__btn">
             Enquire Now →
           </a>
         </div>
@@ -198,7 +241,7 @@
         <div class="fl-flower-card__body">
           <h3>Pooja Flowers</h3>
           <p>Loose flowers, lotus, tulsi and decorated thali sets for daily puja &amp; rituals.</p>
-          <a href="https://wa.me/919999999999?text=I+want+Pooja+Flowers" target="_blank" rel="noopener" class="fl-flower-card__btn">
+          <a href="#fl-enquiry" onclick="flPreselect('pooja')" class="fl-flower-card__btn">
             Enquire Now →
           </a>
         </div>
@@ -213,7 +256,7 @@
         <div class="fl-flower-card__body">
           <h3>Rangoli Petals</h3>
           <p>Multi-colour petal sets sorted and ready to create beautiful rangoli patterns.</p>
-          <a href="https://wa.me/919999999999?text=I+want+Rangoli+Petals" target="_blank" rel="noopener" class="fl-flower-card__btn">
+          <a href="#fl-enquiry" onclick="flPreselect('rangoli')" class="fl-flower-card__btn">
             Enquire Now →
           </a>
         </div>
@@ -228,7 +271,7 @@
         <div class="fl-flower-card__body">
           <h3>Wedding &amp; Event Decor</h3>
           <p>Mandap, car decoration, venue arches and bridal entry floral arrangements.</p>
-          <a href="https://wa.me/919999999999?text=I+need+Wedding+Decor" target="_blank" rel="noopener" class="fl-flower-card__btn">
+          <a href="#fl-enquiry" onclick="flPreselect('wedding')" class="fl-flower-card__btn">
             Enquire Now →
           </a>
         </div>
@@ -265,7 +308,7 @@
           <li>✓ Yellow &amp; orange available</li>
           <li>✓ Bulk discounts on 10+ metres</li>
         </ul>
-        <a href="https://wa.me/919999999999?text=Marigold+Garland+Order" target="_blank" rel="noopener" class="fl-price-card__btn">
+        <a href="#fl-enquiry" onclick="flPreselect('marigold')" class="fl-price-card__btn">
           Order Now
         </a>
       </div>
@@ -282,7 +325,7 @@
           <li>✓ Stage &amp; entry arch</li>
           <li>✓ Bridal bouquet included</li>
         </ul>
-        <a href="https://wa.me/919999999999?text=Wedding+Decor+Enquiry" target="_blank" rel="noopener" class="fl-price-card__btn fl-price-card__btn--white">
+        <a href="#fl-enquiry" onclick="flPreselect('wedding')" class="fl-price-card__btn fl-price-card__btn--white">
           Get Quote
         </a>
       </div>
@@ -297,7 +340,7 @@
           <li>✓ Gift wrapping available</li>
           <li>✓ Same-day delivery</li>
         </ul>
-        <a href="https://wa.me/919999999999?text=Rose+Bouquet+Order" target="_blank" rel="noopener" class="fl-price-card__btn">
+        <a href="#fl-enquiry" onclick="flPreselect('rose')" class="fl-price-card__btn">
           Order Now
         </a>
       </div>
@@ -312,7 +355,7 @@
           <li>✓ Perfect for hair &amp; puja</li>
           <li>✓ Wholesale available</li>
         </ul>
-        <a href="https://wa.me/919999999999?text=Mogra+Gajra+Order" target="_blank" rel="noopener" class="fl-price-card__btn">
+        <a href="#fl-enquiry" onclick="flPreselect('mogra')" class="fl-price-card__btn">
           Order Now
         </a>
       </div>
@@ -327,7 +370,7 @@
           <li>✓ Mixed seasonal flowers</li>
           <li>✓ Monthly subscription discount</li>
         </ul>
-        <a href="https://wa.me/919999999999?text=Pooja+Flowers+Subscription" target="_blank" rel="noopener" class="fl-price-card__btn">
+        <a href="#fl-enquiry" onclick="flPreselect('pooja')" class="fl-price-card__btn">
           Subscribe
         </a>
       </div>
@@ -342,7 +385,7 @@
           <li>✓ Diwali &amp; festival specials</li>
           <li>✓ Bulk packs available</li>
         </ul>
-        <a href="https://wa.me/919999999999?text=Rangoli+Petal+Set+Order" target="_blank" rel="noopener" class="fl-price-card__btn">
+        <a href="#fl-enquiry" onclick="flPreselect('rangoli')" class="fl-price-card__btn">
           Order Now
         </a>
       </div>
@@ -447,7 +490,7 @@ Little India MRT Exit C</p>
 
       <!-- Right: form -->
       <div class="fl-enquiry-form-wrap">
-        <form class="fl-form" method="post" action="">
+        <form class="fl-form" method="post" action="{% url 'flowers:flower_enquiry' %}">
           {% csrf_token %}
 
           <div class="fl-form__row">
@@ -459,6 +502,11 @@ Little India MRT Exit C</p>
               <label for="fl-phone">WhatsApp Number</label>
               <input type="tel" id="fl-phone" name="phone" placeholder="+91 99999 99999" required>
             </div>
+          </div>
+
+          <div class="fl-form__group">
+            <label for="fl-email">Email Address <span style="font-weight:400;color:#7A7A7A;">(optional – for confirmation)</span></label>
+            <input type="email" id="fl-email" name="email" placeholder="priya@example.com">
           </div>
 
           <div class="fl-form__group">

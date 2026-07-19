@@ -699,6 +699,8 @@
         <p class="bao-ribbon">
           <span>Feel Beautiful. Look Confident. Be You.</span>
         </p>
+
+        
       </div>
 
       <div class="bao-hero__image">
@@ -797,6 +799,14 @@
         <li><span class="bao-why__icon" aria-hidden="true">🛡️</span><span>Quality Service</span></li>
         <li><span class="bao-why__icon" aria-hidden="true">❤️</span><span>Customer Satisfaction</span></li>
       </ul>
+      <center><div class="bao-cta-btns">
+          <button class="bao-btn-book bao-modal-open" type="button">
+            📅 Book Now
+          </button>
+          <a href="/beauty/#pricing" class="bao-btn-price">
+            🏷️ View Pricing
+          </a>
+        </div></center>
     </div>
 
   </div>
@@ -1302,5 +1312,172 @@ loading="lazy">
 </section> -->
 
 
+
+
+<!-- ── BAO BOOKING MODAL ── -->
+{% if messages %}
+  {% for message in messages %}
+    <div class="bao-toast-data" data-type="{{ message.tags }}" data-msg="{{ message }}" hidden></div>
+  {% endfor %}
+{% endif %}
+
+<div id="bao-modal" class="bao-modal" role="dialog" aria-modal="true" aria-labelledby="bao-modal-title" hidden>
+  <div class="bao-modal__backdrop"></div>
+  <div class="bao-modal__box">
+    <button class="bao-modal__close" aria-label="Close">&times;</button>
+    <div class="bao-modal__head">
+      <span style="font-size:2rem;display:block;margin-bottom:6px;">💄</span>
+      <h2 id="bao-modal-title">Book Beauty Appointment</h2>
+      <p>Fill in your details and we’ll confirm via WhatsApp.</p>
+    </div>
+    <form class="bao-form" method="POST" action="{% url 'beauty:book_appointment' %}">
+      {% csrf_token %}
+
+      <div class="bao-form__row">
+        <div class="bao-form__group">
+          <label>Full Name <span>*</span></label>
+          <input type="text" name="name" placeholder="e.g. Priya Sharma" required>
+        </div>
+        <div class="bao-form__group">
+          <label>WhatsApp Number <span>*</span></label>
+          <input type="tel" name="phone" placeholder="+65 9134 4333" required>
+        </div>
+      </div>
+
+      <div class="bao-form__group">
+        <label>Email Address <span class="bao-optional">(optional – for confirmation email)</span></label>
+        <input type="email" name="email" placeholder="priya@example.com">
+      </div>
+
+      <div class="bao-form__group">
+        <label>Select Service <span>*</span></label>
+        <select name="service" required>
+          <option value="" disabled selected>Choose a service…</option>
+          <optgroup label="💅 Nail & Beauty Care">
+            <option value="Pedicure">Pedicure</option>
+            <option value="Manicure">Manicure</option>
+            <option value="Nail Art">Nail Art</option>
+            <option value="Gel Polish">Gel Polish</option>
+          </optgroup>
+          <optgroup label="🖌️ Henna">
+            <option value="Henna">Henna</option>
+          </optgroup>
+          <optgroup label="✨ Facial Services">
+            <option value="Basic Facial">Basic Facial</option>
+            <option value="Gold Facial">Gold Facial</option>
+            <option value="Fruit Facial">Fruit Facial</option>
+            <option value="Bridal Facial">Bridal Facial</option>
+          </optgroup>
+          <optgroup label="💇 Hair Services">
+            <option value="Haircut">Haircut</option>
+            <option value="Hair Wash">Hair Wash</option>
+            <option value="Hair Spa">Hair Spa</option>
+            <option value="Hair Colouring">Hair Colouring</option>
+          </optgroup>
+          <optgroup label="🪒 Threading & Waxing">
+            <option value="Eyebrow Threading">Eyebrow Threading</option>
+            <option value="Upper Lip Threading">Upper Lip Threading</option>
+            <option value="Full Face Threading">Full Face Threading</option>
+            <option value="Full Arms Waxing">Full Arms Waxing</option>
+            <option value="Waxing">Waxing</option>
+          </optgroup>
+          <optgroup label="✨ Special / Signature Services">
+            <option value="Party Makeup">Party Makeup</option>
+            <option value="Engagement Makeup">Engagement Makeup</option>
+            <option value="Bridal Makeup">Bridal Makeup</option>
+            <option value="Hair Styling">Hair Styling</option>
+          </optgroup>
+        </select>
+      </div>
+
+      <div class="bao-form__group">
+        <label>Preferred Date & Time</label>
+        <input type="text" name="preferred_date" placeholder="e.g. 25 Jan 2025, 3:00 PM">
+      </div>
+
+      <div class="bao-form__group">
+        <label>Additional Notes</label>
+        <textarea name="notes" rows="3" placeholder="Any special requests…"></textarea>
+      </div>
+
+      <button type="submit" class="bao-form__submit">🌸 Confirm Booking</button>
+      <p class="bao-form__note">Or book via <a href="https://wa.me/6591344333?text=Hi%20Sastha%20Beauty,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp →</a></p>
+    </form>
+  </div>
+</div>
+
+<!-- Toast container -->
+<div id="bao-toast-container" aria-live="polite"></div>
+
+<style>
+.bao-cta-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;justify-content:center;align-items:center;}
+.bao-btn-book{background:linear-gradient(135deg,#B12F79,#C83889);color:#fff;border:none;border-radius:999px;padding:13px 32px;font-size:.95rem;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(200,56,137,.35);transition:transform .2s,box-shadow .2s;}
+.bao-btn-book:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(200,56,137,.45);}
+.bao-btn-price{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#B12F79;border:2px solid #C83889;border-radius:999px;padding:11px 28px;font-size:.95rem;font-weight:700;text-decoration:none;transition:background .2s,color .2s;}
+.bao-btn-price:hover{background:#fce7f3;color:#B12F79;}
+/* Modal */
+.bao-modal{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;}
+.bao-modal[hidden]{display:none;}
+.bao-modal__backdrop{position:absolute;inset:0;background:rgba(177,47,121,.35);backdrop-filter:blur(4px);}
+.bao-modal__box{position:relative;z-index:1;background:#fff;border-radius:16px;width:100%;max-width:520px;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(200,56,137,.25);animation:bao-slide-in .3s ease;}
+@keyframes bao-slide-in{from{transform:translateY(30px);opacity:0}to{transform:translateY(0);opacity:1}}
+.bao-modal__close{position:absolute;top:14px;right:16px;background:none;border:none;font-size:1.6rem;color:#B12F79;cursor:pointer;line-height:1;z-index:2;}
+.bao-modal__head{background:linear-gradient(135deg,#B12F79,#E04A9D);padding:28px 32px 20px;text-align:center;border-radius:16px 16px 0 0;}
+.bao-modal__head h2{margin:0;color:#fff;font-size:1.3rem;font-weight:700;}
+.bao-modal__head p{margin:6px 0 0;color:rgba(255,255,255,.8);font-size:.85rem;}
+.bao-form{padding:24px 32px 28px;display:flex;flex-direction:column;gap:14px;}
+.bao-form__row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.bao-form__group{display:flex;flex-direction:column;gap:5px;}
+.bao-form__group label{font-size:.75rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:#333;}
+.bao-form__group label span{color:#C83889;}
+.bao-optional{text-transform:none;font-weight:400;color:#7A7A7A;letter-spacing:0;}
+.bao-form__group input,.bao-form__group select,.bao-form__group textarea{font-size:.9rem;color:#333;background:#fff5fb;border:1.5px solid #E5E5E5;border-radius:8px;padding:11px 13px;outline:none;width:100%;transition:border-color .2s,box-shadow .2s;-webkit-appearance:none;appearance:none;}
+.bao-form__group select{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23C83889' d='M6 8L0 0h12z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;background-size:10px;padding-right:36px;cursor:pointer;}
+.bao-form__group input:focus,.bao-form__group select:focus,.bao-form__group textarea:focus{border-color:#C83889;box-shadow:0 0 0 3px rgba(200,56,137,.12);}
+.bao-form__group textarea{resize:vertical;}
+.bao-form__submit{background:linear-gradient(135deg,#B12F79,#C83889);color:#fff;border:none;border-radius:999px;padding:14px;font-size:1rem;font-weight:700;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 6px 20px rgba(200,56,137,.35);}
+.bao-form__submit:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(200,56,137,.45);}
+.bao-form__note{text-align:center;font-size:.8rem;color:#7A7A7A;margin:0;}
+.bao-form__note a{color:#166534;font-weight:600;text-decoration:none;}
+/* Toast */
+#bao-toast-container{position:fixed;top:24px;right:24px;z-index:99999;display:flex;flex-direction:column;gap:12px;pointer-events:none;}
+.bao-toast{display:flex;align-items:center;gap:12px;min-width:300px;max-width:420px;padding:16px 18px;border-radius:12px;background:#fff;box-shadow:0 8px 32px rgba(0,0,0,.15);font-size:.9rem;font-weight:500;pointer-events:all;opacity:0;transform:translateX(60px);transition:opacity .35s ease,transform .35s ease;}
+.bao-toast--show{opacity:1;transform:translateX(0);}
+.bao-toast--success{border-left:5px solid #C83889;color:#6b0f3a;}
+.bao-toast--error{border-left:5px solid #dc2626;color:#7f1d1d;}
+.bao-toast__icon{font-size:1.3rem;flex-shrink:0;}
+.bao-toast__msg{flex:1;line-height:1.45;}
+.bao-toast__close{background:none;border:none;font-size:1.2rem;opacity:.5;cursor:pointer;padding:0 2px;flex-shrink:0;}
+.bao-toast__close:hover{opacity:1;}
+@media(max-width:600px){.bao-form__row{grid-template-columns:1fr;}.bao-form{padding:20px;}#bao-toast-container{top:12px;right:12px;left:12px;}.bao-toast{min-width:unset;max-width:100%;}}
+</style>
+
+<script>
+(function(){
+  var modal=document.getElementById("bao-modal");
+  var closeBtn=modal.querySelector(".bao-modal__close");
+  var backdrop=modal.querySelector(".bao-modal__backdrop");
+  function openModal(){modal.hidden=false;document.body.style.overflow="hidden";}
+  function closeModal(){modal.hidden=true;document.body.style.overflow="";}
+  document.querySelectorAll(".bao-modal-open").forEach(function(btn){
+    btn.addEventListener("click",openModal);
+  });
+  closeBtn.addEventListener("click",closeModal);
+  backdrop.addEventListener("click",closeModal);
+  document.addEventListener("keydown",function(e){if(e.key==="Escape")closeModal();});
+  function showToast(msg,type){
+    var wrap=document.getElementById("bao-toast-container");
+    var t=document.createElement("div");
+    t.className="bao-toast bao-toast--"+type;
+    t.innerHTML='<span class="bao-toast__icon">'+(type==="success"?"🌸":"⚠️")+'</span>'+'<span class="bao-toast__msg">'+msg+'</span>'+'<button class="bao-toast__close" aria-label="Close">&times;</button>';
+    t.querySelector(".bao-toast__close").onclick=function(){dismiss(t);};
+    wrap.appendChild(t);
+    requestAnimationFrame(function(){t.classList.add("bao-toast--show");});
+    setTimeout(function(){dismiss(t);},6000);
+  }
+  function dismiss(t){t.classList.remove("bao-toast--show");t.addEventListener("transitionend",function(){t.remove();},{once:true});}
+  document.querySelectorAll(".bao-toast-data").forEach(function(el){showToast(el.dataset.msg,el.dataset.type);});
+})();
+</script>
 
 {% endblock %}

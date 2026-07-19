@@ -7,20 +7,587 @@
 
 {% block content %}
 
+<!-- ── ENQUIRY TOAST ── -->
+{% if messages %}
+  {% for message in messages %}
+    <div class="ms-toast-data" data-type="{{ message.tags }}" data-msg="{{ message }}" hidden></div>
+  {% endfor %}
+{% endif %}
 
-<section class="mobile-hero">
-
-    <div class="container-fluid p-0">
-
-        <div class="hero-banner">
-
-            <img src="{% static 'images/mobile-hero-banner.png' %}"
-                 class="img-fluid w-100"
-                 alt="Sastha Mobile">
-
+<!-- =====================================================
+     ENQUIRY MODAL
+===================================================== -->
+<div id="ms-modal" class="ms-modal" role="dialog" aria-modal="true" hidden>
+  <div class="ms-modal__backdrop"></div>
+  <div class="ms-modal__box">
+    <button class="ms-modal__close" aria-label="Close">&times;</button>
+    <div class="ms-modal__head">
+      <span class="ms-modal__icon">📱</span>
+      <h2>Send Enquiry</h2>
+      <p>Fill in your details and we'll get back to you via WhatsApp.</p>
+    </div>
+    <form class="ms-form" method="POST" action="{% url 'contact' %}">
+      {% csrf_token %}
+      <input type="hidden" name="shop" value="mobile">
+      <div class="ms-form__service-label" id="ms-service-label"></div>
+      <input type="hidden" name="subject" value="price_inquiry">
+      <div class="ms-form__row">
+        <div class="ms-form__group">
+          <label>Full Name <span>*</span></label>
+          <input type="text" name="name" placeholder="e.g. Ravi Kumar" required>
         </div>
+        <div class="ms-form__group">
+          <label>WhatsApp Number <span>*</span></label>
+          <input type="tel" name="phone" placeholder="+65 9134 4333" required>
+        </div>
+      </div>
+      <div class="ms-form__group">
+        <label>Email Address <span class="ms-optional">(optional)</span></label>
+        <input type="email" name="email" placeholder="ravi@example.com">
+      </div>
+      <div class="ms-form__group">
+        <label>Message <span>*</span></label>
+        <textarea name="message" rows="3" placeholder="Tell us what you need…" required></textarea>
+      </div>
+      <button type="submit" class="ms-form__submit">📩 Send Enquiry</button>
+      <p class="ms-form__note">Or reach us on <a href="https://wa.me/6591344333?text=Hi%20Sastha%20Mobile,%20I%20have%20an%20enquiry." target="_blank" rel="noopener">WhatsApp →</a></p>
+    </form>
+  </div>
+</div>
+<div id="ms-toast-container" aria-live="polite"></div>
+
+<!-- =====================================================
+     HERO BANNER
+===================================================== -->
+<section class="mobile-hero">
+  <div class="container-fluid p-0">
+    <div class="hero-banner">
+      <img src="{% static 'images/mobile-hero-banner.png' %}" alt="Sastha Mobile Shop">
+      
+        
+   
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     TRUST BAR
+===================================================== -->
+<section class="ms-trust-bar">
+  <div class="container">
+    <div class="ms-trust-bar__inner">
+      <div class="ms-trust-item"><i class="fas fa-certificate"></i><span>Genuine Products</span></div>
+      <div class="ms-trust-item"><i class="fas fa-tools"></i><span>Expert Technicians</span></div>
+      <div class="ms-trust-item"><i class="fas fa-bolt"></i><span>Fast &amp; Reliable</span></div>
+      <div class="ms-trust-item"><i class="fas fa-shield-alt"></i><span>Warranty Support</span></div>
+      <div class="ms-trust-website"><i class="fas fa-globe"></i> www.sasthagroup.com</div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     QUICK SERVICES OVERVIEW
+===================================================== -->
+<section class="ms-overview">
+  <div class="container">
+    <div class="ms-section-head">
+      <span class="ms-badge">What We Do</span>
+      <h2>All Services Under One Roof</h2>
+      <p>From the latest smartphones to repairs, recharge and printing — we've got you covered.</p>
+    </div>
+    <div class="ms-overview__grid">
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__icon">📱</div>
+        <h4>Mobile Sales</h4>
+        <p>Brand new & budget smartphones, iPhones, Android, flagship devices and accessories.</p>
+        <button class="ms-open ms-overview__btn" data-service="Mobile Sales">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__icon">🔧</div>
+        <h4>Mobile Repair</h4>
+        <p>Screen, battery, charging port, camera, water damage, motherboard and data recovery.</p>
+        <button class="ms-open ms-overview__btn" data-service="Mobile Repair">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__icon">💻</div>
+        <h4>Laptop Sales &amp; Repair</h4>
+        <p>New, refurbished, gaming and business laptops. Screen, SSD, RAM, battery and more.</p>
+        <button class="ms-open ms-overview__btn" data-service="Laptop Sales & Repair">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__icon">🖥️</div>
+        <h4>Desktop Sales &amp; Repair</h4>
+        <p>Custom gaming PCs, office computers, workstations and full desktop repair services.</p>
+        <button class="ms-open ms-overview__btn" data-service="Desktop Sales & Repair">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__icon">📞</div>
+        <h4>Mobile Recharge</h4>
+        <p>Singtel, StarHub, M1, Simba, international top-up, data packs and prepaid recharge.</p>
+        <button class="ms-open ms-overview__btn" data-service="Mobile Recharge">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__icon">💳</div>
+        <h4>SIM Activation</h4>
+        <p>New SIM registration, 4G/5G upgrade, number porting, eSIM setup and corporate SIMs.</p>
+        <button class="ms-open ms-overview__btn" data-service="SIM Activation">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__icon">🖨️</div>
+        <h4>Print / Scan / Copy</h4>
+        <p>B&amp;W and colour printing, A4/A3, photo printing, passport photos, scanning and PDF print.</p>
+        <button class="ms-open ms-overview__btn" data-service="Print / Scan / Copy">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__icon">📄</div>
+        <h4>Lamination Services</h4>
+        <p>ID cards, certificates, A4/A3, menu cards, gloss &amp; matte finish lamination.</p>
+        <button class="ms-open ms-overview__btn" data-service="Lamination Services">Enquire Now</button>
+      </div>
 
     </div>
-
+  </div>
 </section>
+
+<!-- =====================================================
+     MOBILE SALES DETAIL
+===================================================== -->
+<section class="ms-detail-section ms-detail--red">
+  <div class="container">
+    <div class="ms-detail__head">
+      <span class="ms-detail__icon">📱</span>
+      <div>
+        <span class="ms-badge ms-badge--white">Mobile Sales</span>
+        <h2>Brand New Smartphones &amp; Accessories</h2>
+      </div>
+    </div>
+    <div class="ms-detail__grid">
+      <div class="ms-detail__col">
+        <h5>📦 Devices We Sell</h5>
+        <ul>
+          <li>Brand New Smartphones</li>
+          <li>Android Phones</li>
+          <li>iPhones</li>
+          <li>Budget Mobiles</li>
+          <li>Flagship Devices</li>
+          <li>Pre-Order Mobiles</li>
+          <li>Accessories Bundle Offers</li>
+        </ul>
+      </div>
+      <div class="ms-detail__col">
+        <h5>🎧 Accessories</h5>
+        <ul>
+          <li>Phone Cases &amp; Tempered Glass</li>
+          <li>Chargers &amp; Fast Chargers</li>
+          <li>USB Cables &amp; Earphones</li>
+          <li>Bluetooth Earbuds</li>
+          <li>Smart Watches &amp; Power Banks</li>
+          <li>Memory Cards &amp; Pendrives</li>
+          <li>Speakers &amp; Car Chargers</li>
+        </ul>
+      </div>
+      <div class="ms-detail__col">
+        <h5>⭐ Additional Services</h5>
+        <ul>
+          <li>Data Transfer</li>
+          <li>Phone Setup</li>
+          <li>Google &amp; Apple ID Setup</li>
+          <li>WhatsApp Backup</li>
+          <li>Software Installation</li>
+          <li>Device Health Check</li>
+          <li>Trade-In Assistance</li>
+        </ul>
+      </div>
+    </div>
+    <button class="ms-open ms-detail__cta" data-service="Mobile Sales">📩 Enquire About Mobile Sales</button>
+  </div>
+</section>
+
+<!-- =====================================================
+     MOBILE REPAIR DETAIL
+===================================================== -->
+<section class="ms-detail-section ms-detail--light">
+  <div class="container">
+    <div class="ms-detail__head">
+      <span class="ms-detail__icon">🔧</span>
+      <div>
+        <span class="ms-badge">Mobile Repair</span>
+        <h2>Expert Mobile Repair Services</h2>
+      </div>
+    </div>
+    <div class="ms-detail__grid">
+      <div class="ms-detail__col">
+        <h5>📱 Screen &amp; Display</h5>
+        <ul>
+          <li>Screen Replacement</li>
+          <li>Display Replacement</li>
+          <li>Back Glass Replacement</li>
+          <li>Face ID / Fingerprint Repair</li>
+        </ul>
+      </div>
+      <div class="ms-detail__col">
+        <h5>🔋 Hardware Repair</h5>
+        <ul>
+          <li>Battery Replacement</li>
+          <li>Charging Port Repair</li>
+          <li>Speaker Repair</li>
+          <li>Microphone Repair</li>
+          <li>Camera Repair</li>
+          <li>Motherboard Repair</li>
+          <li>Water Damage Repair</li>
+        </ul>
+      </div>
+      <div class="ms-detail__col">
+        <h5>💾 Software &amp; Data</h5>
+        <ul>
+          <li>Software Flashing</li>
+          <li>Unlocking Services</li>
+          <li>Data Recovery</li>
+          <li>Phone Cleaning</li>
+          <li>Insurance Assistance</li>
+          <li>Warranty Support</li>
+        </ul>
+      </div>
+    </div>
+    <button class="ms-open ms-detail__cta ms-detail__cta--outline" data-service="Mobile Repair">📩 Enquire About Mobile Repair</button>
+  </div>
+</section>
+
+<!-- =====================================================
+     LAPTOP & DESKTOP
+===================================================== -->
+<section class="ms-detail-section ms-detail--red">
+  <div class="container">
+    <div class="ms-detail__head">
+      <span class="ms-detail__icon">💻</span>
+      <div>
+        <span class="ms-badge ms-badge--white">Laptop &amp; Desktop</span>
+        <h2>Sales &amp; Repair for Laptops and Desktops</h2>
+      </div>
+    </div>
+    <div class="ms-detail__grid ms-detail__grid--4">
+
+      <div class="ms-detail__col">
+        <h5>💻 Laptop Sales</h5>
+        <ul>
+          <li>New Laptops</li>
+          <li>Refurbished Laptops</li>
+          <li>Business Laptops</li>
+          <li>Gaming Laptops</li>
+        </ul>
+      </div>
+
+      <div class="ms-detail__col">
+        <h5>🔧 Laptop Repair</h5>
+        <ul>
+          <li>Screen Replacement</li>
+          <li>Keyboard Replacement</li>
+          <li>SSD &amp; RAM Upgrade</li>
+          <li>Battery Replacement</li>
+          <li>Motherboard Repair</li>
+          <li>Windows Installation</li>
+          <li>Virus Removal</li>
+          <li>Data Recovery</li>
+          <li>Laptop Cleaning</li>
+        </ul>
+      </div>
+
+      <div class="ms-detail__col">
+        <h5>🖥️ Desktop Sales</h5>
+        <ul>
+          <li>Custom Gaming PCs</li>
+          <li>Office Computers</li>
+          <li>Workstations</li>
+          <li>All-in-One PCs</li>
+        </ul>
+      </div>
+
+      <div class="ms-detail__col">
+        <h5>🔩 Desktop Repair</h5>
+        <ul>
+          <li>Motherboard Repair</li>
+          <li>SMPS Replacement</li>
+          <li>RAM &amp; SSD Upgrade</li>
+          <li>Graphics Card Upgrade</li>
+          <li>CPU Upgrade</li>
+          <li>Windows Installation</li>
+          <li>Performance Optimization</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="ms-detail__cta-row">
+      <button class="ms-open ms-detail__cta" data-service="Laptop Sales & Repair">📩 Laptop Enquiry</button>
+      <button class="ms-open ms-detail__cta" data-service="Desktop Sales & Repair">📩 Desktop Enquiry</button>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     RECHARGE & SIM
+===================================================== -->
+<section class="ms-detail-section ms-detail--light">
+  <div class="container">
+    <div class="ms-detail__head">
+      <span class="ms-detail__icon">📞</span>
+      <div>
+        <span class="ms-badge">Recharge &amp; SIM</span>
+        <h2>Mobile Recharge &amp; SIM Activation</h2>
+      </div>
+    </div>
+    <div class="ms-detail__grid">
+      <div class="ms-detail__col">
+        <h5>📞 Mobile Recharge</h5>
+        <ul>
+          <li>Singtel Recharge</li>
+          <li>StarHub Recharge</li>
+          <li>M1 Recharge</li>
+          <li>Simba Recharge</li>
+          <li>International Top-up</li>
+          <li>Data Packs</li>
+          <li>Voice Packs</li>
+          <li>Prepaid Recharge</li>
+        </ul>
+      </div>
+      <div class="ms-detail__col">
+        <h5>📲 SIM Activation</h5>
+        <ul>
+          <li>New SIM Registration</li>
+          <li>SIM Activation</li>
+          <li>SIM Replacement</li>
+          <li>SIM Upgrade (4G / 5G)</li>
+          <li>Number Porting (MNP)</li>
+          <li>eSIM Setup</li>
+          <li>Corporate SIM Solutions</li>
+        </ul>
+      </div>
+      <div class="ms-detail__col">
+        <h5>💡 Why Choose Us</h5>
+        <ul>
+          <li>All Major Operators</li>
+          <li>Instant Activation</li>
+          <li>No Hidden Charges</li>
+          <li>Walk-in Friendly</li>
+          <li>Fast Processing</li>
+          <li>Experienced Staff</li>
+          <li>Trusted Since 10+ Years</li>
+        </ul>
+      </div>
+    </div>
+    <button class="ms-open ms-detail__cta ms-detail__cta--outline" data-service="Mobile Recharge">📩 Enquire Now</button>
+  </div>
+</section>
+
+<!-- =====================================================
+     PRINT / SCAN / LAMINATION
+===================================================== -->
+<section class="ms-detail-section ms-detail--red">
+  <div class="container">
+    <div class="ms-detail__head">
+      <span class="ms-detail__icon">🖨️</span>
+      <div>
+        <span class="ms-badge ms-badge--white">Print &amp; Lamination</span>
+        <h2>Print, Scan, Copy &amp; Lamination Services</h2>
+      </div>
+    </div>
+    <div class="ms-detail__grid">
+      <div class="ms-detail__col">
+        <h5>🖨️ Print / Scan / Copy</h5>
+        <ul>
+          <li>Black &amp; White Printing</li>
+          <li>Colour Printing</li>
+          <li>A4 &amp; A3 Printing</li>
+          <li>Document Scanning</li>
+          <li>Photo Printing</li>
+          <li>Passport Size Photos</li>
+          <li>Document Copying</li>
+          <li>PDF Printing</li>
+          <li>Email Print Service</li>
+        </ul>
+      </div>
+      <div class="ms-detail__col">
+        <h5>📄 Lamination Services</h5>
+        <ul>
+          <li>ID Card Lamination</li>
+          <li>Certificate Lamination</li>
+          <li>A4 Lamination</li>
+          <li>A3 Lamination</li>
+          <li>Menu Card Lamination</li>
+          <li>Office Documents</li>
+          <li>Educational Certificates</li>
+          <li>Waterproof Lamination</li>
+          <li>Gloss &amp; Matte Finish</li>
+        </ul>
+      </div>
+      <div class="ms-detail__col">
+        <h5>⚡ Quick &amp; Easy</h5>
+        <ul>
+          <li>Walk-in Welcome</li>
+          <li>Same Day Service</li>
+          <li>Affordable Rates</li>
+          <li>High Quality Output</li>
+          <li>Bulk Orders Accepted</li>
+          <li>Email / USB / Cloud Print</li>
+          <li>Friendly Staff</li>
+        </ul>
+      </div>
+    </div>
+    <div class="ms-detail__cta-row">
+      <button class="ms-open ms-detail__cta" data-service="Print / Scan / Copy">📩 Print Enquiry</button>
+      <button class="ms-open ms-detail__cta" data-service="Lamination Services">📩 Lamination Enquiry</button>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CTA BANNER
+===================================================== -->
+<section class="ms-cta">
+  <div class="container">
+    <div class="ms-cta__box">
+      <div class="ms-cta__text">
+        <span class="ms-cta__tag">📍 Little India MRT Exit C</span>
+        <h2>Visit Us at Sastha Mobile Shop</h2>
+        <p>Blk 662, Shop No. 01-23, Buffalo Road, Singapore 210662</p>
+        <div class="ms-cta__features">
+          <div><i class="fas fa-check-circle"></i> Mon–Sat: 9AM – 8PM</div>
+          <div><i class="fas fa-check-circle"></i> Sun: 10AM – 6PM</div>
+          <div><i class="fas fa-check-circle"></i> Walk-ins Welcome</div>
+          <div><i class="fas fa-check-circle"></i> WhatsApp Booking</div>
+        </div>
+      </div>
+      <div class="ms-cta__btns">
+        <button class="ms-open ms-cta__enquire" data-service="General Enquiry">📩 Send Enquiry</button>
+        <a href="https://wa.me/6591344333?text=Hi%20Sastha%20Mobile!" target="_blank" class="ms-cta__wa">
+          <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="tel:+6591344333" class="ms-cta__call">
+          <i class="fas fa-phone-alt"></i> Call Now
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     CONTACT & MAP
+===================================================== -->
+<section class="ms-contact">
+  <div class="container">
+    <div class="ms-section-head">
+      <span class="ms-badge">Find Us</span>
+      <h2>Visit Sastha Mobile Shop</h2>
+      <p>We are located in the heart of Little India, Singapore. Easy access from Little India MRT Exit C.</p>
+    </div>
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-5">
+        <div class="ms-contact__card">
+          <div class="ms-contact__item">
+            <div class="ms-contact__icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <h5>Address</h5>
+              <p>Blk 662, Shop No. 01-23<br>Buffalo Road, Singapore 210662<br>Little India MRT Exit C</p>
+            </div>
+          </div>
+          <div class="ms-contact__item">
+            <div class="ms-contact__icon"><i class="fas fa-phone-alt"></i></div>
+            <div>
+              <h5>Phone</h5>
+              <a href="tel:+6591344333">+65 913 44 333</a>
+            </div>
+          </div>
+          <div class="ms-contact__item">
+            <div class="ms-contact__icon"><i class="fab fa-whatsapp"></i></div>
+            <div>
+              <h5>WhatsApp</h5>
+              <a href="https://wa.me/6591344333" target="_blank">Chat With Us</a>
+            </div>
+          </div>
+          <div class="ms-contact__item">
+            <div class="ms-contact__icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <h5>Email</h5>
+              <a href="mailto:info@sasthagroup.com">info@sasthagroup.com</a>
+            </div>
+          </div>
+          <div class="ms-contact__item">
+            <div class="ms-contact__icon"><i class="far fa-clock"></i></div>
+            <div>
+              <h5>Working Hours</h5>
+              <p>Mon – Sat: 9:00 AM – 8:00 PM<br>Sunday: 10:00 AM – 6:00 PM</p>
+            </div>
+          </div>
+          <a href="https://maps.google.com/?q=Sastha+Mobile+Pte+Ltd" target="_blank" class="ms-contact__dir">
+            <i class="fas fa-location-arrow"></i> Get Directions
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="ms-contact__map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.670332989841!2d103.88009467496579!3d1.3744850986125179!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da178b04bc8d57%3A0xccb0922bd8a0cc8b!2sSastha%20Mobile%20Pte%20Ltd!5e0!3m2!1sen!2sin!4v1782234896444!5m2!1sen!2sin"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =====================================================
+     MODAL + TOAST SCRIPT
+===================================================== -->
+<script>
+(function(){
+  var modal    = document.getElementById('ms-modal');
+  var closeBtn = modal.querySelector('.ms-modal__close');
+  var backdrop = modal.querySelector('.ms-modal__backdrop');
+  var svcLabel = document.getElementById('ms-service-label');
+
+  function openModal(service){
+    svcLabel.textContent = service ? '🔍 ' + service : '';
+    svcLabel.style.display = service ? 'block' : 'none';
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.ms-open').forEach(function(btn){
+    btn.addEventListener('click', function(){ openModal(btn.dataset.service); });
+  });
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal(); });
+
+  function showToast(msg, type){
+    var wrap = document.getElementById('ms-toast-container');
+    var t = document.createElement('div');
+    t.className = 'ms-toast ms-toast--' + type;
+    t.innerHTML = '<span class="ms-toast__icon">'+(type==='success'?'✅':'⚠️')+'</span>'
+                + '<span class="ms-toast__msg">'+msg+'</span>'
+                + '<button class="ms-toast__close">&times;</button>';
+    t.querySelector('.ms-toast__close').onclick = function(){ dismiss(t); };
+    wrap.appendChild(t);
+    requestAnimationFrame(function(){ t.classList.add('ms-toast--show'); });
+    setTimeout(function(){ dismiss(t); }, 6000);
+  }
+  function dismiss(t){
+    t.classList.remove('ms-toast--show');
+    t.addEventListener('transitionend', function(){ t.remove(); }, {once:true});
+  }
+  document.querySelectorAll('.ms-toast-data').forEach(function(el){
+    showToast(el.dataset.msg, el.dataset.type);
+  });
+})();
+</script>
+
 {% endblock %}

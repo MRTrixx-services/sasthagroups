@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Flower Enquiry – Sastha Flower Shop</title>
+</head>
+<body style="margin:0;padding:0;background:#fffbeb;font-family:'Poppins',Arial,sans-serif;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#fffbeb;padding:30px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(180,83,9,0.14);">
+
+          <!-- HEADER -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#92400e 0%,#b45309 50%,#d97706 100%);padding:38px 40px;text-align:center;">
+              <div style="font-size:38px;margin-bottom:8px;">🌸</div>
+              <h1 style="margin:0;color:#ffffff;font-size:26px;font-weight:700;letter-spacing:1px;">Sastha Flower Shop</h1>
+              <p style="margin:6px 0 0;color:rgba(255,255,255,0.8);font-size:12px;letter-spacing:3px;text-transform:uppercase;">New Flower Enquiry Received</p>
+            </td>
+          </tr>
+
+          <!-- FLOWER BADGE -->
+          <tr>
+            <td style="padding:24px 40px 8px;text-align:center;">
+              <span style="background:#fef3c7;color:#92400e;padding:9px 24px;border-radius:999px;font-size:14px;font-weight:700;display:inline-block;border:1px solid #fcd34d;">
+                🌼 {{ flower_display }}
+              </span>
+              <p style="margin:10px 0 0;color:#7A7A7A;font-size:12px;">Received on {{ submitted_at }}</p>
+            </td>
+          </tr>
+
+          <!-- DIVIDER -->
+          <tr><td style="padding:4px 40px 0;"><hr style="border:none;border-top:2px solid #fef3c7;margin:0;"></td></tr>
+
+          <!-- DETAILS -->
+          <tr>
+            <td style="padding:20px 40px 10px;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+
+                <tr>
+                  <td style="padding:12px 0;border-bottom:1px solid #fef3c7;">
+                    <span style="color:#b45309;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">👤 Customer Name</span><br>
+                    <span style="color:#333;font-size:17px;font-weight:600;display:block;margin-top:4px;">{{ name }}</span>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td style="padding:12px 0;border-bottom:1px solid #fef3c7;">
+                    <span style="color:#b45309;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">📞 WhatsApp / Phone</span><br>
+                    <a href="https://wa.me/{{ phone|cut:' '|cut:'+'|cut:'-' }}" style="color:#25d366;font-size:17px;font-weight:600;text-decoration:none;display:block;margin-top:4px;">{{ phone }}</a>
+                  </td>
+                </tr>
+
+                {% if email %}
+                <tr>
+                  <td style="padding:12px 0;border-bottom:1px solid #fef3c7;">
+                    <span style="color:#b45309;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">✉️ Email</span><br>
+                    <a href="mailto:{{ email }}" style="color:#92400e;font-size:17px;font-weight:600;text-decoration:none;display:block;margin-top:4px;">{{ email }}</a>
+                  </td>
+                </tr>
+                {% endif %}
+
+                {% if delivery_date %}
+                <tr>
+                  <td style="padding:12px 0;border-bottom:1px solid #fef3c7;">
+                    <span style="color:#b45309;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">📅 Required Date</span><br>
+                    <span style="color:#333;font-size:17px;font-weight:600;display:block;margin-top:4px;">{{ delivery_date }}</span>
+                  </td>
+                </tr>
+                {% endif %}
+
+                {% if message %}
+                <tr>
+                  <td style="padding:12px 0;">
+                    <span style="color:#b45309;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">📝 Special Requests</span><br>
+                    <div style="margin-top:10px;background:#fffbeb;border-left:4px solid #d97706;padding:14px 18px;border-radius:0 10px 10px 0;color:#333;font-size:15px;line-height:1.7;">{{ message }}</div>
+                  </td>
+                </tr>
+                {% endif %}
+
+              </table>
+            </td>
+          </tr>
+
+          <!-- REPLY BUTTONS -->
+          <tr>
+            <td style="padding:10px 40px 32px;text-align:center;">
+              <a href="https://wa.me/{{ phone|cut:' '|cut:'+'|cut:'-' }}?text=Hi%20{{ name|urlencode }}%2C%20thank%20you%20for%20your%20enquiry%20about%20{{ flower_display|urlencode }}%20at%20Sastha%20Flower%20Shop!"
+                 style="display:inline-block;background:#25d366;color:#fff;padding:13px 30px;border-radius:999px;text-decoration:none;font-size:14px;font-weight:700;margin:4px;">
+                💬 Reply on WhatsApp
+              </a>
+              {% if email %}
+              <a href="mailto:{{ email }}"
+                 style="display:inline-block;background:linear-gradient(135deg,#92400e,#d97706);color:#fff;padding:13px 30px;border-radius:999px;text-decoration:none;font-size:14px;font-weight:700;margin:4px;">
+                ✉️ Reply by Email
+              </a>
+              {% endif %}
+            </td>
+          </tr>
+
+          <!-- FLOWERS STRIP -->
+          <tr>
+            <td style="background:#fef3c7;padding:20px 40px;">
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="16%" style="text-align:center;padding:6px;">
+                    <div style="font-size:20px;">🌼</div>
+                    <div style="font-size:9px;color:#92400e;font-weight:700;margin-top:3px;">Marigold</div>
+                  </td>
+                  <td width="16%" style="text-align:center;padding:6px;border-left:1px solid #fcd34d;">
+                    <div style="font-size:20px;">🤍</div>
+                    <div style="font-size:9px;color:#92400e;font-weight:700;margin-top:3px;">Mogra</div>
+                  </td>
+                  <td width="16%" style="text-align:center;padding:6px;border-left:1px solid #fcd34d;">
+                    <div style="font-size:20px;">🌹</div>
+                    <div style="font-size:9px;color:#92400e;font-weight:700;margin-top:3px;">Roses</div>
+                  </td>
+                  <td width="16%" style="text-align:center;padding:6px;border-left:1px solid #fcd34d;">
+                    <div style="font-size:20px;">🪔</div>
+                    <div style="font-size:9px;color:#92400e;font-weight:700;margin-top:3px;">Pooja</div>
+                  </td>
+                  <td width="16%" style="text-align:center;padding:6px;border-left:1px solid #fcd34d;">
+                    <div style="font-size:20px;">🎨</div>
+                    <div style="font-size:9px;color:#92400e;font-weight:700;margin-top:3px;">Rangoli</div>
+                  </td>
+                  <td width="16%" style="text-align:center;padding:6px;border-left:1px solid #fcd34d;">
+                    <div style="font-size:20px;">💐</div>
+                    <div style="font-size:9px;color:#92400e;font-weight:700;margin-top:3px;">Wedding</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td style="background:#92400e;padding:20px 40px;text-align:center;">
+              <p style="margin:0;color:rgba(255,255,255,0.9);font-size:12px;">
+                📍 Blk 662, Shop No. 01-23, Buffalo Road, Singapore 210662 &nbsp;|&nbsp;
+                <a href="tel:+6591344333" style="color:rgba(255,255,255,0.9);text-decoration:none;">+65 9134 4333</a>
+              </p>
+              <p style="margin:6px 0 0;color:rgba(255,255,255,0.45);font-size:11px;">Automated notification from Sastha Flower Shop enquiry form.</p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

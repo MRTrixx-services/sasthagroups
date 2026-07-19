@@ -120,13 +120,10 @@
         <p>Fill the form and we'll WhatsApp you right back.</p>
       </div>
 
-      <!-- Success / Error messages -->
+      <!-- Toast data (rendered server-side, shown via JS) -->
       {% if messages %}
         {% for message in messages %}
-          <div class="ct-alert ct-alert--{{ message.tags }}">
-            {% if message.tags == 'success' %}✅{% else %}⚠️{% endif %}
-            {{ message }}
-          </div>
+          <div class="ct-toast-data" data-type="{{ message.tags }}" data-msg="{{ message }}" hidden></div>
         {% endfor %}
       {% endif %}
 
@@ -346,5 +343,35 @@
    class="ct-float-wa" aria-label="Chat on WhatsApp">
   <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.124.558 4.118 1.528 5.845L.057 23.5l5.797-1.452A11.94 11.94 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.885 0-3.65-.51-5.17-1.4l-.37-.22-3.44.862.878-3.348-.24-.386C2.558 15.894 2 14.01 2 12 2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
 </a>
+
+<!-- ── TOAST CONTAINER ── -->
+<div id="ct-toast-container" aria-live="polite" aria-atomic="true"></div>
+
+<script>
+(function () {
+  function showToast(msg, type) {
+    var wrap = document.getElementById('ct-toast-container');
+    var t = document.createElement('div');
+    t.className = 'ct-toast ct-toast--' + type;
+    t.innerHTML =
+      '<span class="ct-toast__icon">' + (type === 'success' ? '✅' : '⚠️') + '</span>' +
+      '<span class="ct-toast__msg">' + msg + '</span>' +
+      '<button class="ct-toast__close" aria-label="Close">&times;</button>';
+    t.querySelector('.ct-toast__close').onclick = function () { dismiss(t); };
+    wrap.appendChild(t);
+    requestAnimationFrame(function () { t.classList.add('ct-toast--show'); });
+    setTimeout(function () { dismiss(t); }, 5000);
+  }
+
+  function dismiss(t) {
+    t.classList.remove('ct-toast--show');
+    t.addEventListener('transitionend', function () { t.remove(); }, { once: true });
+  }
+
+  document.querySelectorAll('.ct-toast-data').forEach(function (el) {
+    showToast(el.dataset.msg, el.dataset.type);
+  });
+})();
+</script>
 
 {% endblock %}

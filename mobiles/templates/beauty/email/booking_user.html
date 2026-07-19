@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appointment Confirmed – Sastha Beauty Parlour</title>
+</head>
+<body style="margin:0;padding:0;background:#fff5fb;font-family:'Poppins',Arial,sans-serif;">
+
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#fff5fb;padding:30px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="background:#ffffff;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(200,56,137,0.14);">
+
+          <!-- HEADER -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#B12F79 0%,#C83889 55%,#E04A9D 100%);padding:40px 40px 32px;text-align:center;">
+              <div style="font-size:36px;margin-bottom:8px;">💄</div>
+              <h1 style="margin:0;color:#ffffff;font-size:26px;font-weight:700;letter-spacing:1px;">Sastha Beauty Parlour</h1>
+              <p style="margin:6px 0 0;color:rgba(255,255,255,0.8);font-size:12px;letter-spacing:3px;text-transform:uppercase;">
+                Singapore's Trusted Beauty Studio
+              </p>
+            </td>
+          </tr>
+
+          <!-- CONFIRMATION BANNER -->
+          <tr>
+            <td style="background:#fce7f3;padding:28px 40px;text-align:center;border-bottom:2px solid #f9a8d4;">
+              <div style="font-size:44px;margin-bottom:10px;">🌸</div>
+              <h2 style="margin:0;color:#B12F79;font-size:22px;font-weight:700;">Booking Request Received!</h2>
+              <p style="margin:10px 0 0;color:#7A7A7A;font-size:14px;line-height:1.7;">
+                Hi <strong style="color:#C83889;">{{ name }}</strong>, thank you for choosing Sastha Beauty Parlour.<br>
+                We've received your booking request and will confirm your appointment shortly. ✨
+              </p>
+            </td>
+          </tr>
+
+          <!-- BOOKING SUMMARY -->
+          <tr>
+            <td style="padding:28px 40px 10px;">
+              <p style="margin:0 0 14px;color:#B12F79;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">📋 Your Booking Summary</p>
+              <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid #fce7f3;border-radius:10px;overflow:hidden;">
+
+                <tr style="background:#fce7f3;">
+                  <td style="padding:11px 16px;font-size:12px;font-weight:700;color:#B12F79;text-transform:uppercase;letter-spacing:1px;width:38%;">Service</td>
+                  <td style="padding:11px 16px;font-size:14px;color:#333;font-weight:600;">{{ service }}</td>
+                </tr>
+
+                {% if preferred_date %}
+                <tr>
+                  <td style="padding:11px 16px;font-size:12px;font-weight:700;color:#B12F79;text-transform:uppercase;letter-spacing:1px;border-top:1px solid #fce7f3;">Preferred Date</td>
+                  <td style="padding:11px 16px;font-size:14px;color:#333;font-weight:600;border-top:1px solid #fce7f3;">{{ preferred_date }}</td>
+                </tr>
+                {% endif %}
+
+                <tr style="background:#fce7f3;">
+                  <td style="padding:11px 16px;font-size:12px;font-weight:700;color:#B12F79;text-transform:uppercase;letter-spacing:1px;border-top:1px solid #f9a8d4;">Contact</td>
+                  <td style="padding:11px 16px;font-size:14px;color:#333;font-weight:600;border-top:1px solid #f9a8d4;">{{ phone }}</td>
+                </tr>
+
+                {% if notes %}
+                <tr>
+                  <td style="padding:11px 16px;font-size:12px;font-weight:700;color:#B12F79;text-transform:uppercase;letter-spacing:1px;border-top:1px solid #fce7f3;vertical-align:top;">Notes</td>
+                  <td style="padding:11px 16px;font-size:14px;color:#333;line-height:1.6;border-top:1px solid #fce7f3;">{{ notes }}</td>
+                </tr>
+                {% endif %}
+
+                <tr style="background:#fce7f3;">
+                  <td style="padding:11px 16px;font-size:12px;font-weight:700;color:#B12F79;text-transform:uppercase;letter-spacing:1px;border-top:1px solid #f9a8d4;">Requested On</td>
+                  <td style="padding:11px 16px;font-size:14px;color:#333;font-weight:600;border-top:1px solid #f9a8d4;">{{ submitted_at }}</td>
+                </tr>
+
+              </table>
+            </td>
+          </tr>
+
+          <!-- WHAT HAPPENS NEXT -->
+          <tr>
+            <td style="padding:24px 40px 10px;">
+              <p style="margin:0 0 14px;color:#B12F79;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">⏱ What happens next?</p>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="padding:8px 0;vertical-align:top;width:36px;">
+                    <div style="width:30px;height:30px;background:#fce7f3;border-radius:50%;text-align:center;line-height:30px;font-size:13px;font-weight:700;color:#C83889;">1</div>
+                  </td>
+                  <td style="padding:8px 0 8px 10px;font-size:13px;color:#555;line-height:1.5;">Our team reviews your booking request immediately.</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 0;vertical-align:top;">
+                    <div style="width:30px;height:30px;background:#fce7f3;border-radius:50%;text-align:center;line-height:30px;font-size:13px;font-weight:700;color:#C83889;">2</div>
+                  </td>
+                  <td style="padding:8px 0 8px 10px;font-size:13px;color:#555;line-height:1.5;">We'll WhatsApp you at <strong style="color:#C83889;">{{ phone }}</strong> to confirm your appointment time.</td>
+                </tr>
+                <tr>
+                  <td style="padding:8px 0;vertical-align:top;">
+                    <div style="width:30px;height:30px;background:#fce7f3;border-radius:50%;text-align:center;line-height:30px;font-size:13px;font-weight:700;color:#C83889;">3</div>
+                  </td>
+                  <td style="padding:8px 0 8px 10px;font-size:13px;color:#555;line-height:1.5;">Arrive at our salon and let us make you look absolutely stunning! 💄</td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- WHATSAPP BUTTON -->
+          <tr>
+            <td style="padding:16px 40px 32px;text-align:center;">
+              <a href="https://wa.me/6591344333?text=Hi%20Sastha%20Beauty%2C%20I%20just%20booked%20an%20appointment%20for%20{{ service|urlencode }}%20and%20would%20like%20to%20confirm."
+                 style="display:inline-block;background:#25d366;color:#fff;padding:15px 40px;border-radius:999px;text-decoration:none;font-size:15px;font-weight:700;box-shadow:0 4px 16px rgba(37,211,102,0.35);">
+                💬 Chat on WhatsApp to Confirm
+              </a>
+            </td>
+          </tr>
+
+          <!-- SERVICES STRIP -->
+          <tr>
+            <td style="background:#fce7f3;padding:22px 40px;">
+              <p style="margin:0 0 14px;text-align:center;color:#B12F79;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;">Our Services</p>
+              <table width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td width="25%" style="text-align:center;padding:6px;">
+                    <div style="font-size:22px;">💄</div>
+                    <div style="font-size:10px;color:#B12F79;font-weight:700;margin-top:3px;">Makeup</div>
+                    <div style="font-size:9px;color:#7A7A7A;margin-top:1px;">Bridal · Party · Engagement</div>
+                  </td>
+                  <td width="25%" style="text-align:center;padding:6px;border-left:1px solid #f9a8d4;">
+                    <div style="font-size:22px;">💇</div>
+                    <div style="font-size:10px;color:#B12F79;font-weight:700;margin-top:3px;">Hair</div>
+                    <div style="font-size:9px;color:#7A7A7A;margin-top:1px;">Cut · Spa · Colour · Styling</div>
+                  </td>
+                  <td width="25%" style="text-align:center;padding:6px;border-left:1px solid #f9a8d4;">
+                    <div style="font-size:22px;">✨</div>
+                    <div style="font-size:10px;color:#B12F79;font-weight:700;margin-top:3px;">Facial</div>
+                    <div style="font-size:9px;color:#7A7A7A;margin-top:1px;">Basic · Gold · Fruit · Bridal</div>
+                  </td>
+                  <td width="25%" style="text-align:center;padding:6px;border-left:1px solid #f9a8d4;">
+                    <div style="font-size:22px;">💅</div>
+                    <div style="font-size:10px;color:#B12F79;font-weight:700;margin-top:3px;">Nails & Waxing</div>
+                    <div style="font-size:9px;color:#7A7A7A;margin-top:1px;">Mani · Pedi · Threading</div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td style="background:#B12F79;padding:22px 40px;text-align:center;">
+              <p style="margin:0;color:rgba(255,255,255,0.9);font-size:12px;">
+                📍 Blk 662, Shop No. 01-23, Buffalo Road, Singapore 210662
+              </p>
+              <p style="margin:4px 0 0;color:rgba(255,255,255,0.9);font-size:12px;">
+                <a href="tel:+6591344333" style="color:rgba(255,255,255,0.9);text-decoration:none;">📞 +65 9134 4333</a>
+                &nbsp;|&nbsp;
+                <a href="mailto:info@sasthagroup.com" style="color:rgba(255,255,255,0.9);text-decoration:none;">✉️ info@sasthagroup.com</a>
+              </p>
+              <p style="margin:8px 0 0;color:rgba(255,255,255,0.45);font-size:11px;">
+                You received this because you submitted a booking request on sasthagroup.com
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
