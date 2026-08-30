@@ -28,7 +28,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     'sasthagroup.com',
     'www.sasthagroup.com',
-    '187.127.122.49',
+    '129.121.129.36',
     '127.0.0.1'
 ]
 

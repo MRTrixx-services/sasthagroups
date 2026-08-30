@@ -1541,7 +1541,7 @@ font-size:16px;
 
     border-radius:22px;
 
-    padding:22px;
+    padding:0 22px 24px;
 
     border:1px solid #f1f1f1;
 
@@ -1552,6 +1552,40 @@ font-size:16px;
     position:relative;
 
     overflow:hidden;
+
+}
+
+.service-image{
+
+    width:calc(100% + 44px);
+
+    height:210px;
+
+    margin:0 -22px 0;
+
+    overflow:hidden;
+
+    background:#fff0f6;
+
+}
+
+.service-image img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    display:block;
+
+    transition:.4s;
+
+}
+
+.service-box:hover .service-image img{
+
+    transform:scale(1.06);
 
 }
 
@@ -1601,9 +1635,9 @@ font-size:16px;
 
 .service-icon{
 
-    width:58px;
+    width:72px;
 
-    height:58px;
+    height:72px;
 
     border-radius:50%;
 
@@ -1613,11 +1647,21 @@ font-size:16px;
 
     justify-content:center;
 
-    background:#fff4f6;
+    background:linear-gradient(135deg,#B12F79,#C83889);
 
-    font-size:28px;
+    color:#fff;
 
-    margin-bottom:16px;
+    border:5px solid #fff;
+
+    font-size:30px;
+
+    margin:-36px auto 18px;
+
+    position:relative;
+
+    z-index:2;
+
+    box-shadow:0 12px 28px rgba(200,56,137,.25);
 
     transition:.35s;
 
@@ -1627,7 +1671,7 @@ font-size:16px;
 
     transform:rotate(10deg) scale(1.08);
 
-    background:#C83889;
+    background:linear-gradient(135deg,#B12F79,#C83889);
 
 }
 
@@ -1933,7 +1977,9 @@ Responsive
 
     padding:80px 0;
 
-    background:#fffdfb;
+    background:
+        radial-gradient(circle at top left, rgba(200,56,137,.08), transparent 20%),
+        linear-gradient(180deg, #fffdfb 0%, #fff 100%);
 
 }
 
@@ -1941,13 +1987,15 @@ Responsive
 
     background:#fff;
 
-    border-radius:22px;
+    border:1px solid rgba(200,56,137,.14);
+
+    border-radius:24px;
 
     overflow:hidden;
 
-    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    box-shadow:0 18px 45px rgba(34,21,52,.08);
 
-    transition:.35s;
+    transition:.35s ease;
 
     height:100%;
 
@@ -1961,7 +2009,9 @@ Responsive
 
     transform:translateY(-10px);
 
-    box-shadow:0 25px 60px rgba(200,56,137,.18);
+    box-shadow:0 30px 70px rgba(200,56,137,.18);
+
+    border-color:rgba(200,56,137,.45);
 
 }
 
@@ -1969,17 +2019,25 @@ Responsive
 
     width:100%;
 
-    height:220px;
+    height:240px;
 
     object-fit:cover;
+
+    transition:.45s ease;
+
+}
+
+.signature-card:hover img{
+
+    transform:scale(1.03);
 
 }
 
 .signature-content{
 
-    padding:25px;
+    padding:24px 22px 26px;
 
-    text-align:center;
+    text-align:left;
 
     display:flex;
 
@@ -1987,17 +2045,43 @@ Responsive
 
     flex:1;
 
+    gap:12px;
+
+}
+
+.signature-tag{
+
+    display:inline-flex;
+
+    align-self:flex-start;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    background:rgba(200,56,137,.1);
+
+    color:#b12f79;
+
+    font-size:11px;
+
+    font-weight:800;
+
+    letter-spacing:.08em;
+
+    text-transform:uppercase;
+
 }
 
 .signature-content h4{
 
     font-size:22px;
 
-    font-weight:700;
+    font-weight:800;
 
-    margin-bottom:10px;
+    margin:0;
 
-    color:#222;
+    color:#1f1f2a;
 
 }
 
@@ -2005,11 +2089,11 @@ Responsive
 
     color:#666;
 
-    line-height:1.75;
+    line-height:1.78;
 
     font-size:15px;
 
-    min-height:70px;
+    margin:0;
 
     flex:1;
 
@@ -2017,13 +2101,17 @@ Responsive
 
 .signature-btn{
 
-    display:inline-block;
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
 
     margin-top:auto;
 
-    padding:12px 30px;
+    padding:12px 24px;
 
-    background:#C83889;
+    background:linear-gradient(135deg, #c83889, #a9276d);
 
     color:#fff;
 
@@ -2035,13 +2123,15 @@ Responsive
 
     transition:.3s;
 
-    align-self:center;
+    align-self:flex-start;
+
+    box-shadow:0 10px 25px rgba(200,56,137,.22);
 
 }
 
 .signature-btn:hover{
 
-    background:#B12F79;
+    background:linear-gradient(135deg, #b12f79, #931a5c);
 
     color:#fff;
 
@@ -2053,7 +2143,7 @@ Responsive
 
 .signature-card img{
 
-height:240px;
+height:260px;
 
 }
 

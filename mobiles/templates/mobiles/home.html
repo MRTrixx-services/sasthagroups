@@ -497,141 +497,176 @@
 
 
 
-<!-- FEATURED PRODUCTS -->
-<section class="py-5" style="background: var(--white);">
-    <div class="container">
-        <div class="text-center mb-5">
-            <span class="section-label">Hand Picked</span>
-            <h2 class="section-title">Featured <span>Mobiles</span></h2>
-            <div class="section-divider mx-auto"></div>
+<!-- MOBILE SHOP SERVICES -->
+<section class="ms-overview ms-overview--home">
+  <div class="container">
+    {% if messages %}
+      {% for message in messages %}
+        <div class="ms-toast-data" data-type="{{ message.tags }}" data-msg="{{ message }}" hidden></div>
+      {% endfor %}
+    {% endif %}
+
+    <div id="ms-modal" class="ms-modal" role="dialog" aria-modal="true" hidden>
+      <div class="ms-modal__backdrop"></div>
+      <div class="ms-modal__box">
+        <button class="ms-modal__close" aria-label="Close">&times;</button>
+        <div class="ms-modal__head">
+          <span class="ms-modal__icon">&#128241;</span>
+          <h2>Send Enquiry</h2>
+          <p>Fill in your details and we'll get back to you via WhatsApp.</p>
         </div>
-        <div class="row g-4">
-
-            <!-- PRODUCT 1 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?q=80&w=800&auto=format&fit=crop" alt="iPhone 16 Pro">
-                        <span class="product-badge">NEW</span>
-                        <button class="product-wishlist">🤍</button>
-                    </div>
-                    <div class="card-body">
-                        <div class="product-rating">
-                            <span class="stars">★★★★★</span>
-                            <small>4.9 (328 reviews)</small>
-                        </div>
-                        <div class="brand-tag">Apple</div>
-                        <h5>iPhone 16 Pro</h5>
-                        <div class="product-price">
-                            <span class="current">₹1,19,999</span>
-                            <span class="original">₹1,39,999</span>
-                            <span class="discount">14% OFF</span>
-                        </div>
-                        <div class="card-actions">
-                            <a href="{% url 'mobiles' %}" class="btn btn-pink btn-sm">
-    View Details
-</a>
-                           <a href="{% url 'mobiles' %}" class="btn btn-outline-pink btn-sm">
-    Add Cart
-</a>
-                        </div>
-                    </div>
-                </div>
+        <form class="ms-form" method="POST" action="{% url 'contact' %}">
+          {% csrf_token %}
+          <input type="hidden" name="shop" value="mobile">
+          <div class="ms-form__service-label" id="ms-service-label"></div>
+          <input type="hidden" name="subject" value="price_inquiry">
+          <div class="ms-form__row">
+            <div class="ms-form__group">
+              <label>Full Name <span>*</span></label>
+              <input type="text" name="name" placeholder="e.g. Ravi Kumar" required>
             </div>
-
-            <!-- PRODUCT 2 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800&auto=format&fit=crop" alt="Samsung S25 Ultra">
-                        <span class="product-badge">HOT</span>
-                        <button class="product-wishlist">🤍</button>
-                    </div>
-                    <div class="card-body">
-                        <div class="product-rating">
-                            <span class="stars">★★★★☆</span>
-                            <small>4.7 (214 reviews)</small>
-                        </div>
-                        <div class="brand-tag">Samsung</div>
-                        <h5>Samsung S25 Ultra</h5>
-                        <div class="product-price">
-                            <span class="current">₹99,999</span>
-                            <span class="original">₹1,09,999</span>
-                            <span class="discount">9% OFF</span>
-                        </div>
-                        <div class="card-actions">
-                            <a href="#" class="btn btn-pink btn-sm">View Details</a>
-                            <a href="#" class="btn btn-outline-pink btn-sm">Add Cart</a>
-                        </div>
-                    </div>
-                </div>
+            <div class="ms-form__group">
+              <label>WhatsApp Number <span>*</span></label>
+              <input type="tel" name="phone" placeholder="+65 9134 4333" required>
             </div>
-
-            <!-- PRODUCT 3 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=800&auto=format&fit=crop" alt="OnePlus 13 Pro">
-                        <span class="product-badge">SALE</span>
-                        <button class="product-wishlist">🤍</button>
-                    </div>
-                    <div class="card-body">
-                        <div class="product-rating">
-                            <span class="stars">★★★★★</span>
-                            <small>4.8 (186 reviews)</small>
-                        </div>
-                        <div class="brand-tag">OnePlus</div>
-                        <h5>OnePlus 13 Pro</h5>
-                        <div class="product-price">
-                            <span class="current">₹69,999</span>
-                            <span class="original">₹79,999</span>
-                            <span class="discount">12% OFF</span>
-                        </div>
-                        <div class="card-actions">
-                            <a href="#" class="btn btn-pink btn-sm">View Details</a>
-                            <a href="#" class="btn btn-outline-pink btn-sm">Add Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- PRODUCT 4 -->
-            <div class="col-lg-3 col-md-6">
-                <div class="product-card">
-                    <div class="product-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?q=80&w=800&auto=format&fit=crop" alt="Xiaomi 15 Ultra">
-                        <span class="product-badge">TOP</span>
-                        <button class="product-wishlist">🤍</button>
-                    </div>
-                    <div class="card-body">
-                        <div class="product-rating">
-                            <span class="stars">★★★★☆</span>
-                            <small>4.6 (152 reviews)</small>
-                        </div>
-                        <div class="brand-tag">Xiaomi</div>
-                        <h5>Xiaomi 15 Ultra</h5>
-                        <div class="product-price">
-                            <span class="current">₹54,999</span>
-                            <span class="original">₹64,999</span>
-                            <span class="discount">15% OFF</span>
-                        </div>
-                        <div class="card-actions">
-                            <a href="#" class="btn btn-pink btn-sm">View Details</a>
-                            <a href="#" class="btn btn-outline-pink btn-sm">Add Cart</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-        <div class="text-center mt-5">
-            <a href="{% url 'mobiles' %}" class="btn btn-outline-pink btn-lg px-5">
-    View All Products
-</a>
-        </div>
+          </div>
+          <div class="ms-form__group">
+            <label>Email Address <span class="ms-optional">(optional)</span></label>
+            <input type="email" name="email" placeholder="ravi@example.com">
+          </div>
+          <div class="ms-form__group">
+            <label>Message <span>*</span></label>
+            <textarea name="message" rows="3" placeholder="Tell us what you need..." required></textarea>
+          </div>
+          <button type="submit" class="ms-form__submit">Send Enquiry</button>
+          <p class="ms-form__note">Or reach us on <a href="https://wa.me/6591344333?text=Hi%20Sastha%20Mobile,%20I%20have%20an%20enquiry." target="_blank" rel="noopener">WhatsApp</a></p>
+        </form>
+      </div>
     </div>
+    <div id="ms-toast-container" aria-live="polite"></div>
+
+    <div class="ms-section-head">
+      <span class="ms-badge">What We Do</span>
+      <h2>All Services Under One Roof</h2>
+      <p>From the latest smartphones to repairs, recharge and printing - we've got you covered.</p>
+    </div>
+
+    <div class="ms-overview__grid">
+      <div class="ms-overview__card">
+        <div class="ms-overview__image"><img src="{% static 'images/Mobile Sales.png' %}" alt="Mobile Sales"></div>
+        <div class="ms-overview__icon">&#128241;</div>
+        <h4>Mobile Sales</h4>
+        <p>Brand new &amp; budget smartphones, iPhones, Android, flagship devices and accessories.</p>
+        <button class="ms-open ms-overview__btn" data-service="Mobile Sales">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__image"><img src="{% static 'images/Mobile Repair.png' %}" alt="Mobile Repair"></div>
+        <div class="ms-overview__icon">&#128295;</div>
+        <h4>Mobile Repair</h4>
+        <p>Screen, battery, charging port, camera, water damage, motherboard and data recovery.</p>
+        <button class="ms-open ms-overview__btn" data-service="Mobile Repair">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__image"><img src="{% static 'images/Laptop Sales & Repair.png' %}" alt="Laptop Sales and Repair"></div>
+        <div class="ms-overview__icon">&#128187;</div>
+        <h4>Laptop Sales &amp; Repair</h4>
+        <p>New, refurbished, gaming and business laptops. Screen, SSD, RAM, battery and more.</p>
+        <button class="ms-open ms-overview__btn" data-service="Laptop Sales & Repair">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__image"><img src="{% static 'images/Desktop Sales & Repair.png' %}" alt="Desktop Sales and Repair"></div>
+        <div class="ms-overview__icon">&#128421;&#65039;</div>
+        <h4>Desktop Sales &amp; Repair</h4>
+        <p>Custom gaming PCs, office computers, workstations and full desktop repair services.</p>
+        <button class="ms-open ms-overview__btn" data-service="Desktop Sales & Repair">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__image"><img src="{% static 'images/Mobile Recharge.png' %}" alt="Mobile Recharge"></div>
+        <div class="ms-overview__icon">&#128222;</div>
+        <h4>Mobile Recharge</h4>
+        <p>Singtel, StarHub, M1, Simba, international top-up, data packs and prepaid recharge.</p>
+        <button class="ms-open ms-overview__btn" data-service="Mobile Recharge">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__image"><img src="{% static 'images/SIM Activation.png' %}" alt="SIM Activation"></div>
+        <div class="ms-overview__icon">&#128179;</div>
+        <h4>SIM Activation</h4>
+        <p>New SIM registration, 4G/5G upgrade, number porting, eSIM setup and corporate SIMs.</p>
+        <button class="ms-open ms-overview__btn" data-service="SIM Activation">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__image"><img src="{% static 'images/PrintScanCopy.png' %}" alt="Print Scan Copy"></div>
+        <div class="ms-overview__icon">&#128424;&#65039;</div>
+        <h4>Print / Scan / Copy</h4>
+        <p>B&amp;W and colour printing, A4/A3, photo printing, passport photos, scanning and PDF print.</p>
+        <button class="ms-open ms-overview__btn" data-service="Print / Scan / Copy">Enquire Now</button>
+      </div>
+
+      <div class="ms-overview__card">
+        <div class="ms-overview__image"><img src="{% static 'images/lamiantion.png' %}" alt="Lamination Services"></div>
+        <div class="ms-overview__icon">&#128196;</div>
+        <h4>Lamination Services</h4>
+        <p>ID cards, certificates, A4/A3, menu cards, gloss &amp; matte finish lamination.</p>
+        <button class="ms-open ms-overview__btn" data-service="Lamination Services">Enquire Now</button>
+      </div>
+    </div>
+  </div>
 </section>
 
+<script>
+(function(){
+  var modal = document.getElementById('ms-modal');
+  if (!modal) return;
+  var closeBtn = modal.querySelector('.ms-modal__close');
+  var backdrop = modal.querySelector('.ms-modal__backdrop');
+  var svcLabel = document.getElementById('ms-service-label');
+
+  function openModal(service){
+    svcLabel.textContent = service ? service : '';
+    svcLabel.style.display = service ? 'block' : 'none';
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
+
+  document.querySelectorAll('.ms-open').forEach(function(btn){
+    btn.addEventListener('click', function(){ openModal(btn.dataset.service); });
+  });
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeModal(); });
+
+  function showToast(msg, type){
+    var wrap = document.getElementById('ms-toast-container');
+    if (!wrap) return;
+    var t = document.createElement('div');
+    t.className = 'ms-toast ms-toast--' + type;
+    t.innerHTML = '<span class="ms-toast__icon">' + (type === 'success' ? 'OK' : '!') + '</span>'
+                + '<span class="ms-toast__msg">' + msg + '</span>'
+                + '<button class="ms-toast__close" aria-label="Close">&times;</button>';
+    t.querySelector('.ms-toast__close').onclick = function(){ dismiss(t); };
+    wrap.appendChild(t);
+    requestAnimationFrame(function(){ t.classList.add('ms-toast--show'); });
+    setTimeout(function(){ dismiss(t); }, 6000);
+  }
+  function dismiss(t){
+    t.classList.remove('ms-toast--show');
+    t.addEventListener('transitionend', function(){ t.remove(); }, {once:true});
+  }
+  document.querySelectorAll('.ms-toast-data').forEach(function(el){
+    showToast(el.dataset.msg, el.dataset.type);
+  });
+})();
+</script>
 <!-- BEAUTY SERVICES -->
 <!-- ============================================================
   BEAUTY ALL IN ONE — Promo Banner Section
@@ -683,11 +718,11 @@
     <!-- ===== Top: title + hero photo ===== -->
     <div class="bao-hero">
       <div class="bao-hero__text">
-        <p class="bao-eyebrow">Beauty That Makes You Shine</p>
+        <p class="bao-eyebrow">Premium Beauty Care For Every Occasion</p>
 
         <h1 class="bao-title">
-          <span class="bao-title__script">Beauty</span>
-          <span class="bao-title__serif">All in One</span>
+          <span class="bao-title__script">Sastha</span>
+          <span class="bao-title__serif">Beauty Parlour</span>
         </h1>
 
         <p class="bao-services">
@@ -697,7 +732,7 @@
         </p>
 
         <p class="bao-ribbon">
-          <span>Feel Beautiful. Look Confident. Be You.</span>
+          <span>Glow Beautiful. Feel Confident. Be You.</span>
         </p>
 
         
@@ -801,10 +836,10 @@
       </ul>
       <center><div class="bao-cta-btns">
           <button class="bao-btn-book bao-modal-open" type="button">
-            📅 Book Now
+            Book Now
           </button>
           <a href="/beauty/#pricing" class="bao-btn-price">
-            🏷️ View Pricing
+            View Pricing
           </a>
         </div></center>
     </div>
@@ -1034,14 +1069,14 @@
     <!-- ===== Top: title + hero photo ===== -->
     <div class="fls-hero">
       <div class="fls-hero__text">
-        <p class="fls-eyebrow">Petals Picked Fresh, Every Morning</p>
+        <p class="fls-eyebrow">Fresh Flowers For Pooja, Gifts &amp; Events</p>
 
         <h1 class="fls-title">
-          <span class="fls-title__script">Fresh</span>
-          <span class="fls-title__serif">Blooms</span>
+          <span class="fls-title__script">Sastha</span>
+          <span class="fls-title__serif">Flower Shop</span>
         </h1>
 
-        <p class="fls-tagline">Your Neighbourhood Phool Wale</p>
+        <p class="fls-tagline">Daily Fresh Blooms &amp; Floral Decor</p>
 
         <p class="fls-services">
           Marigold <span class="fls-dot">❀</span> Mogra Gajra <span class="fls-dot">❀</span> Garlands
@@ -1052,6 +1087,11 @@
         <p class="fls-ribbon">
           <span>Fresh Flowers. Festive Spirit. Pure Devotion.</span>
         </p>
+
+        <div class="fls-cta-btns">
+          <a href="{% url 'flowers:home' %}" class="fls-btn fls-btn-shop">Explore Flowers</a>
+          <a href="{% url 'contact' %}" class="fls-btn fls-btn-contact">Contact Us</a>
+        </div>
       </div>
 
       <div class="fls-hero__image">
@@ -1212,37 +1252,61 @@
             <div class="col-lg-5">
 
                 <div class="contact-card h-100">
+                    <span class="contact-card__badge">Sastha Group</span>
 
-                    <h4>Sastha Group</h4>
+                    <h4>Visit Us Or Send An Enquiry</h4>
 
-                    <p>
-                        We are here to help you with mobiles,
-                        beauty services and fresh flowers.
+                    <p class="contact-card__intro">
+                        We are here to help you with mobiles, beauty services and fresh flowers.
                     </p>
 
-                    <div class="mb-3">
-                        <strong>📞 Phone:</strong><br>
-                        +65 913 44 333
+                    <div class="contact-info-list">
+                        <div class="contact-info-item">
+                            <span class="contact-info-icon"><i class="fas fa-phone"></i></span>
+                            <div>
+                                <strong>Phone</strong>
+                                <a href="tel:+6591344333">+65 913 44 333</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <span class="contact-info-icon"><i class="fas fa-envelope"></i></span>
+                            <div>
+                                <strong>Email</strong>
+                                <a href="mailto:info@sasthagroup.com">info@sasthagroup.com</a>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <span class="contact-info-icon"><i class="fas fa-location-dot"></i></span>
+                            <div>
+                                <strong>Address</strong>
+                                <span>
+                                    Blk 662, Shop No. 01-23 Buffalo Road,<br>
+                                    Singapore 210662, Little India MRT Exit C
+                                </span>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="mb-3">
-                        <strong>📧 Email:</strong><br>
-                        info@sasthagroup.com
+                    <div class="contact-actions">
+                        <a href="https://wa.me/6585353536?text=Hi%20Sastha%20Group,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
+                           target="_blank"
+                           class="contact-action contact-action--whatsapp">
+                            <i class="fab fa-whatsapp"></i>
+                            WhatsApp Us
+                        </a>
+                        <a href="{% url 'contact' %}" class="contact-action contact-action--outline">
+                            <i class="fas fa-paper-plane"></i>
+                            Contact Form
+                        </a>
                     </div>
 
-                    <div class="mb-3">
-                        <strong>📍 Address:</strong><br>
-                        Blk 662, Shop No. 01-23
-Buffalo Road,
-Singapore 210662
-Little India MRT Exit C
+                    <div class="contact-service-strip">
+                        <span><i class="fas fa-mobile-screen-button"></i> Mobiles</span>
+                        <span><i class="fas fa-spa"></i> Beauty</span>
+                        <span><i class="fas fa-seedling"></i> Flowers</span>
                     </div>
-
-                    <a href="https://wa.me/6585353536?text=Hi%20Sastha%20Group,%20I%20would%20like%20to%20know%20more%20about%20your%20services."
-   target="_blank"
-   class="btn btn-success">
-    WhatsApp Us
-</a>
 
                 </div>
 
@@ -1271,7 +1335,7 @@ loading="lazy">
     </div>
 </section>
 <!-- WHY CHOOSE US -->
-<!-- <section class="features-section" style="background: var(--light-grey);">
+<section class="features-section" style="background: var(--light-grey);">
     <div class="container">
         <div class="text-center mb-5">
             <span class="section-label">Our Promise</span>
@@ -1283,7 +1347,7 @@ loading="lazy">
                 <div class="feature-card">
                     <div class="feature-icon">🚚</div>
                     <h5>Fast Delivery</h5>
-                    <p>Quick and secure delivery across India within 2-3 business days.</p>
+                    <p>Quick and secure delivery within 2-3 business days.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
@@ -1309,7 +1373,7 @@ loading="lazy">
             </div>
         </div>
     </div>
-</section> -->
+</section>
 
 
 
@@ -1411,10 +1475,10 @@ loading="lazy">
 
 <style>
 .bao-cta-btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px;justify-content:center;align-items:center;}
-.bao-btn-book{background:linear-gradient(135deg,#B12F79,#C83889);color:#fff;border:none;border-radius:999px;padding:13px 32px;font-size:.95rem;font-weight:700;cursor:pointer;box-shadow:0 6px 20px rgba(200,56,137,.35);transition:transform .2s,box-shadow .2s;}
-.bao-btn-book:hover{transform:translateY(-2px);box-shadow:0 10px 28px rgba(200,56,137,.45);}
-.bao-btn-price{display:inline-flex;align-items:center;gap:6px;background:#fff;color:#B12F79;border:2px solid #C83889;border-radius:999px;padding:11px 28px;font-size:.95rem;font-weight:700;text-decoration:none;transition:background .2s,color .2s;}
-.bao-btn-price:hover{background:#fce7f3;color:#B12F79;}
+.bao-btn-book{background:linear-gradient(135deg,#b91c2c,#7a1018);color:#fff;border:none;border-radius:999px;padding:13px 32px;font-size:.95rem;font-weight:700;cursor:pointer;box-shadow:0 8px 22px rgba(122,16,24,.32);transition:transform .2s,box-shadow .2s,background .2s;}
+.bao-btn-book:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(122,16,24,.42);background:linear-gradient(135deg,#c98a1f,#b91c2c);}
+.bao-btn-price{display:inline-flex;align-items:center;gap:6px;background:#fffaf6;color:#7a1018;border:2px solid #c98a1f;border-radius:999px;padding:11px 28px;font-size:.95rem;font-weight:700;text-decoration:none;transition:background .2s,color .2s,transform .2s,box-shadow .2s;box-shadow:0 6px 18px rgba(201,138,31,.18);}
+.bao-btn-price:hover{background:#c98a1f;color:#fff;transform:translateY(-2px);box-shadow:0 10px 26px rgba(201,138,31,.3);}
 /* Modal */
 .bao-modal{position:fixed;inset:0;z-index:10000;display:flex;align-items:center;justify-content:center;padding:16px;}
 .bao-modal[hidden]{display:none;}
