@@ -62,7 +62,7 @@
 <section class="mobile-hero">
   <div class="container-fluid p-0">
     <div class="hero-banner">
-      <img src="{% static 'images/mobile-hero-banner.png' %}" alt="Sastha Mobile Shop">
+      <img src="{% if mobile_hero_banner %}{{ mobile_hero_banner.image.url }}{% else %}{% static 'images/mobile-hero-banner.png' %}{% endif %}" alt="Sastha Mobile Shop">
       
         
    

@@ -151,7 +151,7 @@
 
         <a href="{% url 'mobiles' %}" class="hero-card-image">
 
-    <img src="{% static 'images/mobile-shop.png' %}"
+    <img src="{% if hero.mobile %}{{ hero.mobile }}{% else %}{% static 'images/mobile-shop.png' %}{% endif %}"
          alt="Mobile Shop">
 
     <div class="hero-card-overlay"></div>
@@ -194,7 +194,7 @@
 
         <a href="{% url 'beauty:home' %}" class="hero-card-image">
 
-    <img src="{% static 'images/beauty-parlor.png' %}"
+    <img src="{% if hero.beauty %}{{ hero.beauty }}{% else %}{% static 'images/beauty-parlor.png' %}{% endif %}"
          alt="Beauty Parlour">
 
     <div class="hero-card-overlay"></div>
@@ -237,7 +237,7 @@
 
         <a href="{% url 'flowers:home' %}" class="hero-card-image">
 
-    <img src="{% static 'images/flower-shop.png' %}"
+    <img src="{% if hero.flower %}{{ hero.flower }}{% else %}{% static 'images/flower-shop.png' %}{% endif %}"
          alt="Flower Shop">
 
     <div class="hero-card-overlay"></div>
@@ -357,7 +357,7 @@
 
                 <div class="business-card">
 
-                    <img src="{% static 'images/mobile-shop.png' %}"
+                    <img src="{% if business.mobile %}{{ business.mobile }}{% else %}{% static 'images/mobile-shop.png' %}{% endif %}"
                          alt="Mobile Shop">
 
                     <div class="business-content">
@@ -384,7 +384,7 @@
 
                 <div class="business-card">
 
-                    <img src="{% static 'images/beauty-parlor.png' %}"
+                    <img src="{% if business.beauty %}{{ business.beauty }}{% else %}{% static 'images/beauty-parlor.png' %}{% endif %}"
                          alt="Beauty Parlor">
 
                     <div class="business-content">
@@ -412,7 +412,7 @@
 
                 <div class="business-card">
 
-                    <img src="{% static 'images/flower-shop.png' %}"
+                    <img src="{% if business.flower %}{{ business.flower }}{% else %}{% static 'images/flower-shop.png' %}{% endif %}"
                          alt="Flower Shop">
 
                     <div class="business-content">

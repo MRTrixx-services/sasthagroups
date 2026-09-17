@@ -794,153 +794,24 @@
 
         <div class="pricing-card">
 
+            {% for item in pricing %}
             <div class="price-row">
-
                 <div class="price-service">
-
-                    <div class="price-icon">
-                        <i class="fas fa-cut"></i>
-                    </div>
-
-                    <span>Hair Cut</span>
-
+                    <div class="price-icon"><i class="{{ item.icon }}"></i></div>
+                    <span>{{ item.get_service_display }}</span>
                 </div>
-
-                <span class="price-amount">$20</span>
-
+                <span class="price-amount">${{ item.price }}</span>
             </div>
-
-            <div class="price-row">
-
-                <div class="price-service">
-
-                    <div class="price-icon">
-                        <i class="fas fa-shower"></i>
-                    </div>
-
-                    <span>Hair Wash</span>
-
-                </div>
-
-                <span class="price-amount">$15</span>
-
-            </div>
-
-            <div class="price-row">
-
-                <div class="price-service">
-
-                    <div class="price-icon">
-                        <i class="fas fa-spa"></i>
-                    </div>
-
-                    <span>Luxury Facial</span>
-
-                </div>
-
-                <span class="price-amount">$45</span>
-
-            </div>
-
-            <div class="price-row">
-
-                <div class="price-service">
-
-                    <div class="price-icon">
-                        <i class="fas fa-hand-sparkles"></i>
-                    </div>
-
-                    <span>Manicure</span>
-
-                </div>
-
-                <span class="price-amount">$25</span>
-
-            </div>
-
-            <div class="price-row">
-
-                <div class="price-service">
-
-                    <div class="price-icon">
-                        <i class="fas fa-shoe-prints"></i>
-                    </div>
-
-                    <span>Pedicure</span>
-
-                </div>
-
-                <span class="price-amount">$30</span>
-
-            </div>
-
-            <div class="price-row">
-
-                <div class="price-service">
-
-                    <div class="price-icon">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-
-                    <span>Hair Spa</span>
-
-                </div>
-
-                <span class="price-amount">$50</span>
-
-            </div>
-
-            <div class="price-row">
-
-                <div class="price-service">
-
-                    <div class="price-icon">
-                        <i class="fas fa-droplet"></i>
-                    </div>
-
-                    <span>Waxing</span>
-
-                </div>
-
-                <span class="price-amount">$30</span>
-
-            </div>
-
-            <div class="price-row">
-
-                <div class="price-service">
-
-                    <div class="price-icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-
-                    <span>Henna</span>
-
-                </div>
-
-                <span class="price-amount">$20</span>
-
-            </div>
+            {% empty %}
+            <p style="text-align:center;padding:20px;color:#888;">Pricing coming soon.</p>
+            {% endfor %}
 
             <div class="price-row bridal-price">
-
                 <div class="price-service">
-
-                    <div class="price-icon bridal-icon">
-                        <i class="fas fa-crown"></i>
-                    </div>
-
+                    <div class="price-icon bridal-icon"><i class="fas fa-crown"></i></div>
                     <span>Bridal Makeup Package</span>
-
                 </div>
-
-                <a href="https://wa.me/6585353536?text=Hi%20Sastha%20Beauty,%20I%20would%20like%20to%20know%20about%20your%20Bridal%20Makeup%20Package."
-                   target="_blank">
-
-                    Contact Us
-
-                </a>
-
+                <a href="https://wa.me/6585353536?text=Hi%20Sastha%20Beauty,%20I%20would%20like%20to%20know%20about%20your%20Bridal%20Makeup%20Package." target="_blank">Contact Us</a>
             </div>
 
         </div>

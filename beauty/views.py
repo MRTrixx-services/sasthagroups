@@ -6,8 +6,12 @@ from django.conf import settings
 from django.utils import timezone
 
 
+from .models import BeautyPricing
+
+
 def home(request):
-    return render(request, "beauty/home.html")
+    pricing = BeautyPricing.objects.all()
+    return render(request, "beauty/home.html", {'pricing': pricing})
 
 
 def book_appointment(request):

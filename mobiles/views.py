@@ -4,12 +4,17 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.utils import timezone
+from core.models import HeroImage, BusinessImage, MobileHeroBanner
+
 
 def home(request):
-    return render(request, 'mobiles/home.html')
+    hero = {h.shop: h.image.url for h in HeroImage.objects.all()}
+    business = {b.shop: b.image.url for b in BusinessImage.objects.all()}
+    return render(request, 'mobiles/home.html', {'hero': hero, 'business': business})
 
 def mobiles(request):
-    return render(request, "mobileshop/mobiles.html")
+    banner = MobileHeroBanner.objects.first()
+    return render(request, "mobileshop/mobiles.html", {'mobile_hero_banner': banner})
 
 
 # ================================================================
