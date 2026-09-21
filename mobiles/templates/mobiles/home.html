@@ -357,8 +357,10 @@
 
                 <div class="business-card">
 
+                    <a href="{% url 'mobiles' %}">
                     <img src="{% if business.mobile %}{{ business.mobile }}{% else %}{% static 'images/mobile-shop.png' %}{% endif %}"
                          alt="Mobile Shop">
+                    </a>
 
                     <div class="business-content">
 
@@ -384,8 +386,10 @@
 
                 <div class="business-card">
 
+                    <a href="{% url 'beauty:home' %}">
                     <img src="{% if business.beauty %}{{ business.beauty }}{% else %}{% static 'images/beauty-parlor.png' %}{% endif %}"
                          alt="Beauty Parlor">
+                    </a>
 
                     <div class="business-content">
 
@@ -412,8 +416,10 @@
 
                 <div class="business-card">
 
+                    <a href="{% url 'flowers:home' %}">
                     <img src="{% if business.flower %}{{ business.flower }}{% else %}{% static 'images/flower-shop.png' %}{% endif %}"
                          alt="Flower Shop">
+                    </a>
 
                     <div class="business-content">
 
@@ -553,7 +559,7 @@
 
     <div class="ms-overview__grid">
       <div class="ms-overview__card">
-        <div class="ms-overview__image"><img src="{% static 'images/Mobile Sales.png' %}" alt="Mobile Sales"></div>
+        <div class="ms-overview__image"><a href="{% url 'mobiles' %}"><img src="{% static 'images/Mobile Sales.png' %}" alt="Mobile Sales"></a></div>
         <div class="ms-overview__icon">&#128241;</div>
         <h4>Mobile Sales</h4>
         <p>Brand new &amp; budget smartphones, iPhones, Android, flagship devices and accessories.</p>
@@ -561,7 +567,7 @@
       </div>
 
       <div class="ms-overview__card">
-        <div class="ms-overview__image"><img src="{% static 'images/Mobile Repair.png' %}" alt="Mobile Repair"></div>
+        <div class="ms-overview__image"><a href="{% url 'mobiles' %}"><img src="{% static 'images/Mobile Repair.png' %}" alt="Mobile Repair"></a></div>
         <div class="ms-overview__icon">&#128295;</div>
         <h4>Mobile Repair</h4>
         <p>Screen, battery, charging port, camera, water damage, motherboard and data recovery.</p>
@@ -569,7 +575,7 @@
       </div>
 
       <div class="ms-overview__card">
-        <div class="ms-overview__image"><img src="{% static 'images/Laptop Sales & Repair.png' %}" alt="Laptop Sales and Repair"></div>
+        <div class="ms-overview__image"><a href="{% url 'mobiles' %}"><img src="{% static 'images/Laptop Sales & Repair.png' %}" alt="Laptop Sales and Repair"></a></div>
         <div class="ms-overview__icon">&#128187;</div>
         <h4>Laptop Sales &amp; Repair</h4>
         <p>New, refurbished, gaming and business laptops. Screen, SSD, RAM, battery and more.</p>
@@ -577,7 +583,7 @@
       </div>
 
       <div class="ms-overview__card">
-        <div class="ms-overview__image"><img src="{% static 'images/Desktop Sales & Repair.png' %}" alt="Desktop Sales and Repair"></div>
+        <div class="ms-overview__image"><a href="{% url 'mobiles' %}"><img src="{% static 'images/Desktop Sales & Repair.png' %}" alt="Desktop Sales and Repair"></a></div>
         <div class="ms-overview__icon">&#128421;&#65039;</div>
         <h4>Desktop Sales &amp; Repair</h4>
         <p>Custom gaming PCs, office computers, workstations and full desktop repair services.</p>
@@ -585,7 +591,7 @@
       </div>
 
       <div class="ms-overview__card">
-        <div class="ms-overview__image"><img src="{% static 'images/Mobile Recharge.png' %}" alt="Mobile Recharge"></div>
+        <div class="ms-overview__image"><a href="{% url 'mobiles' %}"><img src="{% static 'images/Mobile Recharge.png' %}" alt="Mobile Recharge"></a></div>
         <div class="ms-overview__icon">&#128222;</div>
         <h4>Mobile Recharge</h4>
         <p>Singtel, StarHub, M1, Simba, international top-up, data packs and prepaid recharge.</p>
@@ -593,7 +599,7 @@
       </div>
 
       <div class="ms-overview__card">
-        <div class="ms-overview__image"><img src="{% static 'images/SIM Activation.png' %}" alt="SIM Activation"></div>
+        <div class="ms-overview__image"><a href="{% url 'mobiles' %}"><img src="{% static 'images/SIM Activation.png' %}" alt="SIM Activation"></a></div>
         <div class="ms-overview__icon">&#128179;</div>
         <h4>SIM Activation</h4>
         <p>New SIM registration, 4G/5G upgrade, number porting, eSIM setup and corporate SIMs.</p>
@@ -601,7 +607,7 @@
       </div>
 
       <div class="ms-overview__card">
-        <div class="ms-overview__image"><img src="{% static 'images/PrintScanCopy.png' %}" alt="Print Scan Copy"></div>
+        <div class="ms-overview__image"><a href="{% url 'mobiles' %}"><img src="{% static 'images/PrintScanCopy.png' %}" alt="Print Scan Copy"></a></div>
         <div class="ms-overview__icon">&#128424;&#65039;</div>
         <h4>Print / Scan / Copy</h4>
         <p>B&amp;W and colour printing, A4/A3, photo printing, passport photos, scanning and PDF print.</p>
@@ -609,7 +615,7 @@
       </div>
 
       <div class="ms-overview__card">
-        <div class="ms-overview__image"><img src="{% static 'images/lamiantion.png' %}" alt="Lamination Services"></div>
+        <div class="ms-overview__image"><a href="{% url 'mobiles' %}"><img src="{% static 'images/lamiantion.png' %}" alt="Lamination Services"></a></div>
         <div class="ms-overview__icon">&#128196;</div>
         <h4>Lamination Services</h4>
         <p>ID cards, certificates, A4/A3, menu cards, gloss &amp; matte finish lamination.</p>
@@ -752,8 +758,7 @@
 
       <article class="bao-service">
         <div class="bao-service__photo">
-          <img src="{% static 'images/Pedicure.jpg' %}"
-     alt="Marigold Garlands">
+          <a href="{% url 'beauty:home' %}" style="display:block;width:100%;height:100%;"><img src="{% static 'images/Pedicure.jpg' %}" alt="Pedicure"></a>
           <span class="bao-service__icon" aria-hidden="true">🦶</span>
         </div>
         <h3 class="bao-service__title">Pedicure</h3>
@@ -762,7 +767,7 @@
 
       <article class="bao-service">
         <div class="bao-service__photo">
-          <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=600&auto=format&fit=crop" alt="Hands receiving a manicure with rose nearby" loading="lazy">
+          <a href="{% url 'beauty:home' %}" style="display:block;width:100%;height:100%;"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?q=80&w=600&auto=format&fit=crop" alt="Manicure" loading="lazy"></a>
           <span class="bao-service__icon" aria-hidden="true">💅</span>
         </div>
         <h3 class="bao-service__title">Manicure</h3>
@@ -771,7 +776,7 @@
 
       <article class="bao-service">
         <div class="bao-service__photo">
-          <img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=600&auto=format&fit=crop" alt="Hand decorated with intricate henna design" loading="lazy">
+          <a href="{% url 'beauty:home' %}" style="display:block;width:100%;height:100%;"><img src="https://images.unsplash.com/photo-1610276198568-eb6d0ff53e48?q=80&w=600&auto=format&fit=crop" alt="Henna" loading="lazy"></a>
           <span class="bao-service__icon" aria-hidden="true">🖌️</span>
         </div>
         <h3 class="bao-service__title">Henna</h3>
@@ -780,7 +785,7 @@
 
       <article class="bao-service">
         <div class="bao-service__photo">
-          <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&auto=format&fit=crop" alt="Woman receiving a facial skincare treatment" loading="lazy">
+          <a href="{% url 'beauty:home' %}" style="display:block;width:100%;height:100%;"><img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=600&auto=format&fit=crop" alt="Facial" loading="lazy"></a>
           <span class="bao-service__icon" aria-hidden="true">🧖‍♀️</span>
         </div>
         <h3 class="bao-service__title">Facial</h3>
@@ -789,7 +794,7 @@
 
       <article class="bao-service">
         <div class="bao-service__photo">
-          <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=600&auto=format&fit=crop" alt="Hairstylist trimming a client's hair" loading="lazy">
+          <a href="{% url 'beauty:home' %}" style="display:block;width:100%;height:100%;"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=600&auto=format&fit=crop" alt="Haircut" loading="lazy"></a>
           <span class="bao-service__icon" aria-hidden="true">✂️</span>
         </div>
         <h3 class="bao-service__title">Haircut</h3>
@@ -798,7 +803,7 @@
 
       <article class="bao-service">
         <div class="bao-service__photo">
-          <img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=600&auto=format&fit=crop" alt="Hair wash treatment at a salon" loading="lazy">
+          <a href="{% url 'beauty:home' %}" style="display:block;width:100%;height:100%;"><img src="https://images.unsplash.com/photo-1620331311520-246422fd82f9?q=80&w=600&auto=format&fit=crop" alt="Wash" loading="lazy"></a>
           <span class="bao-service__icon" aria-hidden="true">🧴</span>
         </div>
         <h3 class="bao-service__title">Wash</h3>
@@ -807,8 +812,7 @@
 
       <article class="bao-service">
         <div class="bao-service__photo">
-          <img src="{% static 'images/Waxing.webp' %}"
-     alt="Marigold Garlands">
+          <a href="{% url 'beauty:home' %}" style="display:block;width:100%;height:100%;"><img src="{% static 'images/Waxing.webp' %}" alt="Waxing"></a>
           <span class="bao-service__icon" aria-hidden="true">🪒</span>
         </div>
         <h3 class="bao-service__title">Waxing</h3>
@@ -1108,8 +1112,7 @@
 
       <article class="fls-item">
         <div class="fls-item__photo">
-          <img src="{% static 'images/MarigoldGarlands.webp' %}"
-     alt="Marigold Garlands">
+          <a href="{% url 'flowers:home' %}" style="display:block;width:100%;height:100%;"><img src="{% static 'images/MarigoldGarlands.webp' %}" alt="Marigold Garlands"></a>
           <span class="fls-item__icon" aria-hidden="true">🌼</span>
         </div>
         <h3 class="fls-item__title">Marigold Garlands</h3>
@@ -1118,7 +1121,7 @@
 
       <article class="fls-item">
         <div class="fls-item__photo">
-          <img src="https://images.unsplash.com/photo-1599733594230-6b823276abcc?q=80&w=600&auto=format&fit=crop" alt="Fragrant mogra jasmine gajra flowers" loading="lazy">
+          <a href="{% url 'flowers:home' %}" style="display:block;width:100%;height:100%;"><img src="https://images.unsplash.com/photo-1599733594230-6b823276abcc?q=80&w=600&auto=format&fit=crop" alt="Mogra Gajra" loading="lazy"></a>
           <span class="fls-item__icon" aria-hidden="true">🤍</span>
         </div>
         <h3 class="fls-item__title">Mogra Gajra</h3>
@@ -1127,7 +1130,7 @@
 
       <article class="fls-item">
         <div class="fls-item__photo">
-          <img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=600&auto=format&fit=crop" alt="Red rose bouquet wrapped for gifting" loading="lazy">
+          <a href="{% url 'flowers:home' %}" style="display:block;width:100%;height:100%;"><img src="https://images.unsplash.com/photo-1561181286-d3fee7d55364?q=80&w=600&auto=format&fit=crop" alt="Rose Bouquets" loading="lazy"></a>
           <span class="fls-item__icon" aria-hidden="true">🌹</span>
         </div>
         <h3 class="fls-item__title">Rose Bouquets</h3>
@@ -1136,8 +1139,7 @@
 
       <article class="fls-item">
         <div class="fls-item__photo">
-<img src="{% static 'images/Pooja Flowers.webp' %}"
-     alt="Marigold Garlands">          <span class="fls-item__icon" aria-hidden="true">🪔</span>
+<a href="{% url 'flowers:home' %}" style="display:block;width:100%;height:100%;"><img src="{% static 'images/Pooja Flowers.webp' %}" alt="Pooja Flowers"></a>          <span class="fls-item__icon" aria-hidden="true">🪔</span>
         </div>
         <h3 class="fls-item__title">Pooja Flowers</h3>
         <p class="fls-item__desc">Loose flowers and thali sets for daily puja and special rituals.</p>
@@ -1145,8 +1147,7 @@
 
       <article class="fls-item">
         <div class="fls-item__photo">
-<img src="{% static 'images/Rangoli Petals1.png' %}"
-     alt="Marigold Garlands">          <span class="fls-item__icon" aria-hidden="true">🎨</span>
+<a href="{% url 'flowers:home' %}" style="display:block;width:100%;height:100%;"><img src="{% static 'images/Rangoli Petals1.png' %}" alt="Rangoli Petals"></a>          <span class="fls-item__icon" aria-hidden="true">🎨</span>
         </div>
         <h3 class="fls-item__title">Rangoli Petals</h3>
         <p class="fls-item__desc">Sorted petal sets in every colour to design rangoli at your doorstep.</p>
@@ -1154,7 +1155,7 @@
 
       <article class="fls-item">
         <div class="fls-item__photo">
-          <img src="https://images.unsplash.com/photo-1583160247711-2191776b4b91?q=80&w=600&auto=format&fit=crop" alt="Wedding mandap decorated with flowers" loading="lazy">
+          <a href="{% url 'flowers:home' %}" style="display:block;width:100%;height:100%;"><img src="https://images.unsplash.com/photo-1583160247711-2191776b4b91?q=80&w=600&auto=format&fit=crop" alt="Wedding Decor" loading="lazy"></a>
           <span class="fls-item__icon" aria-hidden="true">💐</span>
         </div>
         <h3 class="fls-item__title">Wedding Decor</h3>
