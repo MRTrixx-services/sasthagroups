@@ -1,3 +1,7 @@
 from django.contrib import admin
+from .models import FlowerPricing
 
-# Register your models here.
+
+@admin.register(FlowerPricing)
+class FlowerPricingAdmin(admin.ModelAdmin):
+    list_display = ('slug', 'price', 'unit')

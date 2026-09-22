@@ -4,6 +4,7 @@ from django.core.mail import EmailMultiAlternatives
 from django.template.loader import render_to_string
 from django.conf import settings
 from django.utils import timezone
+from .models import FlowerPricing
 
 
 FLOWER_LABELS = {
@@ -18,7 +19,8 @@ FLOWER_LABELS = {
 
 
 def home(request):
-    return render(request, "flowers/flowers.html")
+    pricing = {p.slug: p.price for p in FlowerPricing.objects.all()}
+    return render(request, "flowers/flowers.html", {'pricing': pricing})
 
 
 def flower_enquiry(request):
